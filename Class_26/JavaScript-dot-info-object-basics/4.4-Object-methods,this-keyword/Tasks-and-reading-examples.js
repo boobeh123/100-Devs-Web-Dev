@@ -314,5 +314,5 @@ Arrow functions and this keyword
 // user.sayHi(); // Hello John
 
 // ****************************************************************************************
-// JavaScript.info reading examples
+// JavaScript.info reading examples 
 // ****************************************************************************************
