@@ -215,3 +215,16 @@ Symbol.isConcatSpreadable   -> well-known symbol is used to configure if an obje
 Symbol.iterator             -> symbol specifies the default iterator for an object.
 Symbol.toPrimitive          -> is a symbol that allows us to describe object to primitive conversion.
 */
+
+/*
+Summary note:
+Symbols are not 100% hidden
+
+There is a built-in method:
+Object.getOwnPropertySymbols(obj) that allows us to get all symbols. 
+
+There is a method named:
+Reflect.ownKeys(obj) that returns all keys of an object including symbolic ones. 
+
+Most libraries, built-in functions and syntax constructs don’t use these methods.
+*/
