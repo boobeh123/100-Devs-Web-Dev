@@ -7,12 +7,12 @@
 
  "Make a rotating list of drinks (an automatic carousel) from the cocktailDB code:"
 
- The spaces solution:
+## Spaces Solution
  * spaces.html
  * spaces.css
  * spaces.js
 
- The carousel solution:
+ ## Carousel Solution
  * carousel.html
  * carousel.css
  * carousel.js
