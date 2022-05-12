@@ -8,11 +8,11 @@
  "Make a rotating list of drinks (an automatic carousel) from the cocktailDB code:"
 
 ## Spaces Solution
- * spaces.html
- * spaces.css
- * spaces.js
-
+ * https://thecocktaildb-spaces.netlify.app/
+ 
  ## Carousel Solution
- * carousel.html
- * carousel.css
- * carousel.js
+* https://thecocktaildb-carousel.netlify.app/
+
+## Code
+The code for these two solutions are in the folders above. 
+I provided comments/pseudocode to see what's going on at first glance
