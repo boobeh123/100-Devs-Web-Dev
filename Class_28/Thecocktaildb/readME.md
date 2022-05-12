@@ -14,9 +14,9 @@
 * https://thecocktaildb-carousel.netlify.app/
 
 ## Demos
-[Carousel](carouseldemo.gif)
+![Carousel](carouseldemo.gif)
 
-[Spaces](spacesdemo.gif)
+![Spaces](spacesdemo.gif)
 
 ## Code
 The code for these two solutions are in the folders above. 
