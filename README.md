@@ -1,6 +1,8 @@
 ## Description
 My perspective coding along to various JavaScript resources
 * JavaScript.info
+* Video tutorials and guides
+* Codecademy
 * The JavaScript Way
 * Eloquent JavaScript
 
