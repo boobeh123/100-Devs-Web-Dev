@@ -47,9 +47,10 @@ let isEarly = true;
 let personAge = 18;
 // 4 - Check whether runner is an adult AND registered early. If true, add 1000 to raceNumber. This control flow determines the runner's number.
 if ((personAge >= 18) && (isEarly === true)) {
+    console.log('see the registration desk.');
     raceNumber += 1000;
 } else {
-    console.log('see the registration desk.')
+    console.log('see the registration desk.');
 }
 // 5 - Check runner's age & registration time. This seperate control flow determines the race time.
 if ((personAge >= 18) && (isEarly === true)) {
