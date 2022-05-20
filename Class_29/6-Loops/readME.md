@@ -13,4 +13,6 @@ The concepts covered in this chapter:
 * The break keyword: Allow programs to leave a loop during the execution of its block.
 
 ## Learn anything new?
-I understand how to use break in an active loop and that do...while loops can run the code once before looping.
+I understand how to use break in an active loop and that do...while loops can run the code once before looping. 
+I had trouble grasping the concept of nested for loops the first time I learned about it. 
+Going over it again, I now understand that each time the outer loop iterates once, the inner loop iterates entirely.
