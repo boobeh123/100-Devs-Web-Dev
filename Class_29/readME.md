@@ -14,3 +14,7 @@ It contains snippets of:
 * 4 of the 12 projects available (to free users).
 * 2 of the 8 quizes available (to free users).
 * 2 articles.
+
+## Assignment:
+Do: Intro JS Course 
+https://www.codecademy.com/learn/introduction-to-javascript (~30 Hours)
