@@ -124,3 +124,35 @@ console.log(checkConsistentOutput(addTwo)); // Step 3
 /**************************************************************
 * FUNCTIONS AS PARAMETERS - TASKS
 ***************************************************************/
+
+
+
+
+/**************************************************************
+* REVIEW - CHALLENGES
+***************************************************************/
+// CB func
+const addTwo = num => {
+    return num + 2;
+}
+// Higher order func
+const checkConsistentOutput = (func, val) => {
+    let checkA = val + 2;
+    let checkB = func(val);
+    if (checkA === checkB) {
+        return checkB;
+    } else {
+        return `inconsistent results`;
+    }
+}
+console.log(checkConsistentOutput(addTwo));
+// 1 - What happens if you change the value of 2 in checkA?
+// ANSWER: The control flow that compares checkA & checkB will evaluate to false. The else statement will return a string.
+// 2 - Which variable holds the callback function?
+// ANSWER: The addTwo variable.
+// 3 - What happens if you invoke the function’s argument?
+// ANSWER: addTwo is still a function. If you pass a number as an argument, this function will add 2 to the argument and return the new number
+// example: addTwo(5); -> Output -> 7
+/**************************************************************
+* REVIEW - CHALLENGES
+***************************************************************/
