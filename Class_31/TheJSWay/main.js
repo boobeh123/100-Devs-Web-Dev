@@ -402,7 +402,7 @@ Write a program that creates three accounts:
 [X] Next, the program credits 1000 to each account and shows its description.
 */
 class Accounts {
-    constructor(name, balance) {
+    constructor(name) {
         this.name = name            // Name property
         this.balance = 0            // Balance property -> Initially set as 0
     }
