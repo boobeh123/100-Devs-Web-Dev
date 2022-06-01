@@ -20,3 +20,7 @@ The concepts covered in this chapter:
 
 ## Learn anything new?
 TheJSWay dives deeper into prototypes. I used Object.create() for the first time. It seems to clone an object created from a constructor, but without the properties from the constructor. Is it cloning a prototype?
+
+
+## Assignment:
+Read / Do: JS Way Ch. 09
