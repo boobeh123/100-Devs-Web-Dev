@@ -67,11 +67,36 @@ That's because these parameters are modeled as properties of the employee object
 
 
 /**************************************************************
-* ABSTRACTION - Video examples - 5:16 ~ 
+* ABSTRACTION - Video examples - 5:16 ~ 6:28
+***************************************************************/
+/*
+Imagine a DVD player as an object. 
+What happens when you push the "Play" button? 
+(disc starts spinning, LED displays hours:minutes:seconds, etc..)
+The complexities of what happens internally is hidden from the user.
+
+This is abstraction in practice.
+We can use that same technique on our objects. 
+We can hide the complex properties and methods from the user.
+
+Why would we want to do that?
+This will make the interface simpler.
+This will reduce the impact of change.
+Fewer properties and methods are easier to use than several.
+*/
+/**************************************************************
+* ABSTRACTION - Video examples - 5:16 ~ 6:28
+***************************************************************/
+
+
+
+
+/**************************************************************
+* INHERITANCE - Video examples - 6:29
 ***************************************************************/
 /*
 
 */
 /**************************************************************
-* ABSTRACTION - Video examples - 5:16 ~ 
+* INHERITANCE - Video examples - 6:29
 ***************************************************************/
