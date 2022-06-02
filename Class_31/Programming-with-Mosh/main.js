@@ -417,8 +417,135 @@ delete circle3.location;
 
 
 /**************************************************************
-* ENUMERATING PROPERTIES - Video examples - 40:54 ~
+* ENUMERATING PROPERTIES - Video examples - 40:54 ~ 43:45
 ***************************************************************/
+/*
+One way to iterate (enumerate) over properties of an object, is the for in loop
+
+To get the property value use bracket notation
+
+in operator is used to check an object for a given property or method
+*/
+
+// Iterating over properties of an object 
+for (let i in circle3) {
+    console.log(i);                 // Output -> radius draw
+}
+
+// Iterating over property values of an object
+for (let i in circle3) {
+    console.log(circle3[i]);        // Output -> 2 draw() {...}
+}
+
+// Properties only and not the methods
+for (let i in circle3) {
+    if (typeof circle3[i] !== 'function') {
+        console.log(i);             // Output -> radius
+    }
+}
+
+// Property values only and not the methods
+for (let i in circle3) {
+    if (typeof circle3[i] !== 'function') {
+        console.log(circle3[i]);    // Output -> 2
+    }
+}
+
+// Returns properties in an array
+console.log(Object.keys(circle3));
+
+// in operator
+if ('radius' in circle3) {
+    console.log('This object has a radius property')
+}
 /**************************************************************
-* ENUMERATING PROPERTIES - Video examples - 40:54 ~ 
+* ENUMERATING PROPERTIES - Video examples - 40:54 ~ 43:45
+***************************************************************/
+
+
+
+
+/**************************************************************
+* ABSTRACTION - Video examples - 43:46 ~ 47:46
+***************************************************************/
+/*
+Takeaway:
+Hide the details, show the essentials
+
+One change in the implementation of an object results in a number of changes in the source code.
+*/
+
+// This constructor function will call a method inside the draw() method
+function CreateCircles4(radius) {
+    this.radius = radius;
+    this.defaultLocation = {x: 3, y: 3}
+    this.optimumLocation = function() {
+        console.log(`${this.defaultLocation }`)
+    }
+    this.draw = function() {
+        this.optimumLocation();
+        console.log('Created with a constructor function: Abstraction example');
+    }
+}
+const circle5 = new CreateCircles4(2);
+// The problem is the object displays the defaultLocation property and optimumLocation() method. 
+// This should not be accessible to the consumer of this object
+circle5.defaultLocation = false;
+circle5.optimumLocation();
+circle5.draw();
+/**************************************************************
+* ABSTRACTION - Video examples - 43:46 ~ 47:46
+***************************************************************/
+
+
+
+
+/**************************************************************
+* PRIVATE PROPERTIES AND METHODS - Video examples - 47:47 ~ 51:54
+***************************************************************/
+/*
+Closure determines which variables will be accessible to an inner function.
+Do not confuse closure with scope. Scope is temporary. Closure stays.
+
+The draw() method has access to two variables from the parent function: defaultLocation & optimumLocation. 
+The draw() method has access to two variables inside the function body: x y
+x & y will be initialized each time draw() method is called. Once the method is done the local variables will be out of scope.
+defaultLocation & optimumLocation will remain before, during, an after draw() method is called & executed.
+*/
+
+// Declaring a local variable inside a constructor function
+function CreateCircles5(radius) {
+    let color = 'orange';               // This variable will not be a part of the object. It is not a property. 
+    let defaultLocation = {x: 3, y: 3}  // Converting a property to a local variable hides it from the consumer.
+    let optimumLocation = function() {  // Converting a method to a local variable hides it from the consumer.
+        console.log(`${defaultLocation }`)
+    }
+    this.radius = radius;
+    this.draw = function() {
+        let x = 'hello'
+        let y = 'world'
+        optimumLocation();
+        console.log(`${x} ${y}: Abstraction in practice`);
+    }
+}
+const circle6 = new CreateCircles5;
+// The problem is solved. The object no longer displays defaultLocation or optimumLocation().
+// The public interface is simpler and easier to work with
+circle6.draw;
+circle6.draw();
+/**************************************************************
+* PRIVATE PROPERTIES AND METHODS - Video examples - 47:47 ~ 51:54
+***************************************************************/
+
+
+
+
+/**************************************************************
+* GETTERS/SETTERS - Video examples - 51:55 ~
+***************************************************************/
+/*
+
+*/
+/**************************************************************
+* GETTERS/SETTERS - Video examples - 51:55 ~
 ***************************************************************/
