@@ -278,11 +278,147 @@ circle3.draw();     // Output -> Created with a constructor function
 
 
 /**************************************************************
-* CONSTRUCTOR PROPERTY - Video examples - 23:28 ~
+* CONSTRUCTOR PROPERTY - Video examples - 23:28 ~ 25:51
 ***************************************************************/
 /*
+The takeaway:
+Every object in JavaScript has a constructor property.
+The constructor property references the function that was used to create the object.
 
+When creating an object with literal notation, the JavaScript engine
+constructs that object with a built-in constructor function
 */
+console.log(circle.constructor);     // Created with built-in constructor
+console.log(circle2.constructor);    // Created with built-in constructor (Built with factory. Factory returns object literal. Still uses the built-in constructor)
+console.log(circle3.constructor);    // Created with CreateCircles2 constructor
 /**************************************************************
-* CONSTRUCTOR PROPERTY - Video examples - 23:28 ~
+* CONSTRUCTOR PROPERTY - Video examples - 23:28 ~ 25:51
+***************************************************************/
+
+
+
+
+/**************************************************************
+* FUNCTIONS ARE OBJECTS - Video examples - 25:52 ~ 
+***************************************************************/
+/*
+One of the confusing concepts about JavaScript is that functions are objects.
+
+Take a look at the CreateCircles2 constructor function below:
+This function has access to methods like: toString and apply.
+This function has access to properties like: name and length.
+
+The takeaway is:
+Functions are objects.
+*/
+CreateCircles2.toString();          // Output -> "function CreateCircles2(radius) {...}
+CreateCircles2.apply();             // Output -> undefiend
+CreateCircles2.name;                // Output -> CreateCircles2
+CreateCircles2.length;              // Output -> 1
+
+const CreateCircles3 = new Function('radius', `
+this.radius = radius;
+this.draw = function() {
+    console.log('Created with the built-in-Function-Constructor constructor function');
+}
+`)
+const circle4 = new CreateCircles3(2);
+circle4.draw();                     // Output -> Created with the built-in-Function-Constructor constructor function
+CreateCircles2.call({}, 2)          // Same syntax as line 271
+CreateCircles2.apply({}, [2,3,4])   // Same as call, but pass args in an array
+/**************************************************************
+* FUNCTIONS ARE OBJECTS - Video examples - 25:52 ~ 31:09
+***************************************************************/
+
+
+
+
+/**************************************************************
+* VALUE VS REFERENCE TYPES - Video examples - 31:10 ~ 36:59
+***************************************************************/
+/*
+There are two categories of types:
+Reference Types - Objects, functions, arrays
+Value Types     - String, Number, Boolean, Symbol, undefined, null (primitives)
+
+When working with primitives, the value is stored inside the variable.
+When copying a variable, the value is copied into the new variable.
+
+When working with objects, the object is NOT stored inside the variable.
+When copying an object, the reference is copied into the new variable.
+
+That object is stored in memory and the address of the memory's location
+is stored inside the variable.
+Both a & b variables are pointing to the same object in memory.
+
+The takeaway:
+Primitives are copied by their value.
+Objects are copied by their reference.
+*/
+
+// Declaring two primitives. X & Y are two independent variables
+let x = 5;
+let y = x;
+x = 50;
+console.log(x); // Output -> 50
+console.log(y); // Output -> 5
+
+// Same as above, but with reference types
+let a = {value: 9};
+let b = a;
+a.value = 90;
+console.log(a); // Output 90
+console.log(b); // Output 90
+
+// Value types & functions
+let number = 5;
+function increase(number) {
+    number++;
+}
+increase(number);           // Call function to increase number. Increased value is out of scope
+console.log(number);        // Output -> 5 (still)
+
+// Reference types & functions
+let number2 = {value: 50};
+function increase2(obj) {
+    obj.value++
+}
+increase2(number2);         // Call function to increase number. Object is passed by its reference
+console.log(number2);       // Output -> 51
+/**************************************************************
+* VALUE VS REFERENCE TYPES - Video examples - 31:10 ~ 36:59
+***************************************************************/
+
+
+
+
+/**************************************************************
+* ADDING/REMOVING PROPERTIES - Video examples - 37:00 ~ 40:53
+***************************************************************/
+/*
+Objects in JavaScript are dynamic. Properties can be added or removed after creation.
+
+Bracket notation is used when property names contain spaces or special characters.
+*/
+
+// Adding properties with dot notation
+circle3.location = {x: 3};  
+
+// Adding properties with bracket notation
+circle3['location'] = {y: 3};
+
+// Deleting properties
+delete circle3.location;
+/**************************************************************
+* ADDING/REMOVING PROPERTIES - Video examples - 37:00 ~ 40:53
+***************************************************************/
+
+
+
+
+/**************************************************************
+* ENUMERATING PROPERTIES - Video examples - 40:54 ~
+***************************************************************/
+/**************************************************************
+* ENUMERATING PROPERTIES - Video examples - 40:54 ~ 
 ***************************************************************/
