@@ -398,7 +398,7 @@ Write a program that creates three accounts:
 [X] one belonging to Sean, 
 [X] another to Brad 
 [X] and the third one to Georges. 
-[?] These accounts are stored in an array. 
+[X] These accounts are stored in an array. 
 [X] Next, the program credits 1000 to each account and shows its description.
 */
 class Accounts {
@@ -421,15 +421,16 @@ const Sean = new Accounts('Sean');
 const Brad = new Accounts('Brad');
 const George = new Accounts('George');
 // Accounts are stored into an array
-const arrayOfAccounts = [Sean, Brad, George];
+// const arrayOfAccounts = [Sean, Brad, George];
+const accountList = [new Accounts('Sean'), new Accounts('Brad'), new Accounts('George')]
 // Credits 1000 to each account 
 Sean.credit(1000);
 Brad.credit(1000);
 George.credit(1000);
 // Show description
-Sean.describe();
-Brad.describe();
-George.describe();
+console.log(Sean.describe());
+console.log(Brad.describe());
+console.log(George.describe());
 /**************************************************************
 * ACCOUNT LIST - Tasks
 ***************************************************************/
