@@ -620,7 +620,7 @@ The stopwatch has these behaviors:
 [X] Upon start() and after stop(), the duration will return a number.
 [X] Upon start() and after reset(), the duration is 0.
 [X] Executing the start() twice in a row will cause an error.
-[] Executing the stop() twice in a row will cause an error.
+[X] Executing the stop() twice in a row will cause an error.
 */
 
 class Stopwatch {
@@ -647,6 +647,11 @@ class Stopwatch {
     }
 
     stop() {
+        if (this.isRunning == false) {
+            throw new Error('Stopwatch is not running.')
+        }
+
+        this.isRunning = false;
         this.endTime = new Date();
 
         const seconds = (this.endTime.getTime() - this.startTime.getTime()) / 1000
