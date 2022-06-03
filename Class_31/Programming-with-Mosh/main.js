@@ -619,7 +619,7 @@ Create a stopwatch object. The stopwatch has one property and three methods:
 The stopwatch has these behaviors:
 [X] Upon start() and after stop(), the duration will return a number.
 [X] Upon start() and after reset(), the duration is 0.
-[] Executing the start() twice in a row will cause an error.
+[X] Executing the start() twice in a row will cause an error.
 [] Executing the stop() twice in a row will cause an error.
 */
 
@@ -628,13 +628,21 @@ class Stopwatch {
         this.duration = 0
         this.startTime = null
         this.endTime = null
+        this.isRunning = false;
     }
 
     reset() {
         this.duration = 0;
+        this.startTime = null;
+        this.endTime = null
+        this.isRunning = false;
     }
 
     start() {
+        if (this.isRunning == true) {
+            throw new Error('Stopwatch is currently running.')
+        }        
+        this.isRunning = true;
         this.startTime = new Date();
     }
 
