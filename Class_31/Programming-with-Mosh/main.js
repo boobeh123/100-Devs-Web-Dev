@@ -612,13 +612,13 @@ console.log(circle7.defaultLocation);       // Output -> {x: 3, y: 3}
 /*
 Create a stopwatch object. The stopwatch has one property and three methods:
 [X] A duration property 
-[] A reset method
-[] A start method
-[] A stop method
+[X] A reset method
+[X] A start method
+[X] A stop method
 
 The stopwatch has these behaviors:
-[] Upon start() and after stop(), the duration will return a number.
-[] Upon start() and after reset(), the duration is 0.
+[X] Upon start() and after stop(), the duration will return a number.
+[X] Upon start() and after reset(), the duration is 0.
 [] Executing the start() twice in a row will cause an error.
 [] Executing the stop() twice in a row will cause an error.
 */
@@ -626,6 +626,8 @@ The stopwatch has these behaviors:
 class Stopwatch {
     constructor() {
         this.duration = 0
+        this.startTime = null
+        this.endTime = null
     }
 
     reset() {
@@ -633,13 +635,14 @@ class Stopwatch {
     }
 
     start() {
-        new Date();
+        this.startTime = new Date();
     }
 
     stop() {
-        new Date();
+        this.endTime = new Date();
 
-        const hello = 
+        const seconds = (this.endTime.getTime() - this.startTime.getTime()) / 1000
+        this.duration += seconds;
     }
 
 }
