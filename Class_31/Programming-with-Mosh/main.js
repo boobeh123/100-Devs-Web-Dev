@@ -661,6 +661,7 @@ class Stopwatch {
         this.duration += seconds;                                                   // The result of the calculated difference is added to the duration property
     }
 }
+
 const timer = new Stopwatch;
 /**************************************************************
 * STOPWATCH EXERCISE
