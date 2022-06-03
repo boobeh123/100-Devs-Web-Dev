@@ -113,8 +113,66 @@ normalize.call({coords: [0, 2, 3], length: 5}); // → [0, 0.4, 0.6]
 * PROTOTYPES - READING EXAMPLES
 ***************************************************************/
 /*
+Most objects also have a prototype. 
+A prototype is another object that is used as a fallback source of properties. 
 
+When an object gets a request for a property that it does not have,
+its prototype will be searched for the property, then the prototype’s prototype, and so on.
+
+Object.getPrototypeOf returns the prototype of an object.
+
+The prototype relations of JavaScript objects form a tree-shaped structure, 
+and at the root of this structure sits Object.prototype. 
+It provides a few methods that show up in all objects
+(such as toString, which converts an object to a string representation)
+
+Many objects have another object that provides a different set of default properties.
+Functions derive from Function.prototype
+Arrays derive from Array.prototype
+
+Object.create creates an object with a specific prototype.
+The “proto” rabbit acts as a container 
+for the properties that are shared by all rabbits. 
+
+An individual rabbit object, like the happy rabbit, 
+contains properties that apply only to itself—in this case 
+its type—and derives shared properties from its prototype.
 */
+
+// Empty object with no properties or methods
+let empty = {};
+// Q: Who is the prototype of the empty object?
+console.log(empty.toString);                                    // Output -> ƒ toString() { [native code] }
+console.log(empty.toString());                                  // Output -> [object Object]
+// A: Object.prototype. It's the entity behind all objects
+console.log(Object.getPrototypeOf(empty) == Object.prototype);  // Output -> true
+console.log(Object.getPrototypeOf({}) == Object.prototype);     // Output -> true
+console.log(Object.getPrototypeOf(Object.prototype));           // Output -> null
+// Object that provide a different set of default properties
+console.log(Object.getPrototypeOf(Math.max) == Function.prototype); // Output -> true
+console.log(Object.getPrototypeOf([]) == Array.prototype);          // Output -> true
+
+// Creating an object with a specific prototype
+let protoRabbit = {
+    speak(line) {
+        console.log(`The ${this.type} rabbit says ${line}`);
+    }
+};
+let happyRabbit = Object.create(protoRabbit);
+happyRabbit.type = "happy";
+happyRabbit.speak("Hello your outfit is on point and you smell good");
 /**************************************************************
 * PROTOTYPES - READING EXAMPLES
+***************************************************************/
+
+
+
+
+/**************************************************************
+* CLASSES - READING EXAMPLES
+***************************************************************/
+/*
+*/
+/**************************************************************
+* CLASSES - READING EXAMPLES
 ***************************************************************/
