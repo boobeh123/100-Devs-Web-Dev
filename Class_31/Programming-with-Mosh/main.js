@@ -299,7 +299,7 @@ console.log(circle3.constructor);    // Created with CreateCircles2 constructor
 
 
 /**************************************************************
-* FUNCTIONS ARE OBJECTS - Video examples - 25:52 ~ 
+* FUNCTIONS ARE OBJECTS - Video examples - 25:52 ~ 31:09 
 ***************************************************************/
 /*
 One of the confusing concepts about JavaScript is that functions are objects.
@@ -541,11 +541,109 @@ circle6.draw();
 
 
 /**************************************************************
-* GETTERS/SETTERS - Video examples - 51:55 ~
+* GETTERS/SETTERS - Video examples - 51:55 ~ 57:32
 ***************************************************************/
 /*
+In the last lesson, we converted a property and a method to local variables
+inside the (CreateCircles5) constructor. 
+We will refer to these local variables as private property and private methods.
+
+The defaultLocation property can no longer be accessed from the outside.
+But what if we want to display that defaultLocation somewhere?
+We want to be able to read it, without being able to modify it.
+
+1) 1st solution is to define a method that returns the private property.
+2) 2nd solution is defineProperty method to define Getters/Setters
+    - 1st argument -> Object that we are adding properties to
+    - 2nd argument -> Name of the property. Referred as a read-only property
+    - 3rd argument -> An object with a key-value pair
+
+A Getter is a function that is used to read a property
+
+Setting the value of defaultLocation from the outside can be done by defining a Setter
+
 
 */
+
+function CreateCircles6(radius) { 
+    let defaultLocation = {x: 3, y: 3}
+    this.radius = radius;
+    
+    // 1) Defining a method that returns a private property
+    this.getDefaultLocation = function() {
+        return defaultLocation;
+    }
+
+    // 2) defineProperty method
+    Object.defineProperty(this, 'defaultLocation', {
+        // get keyword is the property. Function is the value
+        get: function() {
+            return defaultLocation;
+        },
+        // set keyword is the property. Function is the value. Contains a parameter of value
+        set: function(value) {
+            // Performing validation on value before value is set
+            if ((!value.x) || (!value.y)) 
+            throw new Error('Invalid location')
+            defaultLocation = value;
+        }
+    })
+
+    this.draw = function() {
+        console.log('Getter / Setter in practice');
+    }
+}
+const circle7 = new CreateCircles6(2);
+// 1st solution
+console.log(circle7.getDefaultLocation());  // Output -> {x: 3, y: 3}
+// 2nd solution
+console.log(circle7.defaultLocation);       // Output -> {x: 3, y: 3}
+// circle7.defaultLocation = 2;             // Output -> Invalid location
 /**************************************************************
-* GETTERS/SETTERS - Video examples - 51:55 ~
+* GETTERS/SETTERS - Video examples - 51:55 ~ 57:32
+***************************************************************/
+
+
+
+
+/**************************************************************
+* STOPWATCH EXERCISE
+***************************************************************/
+/*
+Create a stopwatch object. The stopwatch has one property and three methods:
+[X] A duration property 
+[] A reset method
+[] A start method
+[] A stop method
+
+The stopwatch has these behaviors:
+[] Upon start() and after stop(), the duration will return a number.
+[] Upon start() and after reset(), the duration is 0.
+[] Executing the start() twice in a row will cause an error.
+[] Executing the stop() twice in a row will cause an error.
+*/
+
+class Stopwatch {
+    constructor() {
+        this.duration = 0
+    }
+
+    reset() {
+        this.duration = 0;
+    }
+
+    start() {
+        new Date();
+    }
+
+    stop() {
+        new Date();
+
+        const hello = 
+    }
+
+}
+const timer = new Stopwatch;
+/**************************************************************
+* STOPWATCH EXERCISE
 ***************************************************************/
