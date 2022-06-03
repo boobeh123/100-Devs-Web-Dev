@@ -623,14 +623,17 @@ The stopwatch has these behaviors:
 [X] Executing the stop() twice in a row will cause an error.
 */
 
+// Stopwatch class
 class Stopwatch {
+    // Properties of stopwatch
     constructor() {
-        this.duration = 0
-        this.startTime = null
-        this.endTime = null
-        this.isRunning = false;
+        this.duration = 0       // 0 is the default / starting state of the duration property.
+        this.startTime = null   // startTime's value will be reassigned after the start() method is called.
+        this.endTime = null     // endTime's value will be reassigned after the stop() method is called.
+        this.isRunning = false; // false is the default / starting state of the isRunning property. It it only true after start() is called.
     }
 
+    // Reset sets properties to default state
     reset() {
         this.duration = 0;
         this.startTime = null;
@@ -638,26 +641,25 @@ class Stopwatch {
         this.isRunning = false;
     }
 
+    // Start performs input validation, toggles an on/off boolean to 'on', and reassigns startTime property value to a timestamp
     start() {
-        if (this.isRunning == true) {
-            throw new Error('Stopwatch is currently running.')
-        }        
-        this.isRunning = true;
-        this.startTime = new Date();
-    }
-
-    stop() {
-        if (this.isRunning == false) {
-            throw new Error('Stopwatch is not running.')
+        if (this.isRunning == true) {                                               // If isRunning evaluates to true, 
+            throw new Error('Stopwatch is currently running.')                      // then start() has already been called.
         }
-
-        this.isRunning = false;
-        this.endTime = new Date();
-
-        const seconds = (this.endTime.getTime() - this.startTime.getTime()) / 1000
-        this.duration += seconds;
+        this.isRunning = true;                                                      // toggle an on/off boolean to 'on'
+        this.startTime = new Date();                                                // Reassign startTime property value to a timestamp
     }
 
+    // Stop performs input validation, toggles an on/off boolean to 'off', and reassigns endTime property value to a seperate timestamp
+    stop() {
+        if (this.isRunning == false) {                                              // If isRunning evaluates to false
+            throw new Error('Stopwatch is not running.')                            // then start() has not been called.
+        }
+        this.isRunning = false;                                                     // toggle an on/off boolean to 'off'
+        this.endTime = new Date();                                                  // Reassign endTime property value to another timestamp
+        const seconds = (this.endTime.getTime() - this.startTime.getTime()) / 1000  // Calculate difference between startTime timestamp and endTime timestamp
+        this.duration += seconds;                                                   // The result of the calculated difference is added to the duration property
+    }
 }
 const timer = new Stopwatch;
 /**************************************************************
