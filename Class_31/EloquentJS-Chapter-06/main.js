@@ -172,7 +172,70 @@ happyRabbit.speak("Hello your outfit is on point and you smell good");
 * CLASSES - READING EXAMPLES
 ***************************************************************/
 /*
+JavaScript’s prototype system can be interpreted as 
+a somewhat informal take on an object-oriented concept called classes. 
+
+A class defines the shape of a type of object—what methods and properties it has. 
+Such an object is called an instance of the class.
+
+Prototypes are useful for defining properties 
+for which all instances of a class share the same value, such as methods.
+Properties that differ per instance, need to be stored directly in the objects themselves.
+(such as our rabbits’ type property)
+
+A constructor function creates an instance of a given class. 
+It makes an object that derives from the proper prototype.
+It has properties that instances of this class are supposed to have.
+
+If you put the keyword new in front of a function call, 
+the function is treated as a constructor.
+
+Functions automatically get a property named prototype, 
+which by default holds a plain, empty object that derives from Object.prototype. 
+You can overwrite it with a new object or you can add properties to the existing object
+
+A constructor's name are capitalized so it is easily distinguished.
+
+It is important to understand the distinction between 
+the way a prototype is associated with a constructor and 
+the way objects have a prototype
+
+The actual prototype of a constructor is Function.prototype since constructors are functions. 
+Its prototype property holds the prototype used for instances created through it.
 */
+//------------------------------------------------------------
+function makeRabbit(type) {
+    let rabbit = Object.create(protoRabbit);
+    rabbit.type = type;
+    return rabbit;
+}
+const testRabbit = makeRabbit('test');
+testRabbit.speak('testing testing one two test'); // Output -> The test rabbit says testing testing one two test
+//------------------------------------------------------------
+function Rabbit(type) {
+    this.type = type;
+}
+Rabbit.prototype.speak = function(line) {
+    console.log(`The ${this.type} rabbit says ${line}`);
+}
+const dorkyRabbit = new Rabbit('dorky');
+dorkyRabbit.speak('let me adjust my glasses');      // Output -> The dorky rabbit says let me adjust my glasses
+//------------------------------------------------------------
+console.log(Object.getPrototypeOf(Rabbit) == Function.prototype);   // → true
+console.log(Object.getPrototypeOf(dorkyRabbit) == Rabbit.prototype);// → true
 /**************************************************************
 * CLASSES - READING EXAMPLES
+***************************************************************/
+
+
+
+
+/**************************************************************
+* CLASS NOTATION - READING EXAMPLES
+***************************************************************/
+/*
+
+*/
+/**************************************************************
+* CLASS NOTATION - READING EXAMPLES
 ***************************************************************/
