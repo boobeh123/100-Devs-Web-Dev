@@ -234,8 +234,254 @@ console.log(Object.getPrototypeOf(dorkyRabbit) == Rabbit.prototype);// → true
 * CLASS NOTATION - READING EXAMPLES
 ***************************************************************/
 /*
+JavaScript classes are constructor functions with a prototype property.
 
+A class allows methods and a constructor to be defined. The class keywords starts the class declaration. Classes allow only methods.
+Methods are properties that hold functions. 
+Class can be used in statements and in expressions.
+When used as an expression it produces the constructor as a value.
+You are allowed to omit the class name in a class expression.
 */
+
+// Using a class as a statement
+class Rabbit2 {
+    constructor(type) {
+        this.type = type;
+    }
+    speak(line) {
+        console.log(`The ${this.type} rabbit says ${line}`)
+    }
+}
+const friendlyRabbit = new Rabbit2('friendly');
+const focusedRabbit = new Rabbit2('focused');
+friendlyRabbit.speak('Hello');
+focusedRabbit.speak('world');
+
+// Using class as an expression
+let object2 = new class {
+    greetMethod() {
+        console.log("Hello world");
+    }
+};
+object2.greetMethod();
 /**************************************************************
 * CLASS NOTATION - READING EXAMPLES
+***************************************************************/
+
+
+
+
+/**************************************************************
+* OVERRIDING DERIVED PROPERTIES - READING EXAMPLES
+***************************************************************/
+/*
+When you add a property to an object, whether it is present in the prototype or not, 
+the property is added to the object itself.
+
+The Rabbit and Object prototypes lie behind friendlyRabbit on the prototype chain, 
+if properties do not exist in the object itself, it looks up the prototype chain.
+
+Overriding is useful. It's used to make individual objects stand out.
+Overriding is also used to give the standard function and array prototypes 
+a different toString method than the basic object prototype.
+
+Calling toString on an array 
+gives a result similar to calling .join(",") on it—
+it puts commas between the values in the array. 
+
+Calling Object.prototype.toString with an array produces a different string.
+That function doesn’t know about arrays, 
+so it simply puts the word object and 
+the name of the type 
+between square brackets.
+*/
+
+// Adding a property to the prototype
+Rabbit2.prototype.paw = "soft and spongy underneath";
+
+// Adding a property to the object itself. (Overrides property value from Rabbit2 prototype)
+friendlyRabbit.paw = "fuzzy fingers"
+
+// Both objects are of the same prototype
+console.log(focusedRabbit.paw);     // Output -> soft and spongy underneath
+console.log(friendlyRabbit.paw);    // Output -> fuzzy fingers
+
+// Going up the prototype chain
+friendlyRabbit.paw          // Property of the friendlyRabbit object
+friendlyRabbit.type         // Property of the Rabbit2 prototype
+friendlyRabbit.speak()      // Method of the Rabbit2 prototype
+friendlyRabbit.toString()   // Method of the Global Object prototype
+
+// Using toString() on an array
+const arrayToString = [2,3].toString();
+console.log(arrayToString); // Output -> '2, 3'
+
+// Using toString() on an object with an array
+const objectToString = Object.prototype.toString.call([2,3]);
+console.log(objectToString);// Output -> [object Array]
+
+// Comparing array vs object toString() methods
+console.log(Array.prototype.toString == Object.prototype.toString); // Output -> false
+/**************************************************************
+* OVERRIDING DERIVED PROPERTIES - READING EXAMPLES
+***************************************************************/
+
+
+
+
+/**************************************************************
+* MAPS - READING EXAMPLES
+***************************************************************/
+/*
+The word map has two different meanings in programming.
+
+Map is an operation that transforms a data structure by applying a function to its elements.
+(map is an array method. Map applies a function to every element in the array.)
+
+A map (noun) is a data structure that associates values with other values.
+(map is an object. Map associates keys with other keys. For example, map names to ages)
+
+Using plan objects as maps is dangerous. There are several ways to avoid this problem.
+It's possible to create objects with no prototype by passing null into Object.create
+The resulting object will not derive from Object.prototype and can be used as a map.
+
+Object property names must be strings. You cannot use an object as your map. 
+JavaScript comes with a class called Map. It stores a mapping and allows any type of keys.
+
+It is useful to know that Object.keys returns only an object’s own keys, not those in the prototype.
+The hasOwnProperty method ignores the object’s prototype.
+
+*/
+// Object created with literal notation. 
+let ages = {
+    // Properties of the age object. People's names are object properties. People's ages are property values.
+    Boris: 39,
+    Liang: 22,
+    Julia: 62
+};
+
+// Accessing object properties with bracket notation
+console.log(`Julia is ${ages['Julia']}`);                       // Output -> Julia is 62
+
+// Enumerating object properties with for in
+// toString is not in our map. toString is a plain object. It derives from Object.prototype
+console.log(`Is Jack's age known?`, 'Jack' in ages);            // Output -> Is Jack's age known? false
+console.log(`Is toString available?`, 'toString' in ages);      // Output -> Is toString available? true
+
+// An object with no prototype
+console.log("toString" in Object.create(null));                 // Output -> false
+
+// The set, get, has methods are part of the interface of the Map object.
+let ages2 = new Map();
+// Set method
+ages2.set("Borris", 39);
+ages2.set("Liang", 22);
+ages2.set("Julia", 62);
+// Get method
+console.log(`Julia is ${ages2.get("Julia")}`);                  // Output -> Julia is 62
+// Has method
+console.log(`Is Jack's age known?`, ages2.has("Jack"));         // Output -> Is Jack's age known? false
+console.log(`Is toString available?`, ages2.has("toString"));   // Output -> Is toString available? true
+
+// The two objects created from Rabbit2 class. 
+// focusedRabbit has a paw property from its prototype.
+// friendlyRabbit added a paw property explicitly (line #303)
+console.log(Object.keys(focusedRabbit));                        // Output -> [type]
+console.log(Object.keys(friendlyRabbit));                       // Output -> [type, paw]
+console.log(focusedRabbit.hasOwnProperty("paw"));               // Output -> false          
+console.log(friendlyRabbit.hasOwnProperty("paw"));              // Output -> true
+/**************************************************************
+* MAPS - READING EXAMPLES
+***************************************************************/
+
+
+
+
+/**************************************************************
+* POLYMORPHISM - READING EXAMPLES
+***************************************************************/
+/*
+When you call the String function on an object, 
+it will call the toString method on that object 
+to try to create a meaningful string from it.
+
+Some of the standard prototypes 
+define their own version of toString 
+so they can create a string that contains 
+more useful information than "[object Object]". 
+
+When a piece of code is written to work with objects
+that have a certain interface—in this case, a toString method—
+any kind of object that happens to support this interface can be plugged into the code, and it will just work.
+
+This technique is called polymorphism. 
+Polymorphic code can work with values of different shapes, 
+as long as they support the interface it expects.
+
+A for/of loop can loop over several kinds of data structures.
+This is another case of polymorphism—
+such loops expect the data structure to expose a specific interface, 
+which arrays and strings do. 
+We can also add this interface to our own objects! 
+*/
+
+// Standard prototype of toString with objects
+console.log(friendlyRabbit.toString()); // Output -> [object Object]
+console.log(String(friendlyRabbit));    // Output -> [object Object]
+
+// Define own version of toString
+Rabbit2.prototype.toString = function() {
+    return `a ${this.type} rabbit`;
+}
+console.log(String(friendlyRabbit));    // Output -> a friendly rabbit
+/**************************************************************
+* POLYMORPHISM - READING EXAMPLES
+***************************************************************/
+
+
+
+
+/**************************************************************
+* SYMBOLS - READING EXAMPLES
+***************************************************************/
+/*
+It is possible for multiple interfaces 
+to use the same property name for different things. 
+
+Property names are usually strings, but they can also be symbols. 
+Symbols are values created with the Symbol function. 
+Newly created symbols are unique—you cannot create the same symbol twice.
+
+The string you pass to Symbol is included 
+when you convert it to a string and 
+can make it easier to recognize a symbol when, 
+for example, showing it in the console. 
+But it has no meaning beyond that—multiple symbols may have the same name.
+
+Being both unique and usable as property names 
+makes symbols suitable for defining interfaces 
+that can peacefully live alongside other properties, 
+no matter what their names are.
+*/
+
+// Symbol with the description 'name'. This symbol is stored in the variable sym
+let sym = Symbol('name');
+
+// Two symbols with the same description—they are not equal
+console.log(sym == Symbol('name')); // Output -> false
+
+// Adding Symbol as a property
+Rabbit2.prototype[sym] = 55;
+console.log(friendlyRabbit[sym]);       // Output -> 55
+console.log(focusedRabbit[sym]);        // Output -> 55
+
+//
+const toStringSymbol = Symbol('toString');
+Array.prototype[toStringSymbol] = function() {
+    return `${this.length} cm of blue yarn`;
+};
+console.log([2,3].toString());          // Output -> 2,3
+console.log([2,3][toStringSymbol]());   // Output -> 2 cm of blue yarn
+/**************************************************************
+* SYMBOLS - READING EXAMPLES
 ***************************************************************/
