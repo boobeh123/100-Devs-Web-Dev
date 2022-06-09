@@ -445,23 +445,25 @@ console.log(String(friendlyRabbit));    // Output -> a friendly rabbit
 * SYMBOLS - READING EXAMPLES
 ***************************************************************/
 /*
-It is possible for multiple interfaces 
-to use the same property name for different things. 
+It is possible for multiple interfaces to use the same property name for different things. 
+We could define an interface in which the toString method is supposed to convert the object into a piece of yarn. 
+It would not be possible for an object to conform to both that interface and the standard use of toString.
+That would be a bad idea, and this problem isn’t that common.
 
 Property names are usually strings, but they can also be symbols. 
 Symbols are values created with the Symbol function. 
 Newly created symbols are unique—you cannot create the same symbol twice.
 
-The string you pass to Symbol is included 
-when you convert it to a string and 
-can make it easier to recognize a symbol when, 
-for example, showing it in the console. 
-But it has no meaning beyond that—multiple symbols may have the same name.
+The string you pass to Symbol is included when you convert it to a string 
+and can make it easier to recognize a symbol
+Being both unique and usable as property names makes symbols suitable for defining interfaces 
 
-Being both unique and usable as property names 
-makes symbols suitable for defining interfaces 
-that can peacefully live alongside other properties, 
-no matter what their names are.
+
+It is possible to include symbol properties in object expressions and classes 
+by using square brackets around the property name. 
+That causes the property name to be evaluated, 
+much like the square bracket property access notation, 
+which allows us to refer to a binding that holds the symbol.
 */
 
 // Symbol with the description 'name'. This symbol is stored in the variable sym
@@ -472,16 +474,306 @@ console.log(sym == Symbol('name')); // Output -> false
 
 // Adding Symbol as a property
 Rabbit2.prototype[sym] = 55;
-console.log(friendlyRabbit[sym]);       // Output -> 55
-console.log(focusedRabbit[sym]);        // Output -> 55
+console.log(friendlyRabbit[sym]);               // Output -> 55
+console.log(focusedRabbit[sym]);                // Output -> 55
 
-//
+// Symbol with the description 'toString'
 const toStringSymbol = Symbol('toString');
+// Define custom prototype of toString. Custom prototype is stored in Symbol('toString')
 Array.prototype[toStringSymbol] = function() {
     return `${this.length} cm of blue yarn`;
 };
-console.log([2,3].toString());          // Output -> 2,3
-console.log([2,3][toStringSymbol]());   // Output -> 2 cm of blue yarn
+// Standard prototype of toString
+console.log([2,3].toString());                  // Output -> 2,3
+// Custom prototype of toString. Called using variable containing Symbol('toString')
+console.log([2,3][toStringSymbol]());           // Output -> 2 cm of blue yarn
+
+// Object created with literal notation
+let stringObject = {
+    // Define custom prototype of toString. This method returns a string. 
+    [toStringSymbol]() {return "a jute rope";}
+};
+// Using standard & custom toString methods
+console.log(stringObject.toString());           // Output -> [object Object]
+console.log(stringObject[toStringSymbol]());    // Output -> a jute rope
 /**************************************************************
 * SYMBOLS - READING EXAMPLES
+***************************************************************/
+
+
+
+
+/**************************************************************
+* THE ITERATOR INTERFACE - READING EXAMPLES
+***************************************************************/
+/*
+The object given to a for/of loop is expected to be iterable. 
+This means it has a method named with the Symbol.iterator symbol 
+
+When called, 
+that method should return an object 
+that provides a second interface, iterator. 
+This is the actual thing that iterates. 
+
+It has a next method that returns the next result. 
+That result should be an object with a value property 
+that provides the next value, if there is one, and a done property, 
+which should be true when there are no more results and false otherwise.
+
+Note that the next, value, and done property names are plain strings, not symbols. 
+Only Symbol.iterator, 
+which is likely to be added to a lot of different objects, is an actual symbol.
+
+Let’s implement an iterable data structure. 
+We’ll build a matrix class, acting as a two-dimensional array.
+The elements are stored row by row.
+*/
+
+// Using the Symbol.iterator method to iterate over a string, "Hi"
+let hiIterator = "Hi"[Symbol.iterator]();
+// Returns an object. The object contains two properties. The value property contains letters of the string.
+console.log(hiIterator.next()); // Output -> {value: 'H', done: false}
+console.log(hiIterator.next()); // Output -> {value: 'i', done: false}
+// The done property is true, iterating further returns no more results
+console.log(hiIterator.next()); // Output -> {value: undefined, done: true}
+
+// Matrix class acts as a two-dimensional array
+class Matrix {
+    // The constructor function takes a width, a height,
+    // and an optional element function that will be used to fill in the initial values.
+    constructor(width, height, element = (x, y) => undefined) {
+        this.width = width;
+        this.height = height;
+        // Matrix class stores its content in a single array of width × height elements.
+        this.content = [];
+
+        // When looping over a matrix, 
+        // look for position of elements and elements themselves 
+        for (let y = 0; y < height; y++) {
+            for (let x = 0; x < width; x++) {
+                this.content[y * width + x] = element(x, y);
+            }
+        }
+    }
+    
+    // Retrieves elements in the matrix
+    get(x, y) {
+        return this.content[y * this.width + x];
+    }
+    // Update elements in the matrix
+    set(x, y, value) {
+        this.content[y * this.width + x] = value;
+    }
+}
+
+// Our Matrix iterator produces objects with x, y, and value properties.
+class MatrixIterator {
+    constructor(matrix) {
+        this.x = 0;
+        this.y = 0;
+        this.matrix = matrix;
+    }
+
+    // Tracks progress of iterating over x & y properties
+    next() {
+        // Checks if bottom of the matrix has been reached
+        if (this.y == this.matrix.height) return {done: true};
+        
+        // if bottom hasn't reached, create an object holding the current value
+        let value = {
+            x: this.x,
+            y: this.y,
+            value: this.matrix.get(this.x, this.y)
+        }
+        // then update its position
+        this.x++;
+        // moving to the next row if necessary
+        if (this.x == this.matrix.width) {
+            this.x = 0;
+            this.y++;
+        }
+        return {value, done: false};
+    }
+}
+
+// Defining our own iterator. Allows matrix class to be iterable
+Matrix.prototype[Symbol.iterator] = function() {
+    return new MatrixIterator(this);
+};
+
+// Looping over a matrix with for of
+let daMatrix = new Matrix(2, 2, (x, y) => `value ${x}, ${y}`);
+for (let {x, y, value} of daMatrix) {
+    console.log(x, y, value);
+}
+/**************************************************************
+* THE ITERATOR INTERFACE - READING EXAMPLES
+***************************************************************/
+
+
+
+
+/**************************************************************
+* GETTERS, SETTERS, AND STATICS - READING EXAMPLES
+***************************************************************/
+/*
+Interfaces often consist mostly of methods, 
+but it is also okay to include properties that hold non-function values.
+
+Getters are defined by 
+writing get in front of the method name in an object expression or class declaration.
+
+Sometimes you want to attach some properties directly to your constructor function, rather than to the prototype. 
+Such methods won’t have access to a class instance but can, 
+for example, be used to provide additional ways to create instances.
+
+Inside a class declaration, 
+methods that have static written before their name are stored on the constructor. 
+*/
+
+// Object created with literal notation
+let varyingSize = {
+    // Whenever someone reads this object's size property, the getter method is called.
+    get size() {
+        // This method returns a random number between 1 and 100
+        return Math.floor(Math.random() * 100);
+    } 
+}
+console.log(`Reading varyingSize's size property: ${varyingSize.size}`);
+
+// Temperature class allows read and write with celsius and fahrenheit 
+class Temperature {
+    // Only celsius is stored
+    // Automatically converts to & from celsius using fahrenheit getter and setter
+    constructor(celsius) {
+        this.celsius = celsius;
+    }
+    // Reading the fahrenheit property calls the getter method
+    get fahrenheit() {
+        // This method calculates the formula to convert from celsius to fahrenheit
+        return this.celsius * 1.8 + 32;
+    }
+
+    // Writing the fahrenheit property calls the setter method
+    set fahrenheit(value) {
+        // This method calculates the formula to convert from fahrenheit to celsius. This.celsius is reassigned to the result of calculating the formula.
+        this.celsius = (value - 32) / 1.8;
+    }
+
+    // Methods that have static written before their name are stored on the constructor. 
+    static fromFahrenheit(value) {
+        // Creates a temperature using degrees fahrenheit
+        return new Temperature((value - 32) / 1.8);
+    }
+}
+
+// Constructing the object
+let temp = new Temperature(22);
+// Reading the fahrenheit property
+console.log(`Reading temp.fahrenheit property: ${temp.fahrenheit} degrees fahrenheit`);   // Output -> 75
+// Reassigning the fahrenheit property
+temp.fahrenheit = 85;
+// Reading the celsius property after reassigning celsius value
+console.log(`Reading temp.celsius property: ${temp.celsius} degrees celsius`);
+/**************************************************************
+* GETTERS, SETTERS, AND STATICS - READING EXAMPLES
+***************************************************************/
+
+
+
+
+/**************************************************************
+* INHERITANCE - READING EXAMPLES
+***************************************************************/
+/*
+Some matrices are known to be symmetric. 
+If you mirror a symmetric matrix around its top-left to bottom-right diagonal, it stays the same. 
+The value stored at x,y is always the same as that at y,x.
+Imagine we need a data structure like Matrix 
+but one that enforces the fact that the matrix is and remains symmetrical. 
+We could write it from scratch, but that would involve repeating some code very similar to what we already wrote.
+
+JavaScript’s prototype system 
+makes it possible to create a new class, much like the old class, 
+but with new definitions for some of its properties. 
+This is called inheritance. 
+The new class inherits properties and behavior from the old class.
+
+Inside class methods, super provides a way to call methods as they were defined in the superclass.
+
+Inheritance allows us to build slightly different data types 
+from existing data types with relatively little work. 
+It is a fundamental part of the object-oriented tradition, alongside encapsulation and polymorphism. 
+
+Encapsulation and polymorphism can be used to separate pieces of code from each other, 
+reducing the tangledness of the overall program.
+
+Inheritance fundamentally ties classes together, creating more tangle. 
+When inheriting from a class, 
+you usually have to know more about how it works than when simply using it. 
+*/
+
+// extends indicates SymmetricMatrix is based on Matrix
+// Matrix is the superclass (parent) and SymmetricMatrix is the subclass (child)
+class SymmetricMatrix extends Matrix {
+    constructor(size, element = (x, y) => undefined) {
+        // SymmetricMatrix needs the properties that Matrix has
+        super(size, size, (x, y) => {
+            // Conditional checks if SymmetricMatrix is Symmetrical:
+            // By wrapping element function to swap coordinates for values below the diagonal
+            if (x < y) return element(y, x); 
+            else return element(x, y);
+        })
+    }
+    // Setter method uses super keyword
+    set(x, y, value) {
+        // Redefining set method
+        super.set(x, y, value);
+        if (x != y) {
+            super.set(y, x, value);
+        }
+    }
+}
+let daMatrix2 = new SymmetricMatrix(5, (x, y) => `${x}, ${y}`);
+console.log(daMatrix2.get(2, 3));   // Output -> 3, 2
+/**************************************************************
+* INHERITANCE - READING EXAMPLES
+***************************************************************/
+
+
+
+
+/**************************************************************
+* THE INSTANCEOF OPERATOR - READING EXAMPLES
+***************************************************************/
+/*
+It is occasionally useful to know 
+whether an object was derived from a specific class. 
+For this, JavaScript provides a binary operator called instanceof.
+
+The operator will see through inherited types, 
+so a SymmetricMatrix is an instance of Matrix. 
+The operator can also be applied to standard constructors like Array. 
+Almost every object is an instance of Object.
+*/
+// SymmetricMatrix is an instance of SymmetricMatrix
+console.log(new SymmetricMatrix(2) instanceof SymmetricMatrix); // → true
+// SymmetricMatrix is an instance of Matrix
+console.log(new SymmetricMatrix(2) instanceof Matrix);          // → true
+// Matrix is NOT an instance of SymmetricMatrix
+console.log(new Matrix(2, 2) instanceof SymmetricMatrix);       // → false
+// Array is an instance of Array
+console.log([1] instanceof Array);                              // → true
+/**************************************************************
+* THE INSTANCEOF OPERATOR - READING EXAMPLES
+***************************************************************/
+
+
+
+
+/**************************************************************
+* A VECTOR TYPE - TASKS
+***************************************************************/
+/**************************************************************
+* A VECTOR TYPE - TASKS
 ***************************************************************/
