@@ -774,6 +774,105 @@ console.log([1] instanceof Array);                              // → true
 /**************************************************************
 * A VECTOR TYPE - TASKS
 ***************************************************************/
+/*
+[X] Write a class Vec that represents a vector in two-dimensional space. 
+[X] It takes x and y parameters (numbers), which it should save to properties of the same name.
+
+[X] Give the Vec prototype two methods, plus and minus, 
+[X] that take another vector as a parameter and return a new vector 
+[X] that has the sum or difference of the two vectors’ x and y values.
+(this and the parameter) 
+
+[X] Add a getter property length to the prototype that computes the length 
+of the vector—that is, the distance of the point (x, y) from the origin (0, 0).
+*/
+
+// Create a class
+class Vec {
+    // The constructor takes x & y parameters, both are numbers
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+    // Plus method takes a vector and returns a new vector
+    plus(vec2) {
+        // Takes both vector's properties and adds them together 
+        let sumX = this.x + vec2.x;
+        let sumY = this.y + vec2.y;
+        // Create a new vector with the result from plus method. Return the new vector
+        return (new Vec(sumX, sumY))
+    }
+    // Minus method takes a vector and returns a new vector
+    minus(vec2) {
+        // Take another vector and return a new vector
+        let diffX = this.x - vec2.x;
+        let diffY = this.y - vec2.y;
+        // Create a new vector with plus method's result. Return the new vector
+        return (new Vec(diffX, diffY))
+    }
+
+    // Getter length property
+    get length() {
+        // We are given two points on a graph. The formula to find a hypotenuse is C = sqrt(a² + b²)
+        // Compute the distance from origin (0, 0) to the point (x, y)
+        return Math.sqrt(this.x**2 + this.y**2);
+    }
+}
+
+console.log(new Vec(1, 2).plus(new Vec(2, 3))); // Output -> Vec {x: 3, y: 5}
+console.log(new Vec(1, 2).minus(new Vec(2, 3)));// Output -> Vec {x: -1, y: -1}
+console.log(new Vec(3, 4).length);              // Output -> 5
 /**************************************************************
 * A VECTOR TYPE - TASKS
+***************************************************************/
+
+
+
+
+/**************************************************************
+* GROUPS - TASKS
+***************************************************************/
+/*
+The standard JavaScript environment provides another data structure called Set. Like an instance of Map, a set holds a collection of values. Unlike Map, it does not associate other values with those—it just tracks which values are part of the set. A value can be part of a set only once—adding it again doesn’t have any effect.
+
+Write a class called Group (since Set is already taken). Like Set, it has add, delete, and has methods. Its constructor creates an empty group, add adds a value to the group (but only if it isn’t already a member), delete removes its argument from the group (if it was a member), and has returns a Boolean value indicating whether its argument is a member of the group.
+
+Use the === operator, or something equivalent such as indexOf, to determine whether two values are the same.
+
+Give the class a static from method that takes an iterable object as argument and creates a group that contains all the values produced by iterating over it.
+*/
+/**************************************************************
+* GROUPS - TASKS
+***************************************************************/
+
+
+
+
+/**************************************************************
+* ITERABLE GROUPS - TASKS
+***************************************************************/
+/*
+Make the Group class from the previous exercise iterable. Refer to the section about the iterator interface earlier in the chapter if you aren’t clear on the exact form of the interface anymore.
+
+If you used an array to represent the group’s members, don’t just return the iterator created by calling the Symbol.iterator method on the array. That would work, but it defeats the purpose of this exercise.
+
+It is okay if your iterator behaves strangely when the group is modified during iteration.
+*/
+/**************************************************************
+* ITERABLE GROUPS - TASKS
+***************************************************************/
+
+
+
+
+/**************************************************************
+* BORROWING A METHOD - TASKS
+***************************************************************/
+/*
+Earlier in the chapter I mentioned that an object’s hasOwnProperty can be used as a more robust alternative to the in operator when you want to ignore the prototype’s properties. But what if your map needs to include the word "hasOwnProperty"? You won’t be able to call that method anymore because the object’s own property hides the method value.
+
+Can you think of a way to call hasOwnProperty on an object that has its own property by that name?
+*/
+/**************************************************************
+* BORROWING A METHOD - TASKS
 ***************************************************************/
