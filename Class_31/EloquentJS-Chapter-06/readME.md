@@ -70,7 +70,7 @@ The concepts covered in this chapter:
 
 
 ## Learn anything new?
- To be continued...
+Eloquent JavaScript covers a lot of college-level computer science and theory topics. I can't say I understand all of it, but I was able to read over the concepts as a first-pass-through and code along with no errors. This chapter teaches you in-depth about prototypes, maps, defining your own prototype functions, iterator interface, and extending a class. I definitely would need to learn more about the topics mentioned previously.
 
 ## Assignment:
 Read / Do: Eloquent JS Ch. 06 - https://eloquentjavascript.net/06_object.html
