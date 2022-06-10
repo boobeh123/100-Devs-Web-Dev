@@ -911,12 +911,84 @@ console.log(group.has(10)); // → false
 * ITERABLE GROUPS - TASKS
 ***************************************************************/
 /*
-Make the Group class from the previous exercise iterable. Refer to the section about the iterator interface earlier in the chapter if you aren’t clear on the exact form of the interface anymore.
+Make the Group class from the previous exercise iterable. 
+Refer to the section about the iterator interface 
+earlier in the chapter if you aren’t clear on the exact form of the interface anymore.
 
-If you used an array to represent the group’s members, don’t just return the iterator created by calling the Symbol.iterator method on the array. That would work, but it defeats the purpose of this exercise.
+If you used an array to represent the group’s members, 
+don’t just return the iterator created 
+by calling the Symbol.iterator method on the array. 
+That would work, but it defeats the purpose of this exercise.
 
-It is okay if your iterator behaves strangely when the group is modified during iteration.
+It is okay if your iterator behaves strangely 
+when the group is modified during iteration.
 */
+
+// The Group class from the previous exercise. Renamed to Group2.
+class Group2 {
+    constructor() {
+        this.group = [];
+    }
+    add(value) {
+        if (!this.has(value)) {
+            this.group.push(value);
+        }
+    }
+
+    delete(value) {
+        if (this.has(value)) {
+            this.group.splice(this.group.indexOf(value), 1);
+        }
+    }
+
+    has(value) {
+        return this.group.includes(value)
+    }
+
+    static from(obj) {
+        let newGroup = new Group2()
+        for (let i of obj) {
+            newGroup.add(i);
+        }
+        return newGroup;
+    }
+}
+
+// The MatrixIterator from the reading
+// This iterator should return the same output as Symbol.iterator
+class Group2Iterator {
+    // The constructor takes in an object
+    // We need two things to iterate over anything: An index and the object
+    constructor(obj) {
+        this.index = 0;
+        this.group = obj.group
+    }
+
+    // next method should return a value and a status
+    next() {
+        // Checks if looping is done by comparing index to length
+        if (this.index == this.group.length) return {done: true};
+
+        // If looping is not done, check where we are at
+        let value = this.group[this.index];
+        this.index++;
+        return {value, done: false};
+    }
+}
+
+// Prototype assignment 
+Group2.prototype[Symbol.iterator] = function() {
+    return new Group2Iterator(this);
+};
+
+// Call a loop on a group. An array is passed into the static from method.
+// We want to generate the group, loop through the group, and log each value in the group.
+for (let value of Group2.from(["a", "b", "c"])) {
+    console.log(value);
+}
+// → a
+// → b
+// → c
 /**************************************************************
 * ITERABLE GROUPS - TASKS
 ***************************************************************/
