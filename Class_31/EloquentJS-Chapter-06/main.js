@@ -833,14 +833,73 @@ console.log(new Vec(3, 4).length);              // Output -> 5
 * GROUPS - TASKS
 ***************************************************************/
 /*
-The standard JavaScript environment provides another data structure called Set. Like an instance of Map, a set holds a collection of values. Unlike Map, it does not associate other values with those—it just tracks which values are part of the set. A value can be part of a set only once—adding it again doesn’t have any effect.
+The standard JavaScript environment provides another data structure called Set. 
+Like an instance of Map, a set holds a collection of values. 
+Unlike Map, it does not associate other values with those—
+it just tracks which values are part of the set. 
+A value can be part of a set only once—adding it again doesn’t have any effect.
 
-Write a class called Group (since Set is already taken). Like Set, it has add, delete, and has methods. Its constructor creates an empty group, add adds a value to the group (but only if it isn’t already a member), delete removes its argument from the group (if it was a member), and has returns a Boolean value indicating whether its argument is a member of the group.
+[X] Write a class called Group (since Set is already taken). 
+[X] Like Set, it has add, delete, and has methods. 
+[X] Its constructor creates an empty group, 
+[X] add adds a value to the group (but only if it isn’t already a member), 
+[X] delete removes its argument from the group (if it was a member), 
+[X] has returns a Boolean value indicating whether its argument is a member of the group.
 
-Use the === operator, or something equivalent such as indexOf, to determine whether two values are the same.
+[X] Use the === operator, or something equivalent such as indexOf, 
+to determine whether two values are the same. (Used includes)
 
-Give the class a static from method that takes an iterable object as argument and creates a group that contains all the values produced by iterating over it.
+[X] Give the class a static from method that takes an iterable object as argument 
+and creates a group that contains all the values produced by iterating over it.
+
 */
+
+// Create a class
+class Group {
+    constructor() {
+        // Create an empty array
+        this.group = [];
+    }
+    add(value) {
+        // Adds a value to the array
+        if (!this.has(value)) {                                 // If this array does not contain value
+            this.group.push(value);                             // Then add value to the array
+        }
+    }
+
+    delete(value) {
+        // Removes its argument from the group (if it was a member)
+        if (this.has(value)) {                                  // If this array contains value
+            this.group.splice(this.group.indexOf(value), 1);    // Then locate the value's index and remove that element
+        }
+    }
+
+    has(value) {
+        // Returns a boolean indicating whether its argument is a member of the group
+        // Includes method determines whether an array contains a certain element, returing a boolean
+        return this.group.includes(value)
+    }
+
+    // Static from method 
+    // Takes in an iterable object
+    static from(obj) {
+        // Create a group containing values produced by iterations
+        let newGroup = new Group()
+        for (let i of obj) {
+            newGroup.add(i);
+        }
+        return newGroup;
+    }
+    
+}
+let group = Group.from([10, 20]);
+console.log(group.has(10)); // → true
+console.log(group.has(30)); // → false
+group.add(50);
+console.log(group);         // Output -> [10, 20, 50]
+group.delete(10);
+console.log(group);         // Output -> [20, 50]
+console.log(group.has(10)); // → false
 /**************************************************************
 * GROUPS - TASKS
 ***************************************************************/
