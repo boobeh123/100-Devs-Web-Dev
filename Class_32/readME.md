@@ -7,7 +7,7 @@
 
 6kyu: TBD
 
-7kyu: TBD
+7kyu: adding-arrays.js
 
 8kyu: merge-two-sorted-arrays-into-one.js
 
