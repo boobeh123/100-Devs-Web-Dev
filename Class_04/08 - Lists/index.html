@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 8</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Creating an unordered list with items  -->
+    <ul class="one">
+        <li>Hello</li>
+        <li>World</li>
+        <li>Woohoo</li>
+    </ul>
+    <!-- Creating an ordered list with items  -->
+    <ol class="two">
+        <li>Head east of Lumbridge Ave</li>
+        <li>Walk north of Al Kharid St</li>
+        <li>Run north of Varrock Pkwy</li>
+    </ol>
+    <!-- Using start attribute w/ ordered lists -->
+    <ol class="three" start="100">
+        <li>Head east of Lumbridge Ave</li>
+        <li>Walk north of Al Kharid St</li>
+        <li>Run north of Varrock Pkwy</li>
+    </ol>
+    <!-- Using reversed attribute w/ ordered lists -->
+    <ol class="four" reversed>
+        <li>Run south of Varrock Pkwy</li>
+        <li>Walk south of Al Kharid St</li>
+        <li>Head west of Lumbridge Ave</li>
+    </ol>
+    <!-- Creating a description list w/ items & sub-items -->
+    <dl class="five">
+        <dt>Supportive</dt>
+            <dd>Providing sympathy, encouragement, help, or information.</dd>
+        <dt>Calm</dt>
+            <dd>adjective: free from excitement</dd>
+            <dd>noun: freedom from motion or disturbance</dd>
+    </dl>
+    <!--  Nesting lists - ul nested in ol  -->
+    <ol class="six">
+        <li>Walk my dog</li>
+        <li>Do the dishes</li>
+        <li>Separate clothing:</li>
+            <ul>
+                <li>Lights</li>
+                <li>Darks</li>
+            </ul>
+        <li>Wash my clothes</li>
+        <li>Clean the floors:</li>
+            <ul>
+                <li>Vacuum</li>
+                <li>Swiffer: Dry pad</li>
+                <li>Swiffer: Wet pad</li>
+            </ul>
+    </ol>
+    <!-- Using background-image as item marker -->
+    <ul class="seven">
+        <li>Hello</li>
+        <li>World</li>
+    </ul>
+    <!-- Horizontal list w/ display property  -->
+    <ul class="eight">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+    <!-- Horizontal list w/ float property  -->
+    <div class="clearfix">
+        <ul class="nine">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+    <!-- Building a nav  -->
+    <nav class="ten">
+        <ul>
+          <li><a href="#">Profile</a></li><!--
+          --><li><a href="#">Settings</a></li><!--
+          --><li><a href="#">Notifications</a></li><!--
+          --><li><a href="#">Logout</a></li>
+        </ul>
+      </nav>
+    <script src="main.js"></script>
+</body>
+</html>
