@@ -12,4 +12,4 @@
 8kyu: TBD
 
 ## Assignment:
-Do: Codewars Array Ladder (search array problems) - 8kyu, 7kyu, 6kyu, 7kyu, 8kyu
+Do: Codewars String Ladder (search string problems) - 8kyu, 7kyu, 6kyu, 7kyu, 8kyu
