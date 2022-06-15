@@ -9,7 +9,7 @@
 
 7kyu: TBD
 
-8kyu: TBD
+8kyu: is-the-string-uppercase.js
 
 ## Assignment:
 Do: Codewars String Ladder (search string problems) - 8kyu, 7kyu, 6kyu, 7kyu, 8kyu
