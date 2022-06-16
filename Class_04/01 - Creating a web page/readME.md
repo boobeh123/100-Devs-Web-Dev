@@ -24,7 +24,7 @@ The concepts covered in this chapter:
 
 ## Learn anything new?
 I am aware of all of the concepts covered in this reading. 
-The practice exercises will be hosted on github pages.
+The practice exercises are hosted on netlify: https://100devsconference-01.netlify.app/
 I hope you are excited to see the progression of the exercises for this reading.
 
 You can view my notes inside the main.js file.
