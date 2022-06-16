@@ -3,7 +3,7 @@
 
 8kyu: stringy-strings.js
 
-7kyu: TBD
+7kyu: do-you-know-how-to-make-query-string.js
 
 6kyu: TBD
 
