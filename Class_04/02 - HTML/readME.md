@@ -45,4 +45,5 @@ The concepts covered in this chapter:
     * Can link pages in the same web page.
 
 ## Learn anything new?
+https://100devsconference-02.netlify.app/
 I now know the differences and when to use a section or a div. It is important to have semantic code. Doing so will make a website more accessible to folks. I have a better understanding of when to use a header and a nav when creating a web page.
