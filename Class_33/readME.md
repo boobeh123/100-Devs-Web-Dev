@@ -7,7 +7,7 @@
 
 6kyu: TBD
 
-7kyu: TBD
+7kyu: consecutive-vowels-in-a-string.js
 
 8kyu: is-the-string-uppercase.js
 
