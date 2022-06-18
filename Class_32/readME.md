@@ -5,7 +5,7 @@
 
 7kyu: minimize-sum-of-array-(array-series-#1).js
 
-6kyu: TBD
+6kyu: array.diff.js
 
 7kyu: adding-arrays.js
 
