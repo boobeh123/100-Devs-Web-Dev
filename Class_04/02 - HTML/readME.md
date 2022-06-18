@@ -9,6 +9,13 @@ The concepts covered in this chapter:
 * < span > element:
     * Acts as containers and used for styling.
     * Inline-level element.
+* Block-level elements:
+   * Block-level elements begin on a new line, stacking one on top of the other, and occupy any available width. 
+   * Block-level elements may be nested and may wrap inline-level elements. 
+* Inline-level elements:
+   * Inline-level elements do not begin on a new line. 
+   * They fall into the normal flow of a document, lining up one after the other, and only maintain the width of their content.
+   * Inline-level elements may be nested and cannot wrap block-level elements. 
 * Headings: 
     * Break up content and establish hierarchy
     * Block-level element.
