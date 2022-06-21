@@ -5,7 +5,7 @@
 
 7kyu: do-you-know-how-to-make-query-string.js
 
-6kyu: TBD
+6kyu: consecutive-strings.js
 
 7kyu: consecutive-vowels-in-a-string.js
 
