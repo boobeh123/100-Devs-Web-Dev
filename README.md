@@ -1,16 +1,22 @@
 ## Description
-My perspective coding along to various JavaScript resources
-* JavaScript.info
+Hello 👋 Welcome to my web dev repository. 
+
+My perspective reading & coding along to various HTML, CSS, and JavaScript resources.
+ 
 * Video tutorials and guides
+* Project code along
+* Shay Howe
+* LearnLayout
+* JavaScript.info
 * Codecademy
-* The JavaScript Way
+* The JS Way
 * Eloquent JavaScript
+* Codewars
 
 ## Technologies
-![JavaScript](https://img.shields.io/badge/-JAVASCRIPT-333?logo=javascript)
-
-
-
+![HTML5](https://profilinator.rishav.dev/skills-assets/html5-original-wordmark.svg)
+![CSS3](https://profilinator.rishav.dev/skills-assets/css3-original-wordmark.svg)
+![JavaScript](https://profilinator.rishav.dev/skills-assets/javascript-original.svg)
 
 
 
