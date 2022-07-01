@@ -1,0 +1,187 @@
+
+/**************************************************************
+* http://meyerweb.com/eric/tools/css/reset/ 2. v2.0 | 20110126
+* License: none (public domain)
+***************************************************************/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/**************************************************************
+* HTML5 display-role reset for older browsers
+***************************************************************/
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/**************************************************************
+* Base styles
+***************************************************************/
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman','sans-serif';
+    /* font-size: 62.5%; */
+    font-size: 16px;
+    line-height: 22px;
+    background-color: #333;
+    color: #999
+}
+
+a {
+    text-decoration: none;
+    color: #648880;
+}
+
+a:hover {
+    color: #a9b2b9;
+}
+/**************************************************************
+* Clearfix
+***************************************************************/
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    clear: both;
+    *zoom: 1;
+}
+/**************************************************************
+* PRACTICE
+***************************************************************/
+/* Initialize form  */
+
+.one {
+    /* border: 2px solid #000; */
+    /* height: 25rem; */
+    height: 40vh;
+}
+
+/* textarea comment box  */
+.two {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.two textarea {
+    width: 25%;
+}
+
+/* fieldset and legend  */
+
+.three legend {
+    text-align: center;
+    font-weight: 700;
+    color: #fff;
+    border: 2px solid #999;
+    border-radius: 5px;
+    padding: 3px;
+}
+.three fieldset {
+    border-top: 2px solid #555;
+    border-bottom: 2px solid #555;
+    padding-bottom: 1rem;
+
+}
+
+/* :required pseudo element  */
+
+.four input:required {
+    border: 2px dashed #999;
+}
+
+/* Login form demo  */
+
+#main {
+    background-color: #fff;
+    border: 1px solid #c6c7cc;
+    border-radius: 5px;
+    width: 16em;
+    overflow: hidden;
+}
+
+.account-info {
+    padding: .75em 1.25em;
+}
+
+.account-info label {
+    color: #555;
+}
+
+.account-info input {
+    background: #fff;
+    color: #333;
+    padding: .25em;
+    margin-top: .25em;
+    width: 100%;
+    border: 1px solid #a9b2b9;
+}
+
+.account-action {
+    background: #fff;
+    border-top: 1px solid #c6c7cc;
+    padding: 1em;
+}
+
+.account-action .button {
+    background: linear-gradient(#49708f, #293f50);
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 700;
+    float: left;
+    padding: .5em 6.75em;
+    margin-left: .2em;
+}
+
+.account-action label {
+    color: #333;
+    font-size: .8rem;
+    float: left;
+    margin: .25em 1em;
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 9</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Initializing a form -->
+    <form action="/login" method="post" class="one">
+    <!-- Creating a single-line text field -->
+    <div>
+    <input type="text" name="firstName" placeholder="Enter your first name">
+    </div>
+    <!-- Using a variety of type attributes values -->
+    <div>
+        <input type="password" name="password" placeholder="Password">
+        <input type="date" name="birthday">
+        <input type="time" name="game-time">
+        <input type="email" name="email-address" placeholder="JohnDoe@xyz.com">
+        <input type="url" name="website" placeholder="http://www.google.com">
+        <input type="number" name="cost" placeholder="12.49">
+        <input type="tel" name="phone-number" placeholder="(888)762-8888">
+    </div>
+    <!-- Using text area -->
+    <div class="two">
+        <label for="comment-box">How was your experience?:</label>
+        <textarea id="comment-box" name="comment-box" placeholder="Leave a comment."></textarea>
+    </div>
+    <!-- Using radio button -->
+    <div>
+    <input type="radio" name="yesOrNo" value="Disagree"> Disagree
+    <input type="radio" name="yesOrNo" value="Neutral"> Neutral
+    <input type="radio" name="yesOrNo" value="Agree"> Agree
+    </div>
+    <!-- Using check boxes -->
+    <div>
+    <input type="checkbox" name="day" value="Morning"> Morning
+    <input type="checkbox" name="day" value="Afternoon"> Afternoon
+    <input type="checkbox" name="day" value="Evening"> Evening
+    </div>
+    <!-- Creating a dropdown list using select and option  -->
+    <div>
+    <select>
+        <option value="hello">hello</option>
+        <option value="world">world</option>
+    </select>
+    </div>
+    <!-- Creating a submit input -->
+    <div>
+    <input type="submit" name="submit">
+    <button name="submit">Send</button>
+    </div>
+    <!-- Creating a label for radio buttons -->
+    <div>
+        <label>
+            <input type="radio" name="yesOrNo" value="Disagree">Disagree
+        </label>
+        <label>
+            <input type="radio" name="yesOrNo" value="Neutral">Neutral
+        </label>
+        <label>
+            <input type="radio" name="yesOrNo" value="Agree">Agree
+        </label>
+    </div>
+    <!-- Using a fieldset & legend -->
+    <div class="three">
+    <fieldset>
+        <legend>Register</legend>
+        <label>
+            Username
+            <input type="text" name="username" placeholder="username">
+        </label>
+        <label>
+            Password
+            <input type="text" name="password" placeholder="password">
+        </label>
+    </fieldset>
+    </div>
+    <!-- Disabling input  -->
+    <div>
+        <input type="file">
+    </div>
+    <!-- Disabling a fieldset  -->
+    <div>
+        <fieldset disabled>
+                <input type="text" name="username" placeholder="username">
+                <input type="text" name="password" placeholder="password">
+        </fieldset>
+    </div>
+    <!-- Using require attribute  -->
+    <div class="four">
+    <input type="email" name="email" placeholder="type a string and submit" required>
+    <input type="submit" for="email">
+    </div>
+</form>
+    <!-- Login form example -->
+    <form id="main">
+        <fieldset class="account-info">
+            <label>
+                Username
+                <input type="text" name="username">
+            </label>
+            <label>
+                Password
+                <input type="password" name="password">
+            </label>
+        </fieldset>
+        <fieldset class="account-action">
+            <input type="submit" name="submit" value="Login" class="button">
+            <label>
+                <input type="checkbox" name="remember">Stay Signed in
+            </label>
+        </fieldset>
+    </form>
+    <script src="main.js"></script>
+</body>
+</html>
