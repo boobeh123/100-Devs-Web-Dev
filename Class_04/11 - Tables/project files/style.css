@@ -1,0 +1,530 @@
+
+/**************************************************************
+* http://meyerweb.com/eric/tools/css/reset/ 2. v2.0 | 20110126
+* License: none (public domain)
+***************************************************************/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/**************************************************************
+* HTML5 display-role reset for older browsers
+***************************************************************/
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/**************************************************************
+* Custom styles
+***************************************************************/
+body {
+    background: #293f50;
+    color: #999;
+    font-family: 'Roboto', 'Times New Roman', sans-serif;
+    font-size: 1rem;
+    line-height: 1.4rem;
+    /* border: 2px solid red; */
+} 
+
+/**************************************************************
+* Grid
+***************************************************************/
+*, 
+*:before,
+*:after {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.container, 
+.grid {
+    margin: 0 auto;
+    width: 60em;
+    /* border: 2px solid red; */
+}
+
+.container {
+    padding: 0 1.9rem;
+    /* border: 2px solid red; */
+}
+
+.grid,
+.onethird-column,
+.twothird-column {
+    padding: 0 1rem;
+    /* border: 2px solid red; */
+
+}
+
+.onethird-column, 
+.twothird-column {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.onethird-column {
+    width: 33.3333%;
+}
+
+.twothird-column {
+    width: 66.6666%;
+}   
+
+/**************************************************************
+* Rows
+***************************************************************/
+.row {
+    background-color: #fff;
+    min-width: 60em;
+    padding: 4.15rem 0 2.5rem 0;
+    /* border: 2px solid red; */
+}
+
+.row-alt {
+    min-width: 60em;
+    padding: 2.5rem 0 1.25rem 0;
+    background: #cbe2c1;
+    background: -webkit-linear-gradient(to right, #a1d3b0, #f6f1d3);
+    background: -moz-linear-gradient(to right, #a1d3b0, #f6f1d3);
+    background: linear-gradient(to right, #a1d3b0, #f6f1d3);
+}
+
+/**************************************************************
+* Clearfix
+***************************************************************/
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    clear: both;
+    *zoom: 1;
+}
+/**************************************************************
+* Typography
+***************************************************************/
+strong {
+    font-weight: 700;
+}
+cite, em {
+    font-style: italic;
+}
+h1, h3, h4, h5, p {
+    margin-bottom: 1.4rem;
+    /* border: 2px solid red; */
+}
+h1, h2, h3, h4 {
+    color: #648880;
+}
+h1 {
+    font-size: 2.3rem;
+    line-height: 2.75rem;
+    /* border: 2px solid red; */
+}
+h2 {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    /* border: 2px solid red; */
+}
+h3 {
+    font-size: 1.3rem;
+    /* border: 2px solid red; */
+}
+h4 {
+    font-size: 18px;
+    /* border: 2px solid red; */
+}
+h5 {
+    color: #648880;
+    font-size: .8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    /* border: 2px solid red; */
+}
+/**************************************************************
+* Leads
+***************************************************************/
+.lead {
+    text-align: center;
+}
+.lead p {
+    font-size: 1.5rem;
+    line-height: 33px;
+    color: #648880;
+}
+/**************************************************************
+* Links
+***************************************************************/
+a {
+    text-decoration: none;
+    color: #a9b2b9;
+}
+
+a:hover {
+    color: #648880;
+}
+
+.teaser a:hover h3 {
+    color: #999
+}
+
+.fa-github:hover {
+    color: black;
+}
+
+.fa-twitter:hover {
+    color: dodgerblue;
+}
+/**************************************************************
+* Buttons
+***************************************************************/
+.btn {
+    display: inline-block;
+    border-radius: 5px;
+    margin: 0;
+    color: #fff;
+    letter-spacing: .5px;
+}
+
+.btn-alt {
+    border: 1px solid #fff;
+    padding: .65rem 1.9rem;
+}
+
+.btn-alt:hover {
+    background-color: #fff;
+    color: #648880;
+}
+
+/* Another button added in our services - cascade  */
+/**************************************************************
+* Header
+***************************************************************/
+.logo {
+    font-family: 'Lato';
+    float: left;
+    border-top: 4px solid #648880;
+    font-weight: 100;
+    text-transform: uppercase;
+    padding: 2.5rem 0 1.3rem 0;
+    letter-spacing: .5px;
+    /* border: 2px solid red; */
+}
+
+.tagline {
+    margin: 4.15rem 0 1.4rem 0;
+    text-align: right;
+    /* border: 2px solid red; */
+
+}
+
+.primary-header a,
+.primary-footer a {
+    color: #fff;
+}
+
+.primary-header a:hover,
+.primary-footer a:hover {
+    color: #648880;
+}
+
+/**************************************************************
+* Nav
+***************************************************************/
+.nav {
+    font-weight: 400;
+    font-size: 0.9rem;
+    text-align: right;
+    font-variant: small-caps;
+    letter-spacing: .5px;
+    /* border: 2px solid red; */
+}
+
+.nav ul {
+    margin: 1rem;
+    padding: 0;
+    text-transform: uppercase;
+    /* border: 2px solid red; */
+}
+
+.nav ul li {
+    display: inline-block;
+}
+
+.nav a {
+    padding: .65rem 1.25rem;
+    background: #395870;
+    background: linear-gradient(to top, #49708f, #293f50);
+    border-right: 1px solid rgba(0, 0, 0, .25);
+    /* border: 2px solid red; */
+}
+
+.nav a:hover {
+    background: #314b60;
+    color: #648880;
+    box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, .75);
+}
+.nav li:first-child a {
+    /* border: 5px solid green; */
+    border-radius: 4px 0 0 4px;     /* Trim top-left border edges */
+}
+.nav li:last-child a {
+    /* border: 5px solid gold; */
+    border-radius: 0 4px 4px 0;     /* Trim bottom-right border edges */
+}
+
+/**************************************************************
+* Footer
+***************************************************************/
+.primary-footer {
+    color: #648880;
+    font-size: 0.9rem;
+    padding: 2.75rem 0;
+    /* border: 2px solid red; */
+}
+
+.primary-footer > p {
+    float: left;
+    font-weight: 400;
+    /* border: 2px solid rebeccapurple; */
+}
+/**************************************************************
+* Main / HOME
+***************************************************************/
+
+.hero {
+    line-height: 2.75rem;
+    padding: 1.4rem 5rem 4.15rem 5rem;
+    text-align: center;
+    color: #fff;
+    /* border: 2px solid red; */
+}
+
+.hero p {
+    font-size: 1.5rem;
+    font-weight: 100;
+}
+
+.info-main {
+    margin-bottom: 2.75rem;
+}
+
+.info-card {
+    border: 1px solid #dfe2e5;
+    border-radius: 5px;
+    margin-top: 5.5rem;
+    text-align: center;
+}
+
+.teaser img {
+    /* border: 2px solid red; */
+    display: block;
+    max-width: 100%;
+    height: 15rem;
+    border-radius: 5px;
+    margin-bottom: 1.4rem;
+}
+
+/**************************************************************
+* Learn / ABOUT US
+***************************************************************/
+.info-card img {
+    height: 9rem;
+    border-radius: 50%;
+    margin: -4.15rem 0 1.4rem 0;
+    vertical-align: top;
+}
+/**************************************************************
+* Build / LOCATION
+***************************************************************/
+
+.build-One {
+    margin-bottom: 4.15rem;
+}
+
+.build-Two {
+    margin-bottom: 1.4rem;
+}
+
+.map {
+    height: 16.5rem;
+}
+
+/**************************************************************
+* PLAN / SERVICES
+***************************************************************/
+
+.nav-info {
+    list-style: square;
+    margin-left: 1.4rem;
+    margin-bottom: 30px;
+}
+
+form {
+    margin-bottom: 1.4rem;
+}
+
+.onethird-column label {
+    /* border: 2px solid red; */
+    color: #648880;
+    cursor: pointer;
+}
+
+.onethird-column input,
+.onethird-column select,
+.onethird-column textarea {
+    display: block;
+    border: 1px solid #c6c9cc;
+    border-radius: 5px;
+    margin: 1em 0;
+    padding: .25em .5em;
+    /* border: 2px solid red; */
+}
+
+.onethird-column textarea,
+.onethird-colum input {
+    width: 100%;
+}
+
+.onethird-column textarea {
+    height: 4.75em;
+}
+
+.onethird-column select {
+    height: 2.25em;
+    width: 3.75em;
+}
+
+.onethird-column .info-group .btn-input {
+    background: #648880;
+    color: #fff;
+    padding: 0.8em 2.75em;
+    border: 0;
+    /* border: 2px solid red; */
+}
+
+.onethird-column .info-group .btn-input:hover {
+    background: #77a198;
+}
+
+/**************************************************************
+* contact us
+***************************************************************/
+
+table {
+    margin-bottom: 2.75em;
+    width: 100%;
+}
+
+table:last-child {
+    margin-bottom: 0;
+}
+
+th,
+td {
+    padding-bottom: 1.4em;
+    /* vertical-align: top; */
+}
+
+th {
+    text-align: right;
+    padding-right: 2.75em;
+    width: 20%;
+    /* border: 2px solid red; */
+}
+
+td {
+    width: 40%;
+    /* border: 2px solid red; */
+}
+
+thead {
+    line-height: 2.75em;
+}
+
+thead th {
+    color: #648880;
+    font-size: 1.5rem;
+    /* border: 2px solid red; */
+}
+
+tbody th {
+    /* border: 2px solid red; */
+    color: #a9b2b9;
+    font-size: 0.9em;
+    font-weight: 400;
+    padding-top: 1.4em;
+}
+
+tbody td {
+    border-top: 1px solid #dfe2e5;
+    padding-top: 1.4em;
+    /* border: 2px solid red; */
+}
+
+tbody td:first-of-type {
+    /* border: 2px solid red; */
+    padding-right: 1em;
+}
+
+tbody td:last-of-type {
+    padding-left: 1em;
+    /* border: 2px solid red; */
+}
+
+tbody td:only-of-type {
+    /* border: 2px solid red; */
+    padding-left: 0;
+    padding-right: 0;
+}
+
+table a {
+    color: #888;
+}
+
+table h4 {
+    margin-bottom: 0;
+}
+
+.offset {
+    color: #a9b2b9;
+}
