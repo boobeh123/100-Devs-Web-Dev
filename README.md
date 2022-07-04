@@ -14,9 +14,9 @@ My perspective reading & coding along to various HTML, CSS, and JavaScript resou
 * Codewars
 
 ## Technologies
-![HTML5](https://profilinator.rishav.dev/skills-assets/html5-original-wordmark.svg)
-![CSS3](https://profilinator.rishav.dev/skills-assets/css3-original-wordmark.svg)
-![JavaScript](https://profilinator.rishav.dev/skills-assets/javascript-original.svg)
+![HTML5](https://profilinator.rishav.dev/skills-assets/html5-original-wordmark.svg height="50")
+![CSS3](https://profilinator.rishav.dev/skills-assets/css3-original-wordmark.svg height="50")
+![JavaScript](https://profilinator.rishav.dev/skills-assets/javascript-original.svg height="50")
 
 
 
