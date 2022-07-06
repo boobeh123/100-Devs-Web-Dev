@@ -29,3 +29,6 @@ The concepts covered in this reading:
 
 ## What did you learn?
 The takeaway is that this reading will teach you the basics of creating a layout with CSS properties. This reading provided a better understanding for position property values. I haven't previously used multi-column properties and it's surprising how effortlessly it creates text columns. I learned that using percentages on images with the width property can ensure that image stays at 50% width while being resized down.
+
+## Source:
+https://learnlayout.com/
