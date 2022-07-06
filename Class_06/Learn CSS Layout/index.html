@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Setting width block-lvl  -->
+    <div class="one">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae qui quaerat in sequi temporibus architecto, ipsum a eligendi iste eveniet dolorum dolor corporis, nesciunt id!</p>
+    </div>
+    <!-- Setting max-width block-lvl  -->
+    <div class="two">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae qui quaerat in sequi temporibus architecto, ipsum a eligendi iste eveniet dolorum dolor corporis, nesciunt id!</p>
+    </div>
+    <!-- Border-box demo  -->
+    <div class="three-A">
+        <p>Narrow, same width</p>
+    </div>
+    <div class="three-B">
+        <p>Taller, same width</p>
+    </div>
+    <!-- Position property  -->
+    <div class="four">
+        <div class="static"><span>Static</span><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, necessitatibus nam temporibus saepe minima accusamus molestiae ducimus quidem delectus doloremque.</p></div>
+        <div class="relative-A"><span>relative-A</span><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda corrupti quia perspiciatis aliquid ipsum dolore iste at neque reprehenderit deserunt.</p></div>
+        <div class="relative-B"><span>relative-B</span><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda corrupti quia perspiciatis aliquid ipsum dolore iste at neque reprehenderit deserunt.</p></div>
+        <div class="fixed"><span>fixed</span><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda corrupti quia perspiciatis aliquid ipsum dolore iste at neque reprehenderit deserunt.</p></div>
+        <div class="relative-C"><span>relative-C</span><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda corrupti quia perspiciatis aliquid ipsum dolore iste at neque reprehenderit deserunt.</p></div>
+        <div class="absolute-D"><span>absolute-D</span><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda corrupti quia perspiciatis aliquid ipsum dolore iste at neque reprehenderit deserunt.</p></div>
+    </div>
+    <!-- Position property layout  -->
+    <div class="five">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Hours</a></li>
+                <li><a href="#">Location</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+        <section><p>The margin-left style for sections makes sure there is room for the nav. Otherwise the absolute and static elements would overlap</p></section>
+        <section><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.</p></section>
+        <section><p>Notice what happens when you resize your browser. It works nicely!</p></section>
+        <footer><p>If you use a fixed header or footer, make sure there is room for it! I put a margin-bottom on the div. Body would work too.</p></footer>
+    </div>
+    <!-- Image floating  -->
+    <div class="six">
+        <p><img src="http://placecorgi.com/250" alt="Image-of-Dog-Corgi-Placecorgi-dot-com"/> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt debitis, delectus minus nihil praesentium sed hic numquam laborum repellendus molestias? Qui impedit obcaecati quos, veritatis doloribus voluptatum libero dignissimos non nostrum odio? Doloribus similique provident molestias dignissimos deleniti ipsum alias natus itaque quam officia, nisi error maiores dolores praesentium possimus obcaecati ut facilis nostrum maxime consectetur earum quisquam modi. Illo voluptate, veritatis nostrum nisi iste natus, error voluptatem omnis totam sed sequi deserunt magni obcaecati dolor. Iure veniam necessitatibus laborum qui, tempora cupiditate rerum natus sequi suscipit labore ducimus id, quas tenetur nobis quia debitis quisquam aspernatur voluptatem eius fugiat praesentium tempore iusto dolores. Tempore, at facilis. Laborum suscipit voluptatem ipsam similique, nulla quas, quibusdam culpa harum cupiditate consequatur eius tempore libero obcaecati? Deleniti nisi reprehenderit inventore culpa voluptatum voluptate dicta, tempore voluptatibus minus distinctio illum nostrum sapiente perferendis dignissimos accusamus! Est unde ratione mollitia commodi in, ipsum repudiandae aperiam officiis, magni ex labore iusto cupiditate ducimus vitae at incidunt quasi nobis optio eligendi? Eos beatae culpa rerum repellendus consequuntur ut fuga, aspernatur molestiae modi veritatis dolorem. Tempore ab voluptas voluptates. Nobis vel enim provident, quibusdam tempora deserunt saepe facere omnis voluptates iusto esse, officia iure doloremque at? Autem, voluptate.</p>
+    </div>
+    <!-- Clearing floats  -->
+    <div class="seven">
+        <div class="box"><p>I feel like I am floating</p></div>
+        <section><p>In this case, the section element is actually after the div. However, since the div is floated to the left, this is what happens: the text in the section is floated around the div and the section surrounds the whole thing. What if we wanted the section to actually appear after the floated element?</p></section>
+    </div>
+    <div class="seven">
+        <div class="box"><p>I feel like I am floating</p></div>
+        <section class="after-box"><p>Using clear we have now moved this section down below the floated div. You use the value left to clear elements floated to the left. You can also clear right and both.</p></section>
+    </div>
+    <!-- Clearfix hack  -->
+    <div class="eight">
+        <p><img src="http://placecorgi.com/250" alt="Image-of-Dog-Corgi-Placecorgi-dot-com"/>Uh oh... this image is taller than the element containing it, and it's floated, so it's overflowing outside of its container!</p>
+    </div>
+    <div class="eight clearfix">
+        <p><img src="http://placecorgi.com/250" alt="Image-of-Dog-Corgi-Placecorgi-dot-com"/>Better</p>
+    </div>
+    <!-- Float layout  -->
+    <div class="nine">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Hours</a></li>
+                <li><a href="#">Location</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+        <section><p>The margin-left style for sections makes sure there is room for the nav. Otherwise the absolute and static elements would overlap</p></section>
+        <section><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.</p></section>
+        <section><p>Notice what happens when you resize your browser. It works nicely!</p></section>
+    </div>
+    <!-- Relative measurement unit : % -->
+    <div class="ten">
+        <section>
+            <p><img src="http://placecorgi.com/250" alt="Image-of-Dog-Corgi-Placecorgi-dot-com" />You could even use min-width and max-width to limit how big or small the image can get!</p>
+        </section>
+    </div>
+    <!-- Float layout w/ Responsive design  -->
+    <div class="eleven">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Hours</a></li>
+                <li><a href="#">Location</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+        <section><p>The margin-left style for sections makes sure there is room for the nav. Otherwise the absolute and static elements would overlap</p></section>
+        <section><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.</p></section>
+        <section><p>Notice what happens when you resize your browser. It works nicely!</p></section>
+    </div>
+    <!-- Grid of boxes w/ float  -->
+    <div class="twelve">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="after-box"></div>
+    </div>
+    <!-- Grid of boxes w/ inline-block -->
+    <div class="thirteen">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="after-box"></div>
+    </div>
+    <!-- Creating a layout with inline-block -->
+    <div class="fourteen">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Hours</a></li>
+                <li><a href="#">Location</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav><!--
+        --><div class="column">
+            <section><p>The margin-left style for sections makes sure there is room for the nav. Otherwise the absolute and static elements would overlap</p></section>
+            <section><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.</p></section>
+            <section><p>Notice what happens when you resize your browser. It works nicely!</p></section>
+        </div>
+    </div>
+    <!-- 3-column layout  -->
+    <section class="fifteen">
+        <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.
+        </p>
+    </section>
+    <!-- flexbox layout  -->
+    <div class="sixteen">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Hours</a></li>
+                <li><a href="#">Location</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="flex-column">
+        <section>
+            <p>Flexbox is so easy</p>
+        </section>
+        <section><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime cupiditate optio eos, maiores recusandae saepe culpa id distinctio repellendus pariatur accusantium sed aspernatur, libero voluptate corporis fugiat et doloribus animi temporibus eum incidunt? Qui unde voluptatibus sequi totam excepturi ipsum laborum voluptatum quos corporis tempore, ipsa dignissimos, veniam quia aliquam.</p>
+        </section>
+        </div>
+    </div>
+    <!-- flexbox layout 2 -->
+    <div class="seventeen">
+        <section class="initial"><p>I will be 200px when there is room, and I will shrink down to 100px if there is not room, but no smaller.</p></section>
+        <section class="none"><p>I will always be 200px, no matter what.</p></section>
+        <section class="flex-A"><p>I will fill up 1/3 of the remaining width.</p></section>
+        <section class="flex-B"><p>I will fill up 2/3 of the remaining width.</p></section>
+    </div>
+    <!-- flexbox centering -->
+    <div class="eighteen">
+        <section><h1>Hello world</h1><p>Finally, it's easy to vertically center something in CSS!</p></section>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
