@@ -1,6 +1,4 @@
-## Description
-Hello 👋 Welcome to my web dev repository. 
-
+## Hello 👋 Welcome to my web dev repository. 
 My perspective reading & coding along to various HTML, CSS, and JavaScript resources.
  
 * Video tutorials and guides
