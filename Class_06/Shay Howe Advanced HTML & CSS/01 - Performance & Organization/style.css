@@ -93,3 +93,64 @@ a:hover {
 * PRACTICE
 ***************************************************************/
 
+/* Image spriting demo  */
+
+li {
+float: left;
+margin: 2px;
+}
+
+li a {
+display: block;
+background: #fff;
+border: 1px solid #ccc;
+border-radius: 3px;
+padding: 3px;
+}
+
+li a:hover {
+border-color: black;
+}
+
+li span {
+display: block;
+background: url("sprite.png") 0 0 no-repeat;
+color: transparent;
+height: 16px;
+width: 16px;
+}
+
+.italic {
+background-position: -16px 0;
+}
+.underline {
+background-position: -32px 0;
+}
+.size {
+background-position: -48px 0;
+}
+.bullet {
+background-position: -64px 0;
+}
+.number {
+background-position: -80px 0;
+}
+.quote {
+background-position: -96px 0;
+}
+.left {
+background-position: -112px 0;
+}
+.center {
+background-position: -128px 0;
+}
+.right {
+background-position: -144px 0;
+}
+
+/* Image Data URI  */
+
+.two {
+    height: 99vh;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAAPUlEQVQYV2NkQAO6m73+X/bdxogujiIAU4RNMVwhuiQ6H6wQl3XI4oy4FMHcCJPHcDS6J2A2EqUQpJhohQAyIyYy0nBAGgAAAABJRU5ErkJggg==") repeat;
+}
