@@ -93,64 +93,161 @@ a:hover {
 * PRACTICE
 ***************************************************************/
 
-/* Image spriting demo  */
+/* Containing floats  */
 
-li {
-float: left;
-margin: 2px;
-}
-
-li a {
-display: block;
-background: #fff;
-border: 1px solid #ccc;
-border-radius: 3px;
-padding: 3px;
+.one {
+    background-color: #999;
+    border: 2px solid red;
+    overflow:auto;
 }
 
-li a:hover {
-border-color: black;
+.box {
+    float: left;
+    margin: 1.9%;
+    width: 29%;
+    background-color: lime;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 15px 20px #ff7b29;
 }
 
-li span {
-display: block;
-background: url("sprite.png") 0 0 no-repeat;
-color: transparent;
-height: 16px;
-width: 16px;
-}
-
-.italic {
-background-position: -16px 0;
-}
-.underline {
-background-position: -32px 0;
-}
-.size {
-background-position: -48px 0;
-}
-.bullet {
-background-position: -64px 0;
-}
-.number {
-background-position: -80px 0;
-}
-.quote {
-background-position: -96px 0;
-}
-.left {
-background-position: -112px 0;
-}
-.center {
-background-position: -128px 0;
-}
-.right {
-background-position: -144px 0;
-}
-
-/* Image Data URI  */
+/* Clearfix technique  */
 
 .two {
-    height: 99vh;
-    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAAPUlEQVQYV2NkQAO6m73+X/bdxogujiIAU4RNMVwhuiQ6H6wQl3XI4oy4FMHcCJPHcDS6J2A2EqUQpJhohQAyIyYy0nBAGgAAAABJRU5ErkJggg==") repeat;
+    border: 2px solid fuchsia;
+    background-color: #888;
+}
+
+/* Static position  */
+
+.three .box {
+    width: 80px;
+    height: 80px;
+}
+
+/* Relative position  */
+
+.four .box {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    /* border: 2px solid red; */
+}
+
+.four .box:nth-child(+1) {
+    /* border: 2px solid white; */
+    top: 20px;
+}
+
+.four .box:nth-child(+2) {
+    /* border: 2px solid dodgerblue; */
+    left: 40px;
+}
+
+.four .box:nth-child(+3) {
+    /* border: 2px solid navy; */
+    bottom: -20px;
+    right: 20px;
+}
+
+/* Absolute position  */
+
+.five .box {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+}
+
+.five .box:nth-child(+1) {
+    /* border: 2px solid white; */
+    top: 6%;
+    left: 2%;
+}
+
+.five .box:nth-child(+2) {
+    /* border: 2px solid dodgerblue; */
+    top: 0;
+    left: -40px;
+}
+
+.five .box:nth-child(+3) {
+    /* border: 2px solid navy; */
+    bottom: -20px;
+    right: 30px;
+}
+
+/* Fixed position  */
+
+.six .box {
+    position: fixed;
+    width: 80px;
+    height: 80px;
+}
+
+.six .box:nth-child(+1) {
+    /* border: 2px solid white; */
+    top: 28%;
+    left: 20%;
+    background-color: red;
+}
+
+.six .box:nth-child(+2) {
+    /* border: 2px solid dodgerblue; */
+    top: 0;
+    left: 40px;
+    background-color: red;
+}
+
+.six .box:nth-child(+3) {
+    /* border: 2px solid navy; */
+    bottom: -45px;
+    right: 65px;
+    background-color: red;
+}
+
+/* FIXED FOOTER */
+
+.seven {
+    position: fixed;
+    /* top: 0; */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: lime;
+    border: 2px solid lime;
+    color: #fff;
+    text-align: center;
+}
+
+/* Z-index */
+
+.eight .box {
+    position: absolute;
+    width: 80px;
+    height: 80px
+}
+
+.eight .box:nth-child(+1) {
+    /* border: 2px solid white; */
+    bottom: 10px;
+    left: 10px;
+    background-color: gold;
+    z-index: 3;
+}
+
+.eight .box:nth-child(+2) {
+    /* border: 2px solid dodgerblue; */
+    bottom: 40px;
+    left: 40px;
+    background-color: gold;
+    z-index: 3;
+}
+
+.eight .box:nth-child(+3) {
+    /* border: 2px solid navy; */
+    bottom: 70px;
+    left: 70px;
+    background-color: gold;
+    z-index: 1;
 }
