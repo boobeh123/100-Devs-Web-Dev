@@ -8,6 +8,137 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Selectors demo  -->
+    <section id="intro">
+        <h1>Hello world</h1>
+        <h2 class="tagline">welcome</h2>
+    </section>
+    <!-- Descendant selectors/combinator  -->
+    <div class="two">
+        <h2>Not selected</h2>
+        <article>
+            <h2>Selected</h2>
+        </article>
+    </div>
+    <!-- Child combinator  -->
+    <div class="three">
+        <article>
+            <p>Selected</p>
+        </article>
+        <p>Not selected</p>
+    </div>
+    <!-- General sibling selector -->
+    <div class="four">
+        <section>
+            <h1>Hello world</h1>
+            <p>Selected</p>
+            <div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, molestias accusantium, fugit, necessitatibus eligendi cum sit rem laudantium quia voluptatum numquam magnam quam provident alias.</p>
+            </div>
+            <p>Selected</p>
+        </section>
+    </div>
+    <!-- Adjacent sibling selector -->
+    <div class="five">
+        <section>
+            <h1>Hello world</h1>
+            <p>Not selected</p>
+            <p>Selected</p>
+        </section>
+    </div>
+    <!-- Hamburger nav menu -->
+    <div class="six">
+        <input type="checkbox" id="toggle">
+        <label for="toggle">&#9776;</label>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!-- Attribute selector -->
+    <div class="seven">
+        <!-- Present attribute selector  -->
+        <a href="#" target="blank">Hello world</a>
+        <!-- Equals attribute selector  -->
+        <a href="http://google.com/">Google</a>
+        <!-- Contains attribute selector -->
+        <a href="/login.php">Login</a>
+        <!-- Begins with attribute selector -->
+        <a href="https://developer.mozilla.org/en-US/">MDN</a>
+        <!-- Ends with attribute selector -->
+        <a href="/docs/menu.pdf">Menu</a>
+        <!-- Spaced attribute selector -->
+        <a href="#" rel="tag nofollow">Ola mundo</a>
+        <!-- Hyphen attribute selector -->
+        <a href="#" lang="en-US">Konnichiwa sekai</a>
+    </div>
+    <!-- Attribute selector 2nd demo -->
+    <div class="eight">
+        <ul>
+            <li><a href="#.pdf">PDF Document</a></li>
+            <li><a href="#.doc">Word Document</a></li>
+            <li><a href="#.jpg">Image File</a></li>
+            <li><a href="#.mp3">Audio File</a></li>
+            <li><a href="#.mp4">Video File</a></li>
+          </ul>
+    </div>
+    <!-- Pseudo-classes -->
+    <div class="nine">
+        <!-- :link & :hover Pseudo-class -->
+        <a href="helloworld.com">unvisisted</a>
+        <!-- :visited & :hover Pseudo-class -->
+        <a href="#">visited</a>
+        <!-- :active Pseudo-class -->
+        <button>Subscribe</button>
+        <!-- :focus Pseudo-class -->
+        <form>
+        <!-- :enabled Pseudo-class -->
+            <label>First Name: <input name="firstName" type="text" enabled></label>
+        <!-- :disabled Pseudo-class -->
+            <label>Last Name: <input name="lastName" type="text" disabled></label>
+        </form>
+        <!-- :indeterminate Pseudo-class -->
+        <input type="radio" value="Hello" name="Hello">Hello
+        <input type="radio" value="World" name="World">World
+        <!-- :checked Pseudo-class -->
+        <input type="checkbox" value="Hello" name="Hello" checked>Hello
+        <input type="checkbox" value="World" name="World">World
+    </div>
+    <!-- Structural & Positional pseudo-classes -->
+    <div class="ten">
+        <ul>
+            <!-- :first-child Pseudo-class  -->
+            <li>This is the first child</li>
+            <li>This is the second child. No styles applied.</li>
+            <!-- :only-child Pseudo-class  -->
+            <li><div>Only child</div></li>
+            <!-- :last-child Pseudo-class  -->
+            <li>This is the last child</li>
+        </ul>
+        <article>
+            <!-- :only-of-type Pseudo-class -->
+            <h1>Hello world</h1>
+            <!-- :first-of-type Pseudo-class -->
+            <p>Selected. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam.</p>
+            <p>Not selected. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam repellat ad placeat illum. Reprehenderit quasi distinctio maxime laborum. Sequi, dolorum?</p>
+            <!-- :last-of-type Pseudo-class -->
+            <p>Selected. Lorem ipsum dolor sit amet.</p>
+        </article>
+        <section>
+            <ul>
+                <li>nope</li>
+                <li>nope</li>
+                <li>This list item will be selected</li>
+                <li>nope</li>
+                <li>nope</li>
+                <li>This list item will be selected</li>
+            </ul>
+        </section>
+    </div>
     <script src="main.js"></script>
 </body>
 </html>

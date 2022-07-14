@@ -92,3 +92,351 @@ a:hover {
 /**************************************************************
 * PRACTICE
 ***************************************************************/
+
+/* Selector demo  */
+/* This is a type selector. It selects an element by its type.  */
+h1 {
+    color: navy;
+    border: 2px solid navy;
+    border-radius: 5px;
+}
+
+/* This is a class selector. It selects an element by the class attribute value  */
+.tagline {
+    font-variant: small-caps;
+    border: 2px solid aqua;
+    border-radius: 5px;
+    color: navy;
+}
+
+/* This is an ID selector. It selects an element by the ID attribute value */
+#intro {
+    background-color: dodgerblue;
+    text-align: center;
+}
+
+/* Descendant selectors/combinator demo */
+.two {
+    color: navy;
+    background-color: dodgerblue;
+}
+
+/* This is a descendant selector/combinator. It selects  an element that resides anywhere within an identified ancestor element */
+article h2 {
+    text-align: center;
+}
+
+.two h2 {
+    border: 2px solid darkblue;
+    border-radius: 5px;
+}
+
+/* Direct child combinator/selector demo */
+
+.three {
+    color: navy;
+    background-color: dodgerblue;
+}
+
+/* This is a direct child selector. It Selects an element that resides immediately inside an identified parent element */
+article > p {
+    text-align: center;
+}
+
+.three p {
+    border: 2px solid aqua;
+    border-radius: 5px;
+}
+
+/* General sibling selector demo */
+
+.four {
+    background-color: darkgreen;
+}
+
+/* This is a general sibling selector. It Selects an element that follows anywhere after the prior element, in which both elements share the same parent */
+.four h1 ~ p {
+    color: navy;
+    text-align: center;
+}
+
+/* Adjacent sibling selector demo */
+
+.five {
+    background-color: olivedrab;
+}
+
+/* This is an adjacent sibling selector. It Selects an element that follows directly after the prior element, in which both elements share the same parent */
+section p + p {
+    color: navy;
+    text-align: center;
+}
+
+/* Hamburger nav menu */
+
+/* Hides checkbox  */
+.six input {
+    display: none;
+}
+
+/* Clicking label enables checkbox & changes label color when active */
+.six input:checked + label{
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
+    color: lime;
+}
+
+/* Surrounds label & ul round border */
+.six label,
+.six ul {
+  border: 1px solid navy;
+  border-radius: 6px;
+}
+
+/* Label set as inline-block & apply style to label */
+.six label {
+    display: inline-block;
+    padding: .4rem .6rem;
+    font-size: 1.1rem;
+    transition: all .15s ease;
+    color: navy;
+    cursor: pointer;
+    background-color: dodgerblue;
+}
+
+/* Color changes on hover */
+.six label:hover {
+    color: #ff7b29;
+}
+
+/* Max-height & overflow hides anchors from page */
+.six nav {
+    max-height: 0;
+    overflow: hidden;
+    transition: all .15s ease;
+}
+
+/* Max-height increases when checkbox is enabled */
+.six input:checked ~ nav {
+    max-height: 500px;
+}
+
+/* Decreases width and apply default styles */
+.six ul {
+    /* list-style: none; */
+    margin: .5rem 0 0 0;
+    padding: 0;
+    width: 100px;
+    /* border: 2px solid red; */
+}
+
+/* Adds line below listed items */
+.six li {
+    border-bottom: 1px solid navy;
+}
+
+/* Removes line below last listed item */
+.six li:last-child {
+    border-bottom: 0;
+}
+
+/* Applies box model properties to anchors */
+.six a {
+    display: block;
+    color: dodgerblue;
+    padding: .45rem .8rem;
+    /* text-decoration: none; */
+}
+
+/* Apply anchor hover */
+.six a:hover {
+    color: #ff7b29;
+}
+
+/* Attribute selectors */
+
+/* present. Selects an element if the given attribute is present */
+.seven a[target] {
+    display: inline-block;
+    border: 2px solid fuchsia;
+    border-radius: 5px;
+    padding: .5rem;
+    margin-top: 2rem;
+}
+
+/* equals. Selects an element if the given attribute value exactly matches the value stated*/
+.seven a[href="http://google.com/"] {
+    display: inline-block;
+    border: 2px solid plum;
+    border-radius: 5px;
+    padding: .5rem;
+    margin-top: 2rem;
+}
+
+/* contains. Selects an element if the given attribute value contains at least once instance of the value stated */
+.seven a[href*="login"] {
+    display: inline-block;
+    border: 2px solid darkgreen;
+    border-radius: 5px;
+    padding: .5rem;
+    margin-top: 2rem;
+}
+
+/* begins with. Selects an element if the given attribute value begins with the value stated*/
+.seven a[href^="https://"] {
+    display: inline-block;
+    border: 2px solid gold;
+    border-radius: 5px;
+    padding: .5rem;
+    margin-top: 2rem;
+}
+
+/* ends with. Selects an element if the given attribute value ends with the value stated*/
+.seven a[href$=".pdf"] {
+    display: inline-block;
+    border: 2px solid salmon;
+    border-radius: 5px;
+    padding: .5rem;
+    margin-top: 2rem;
+}
+
+/* Space separated. Selects an element if the given attribute value is whitespace-separated with one word being exactly as stated*/
+.seven a[rel~="tag"] {
+    display: inline-block;
+    border: 2px solid pink;
+    border-radius: 5px;
+    padding: .5rem;
+    margin-top: 2rem;
+}
+
+/* Hyphen separated. Selects an element if the given attribute value is hyphen-separated and begins with the word stated */
+.seven a[lang|="en"] {
+    display: inline-block;
+    border: 2px solid violet;
+    border-radius: 5px;
+    padding: .5rem;
+    margin-top: 2rem;
+}
+
+/* Attribute selector 2nd demo */
+
+/* Removes default styles  */
+/* .eight ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+} */
+
+/* Applies anchor style. */
+.eight a {
+    color: dodgerblue;
+    padding-left: 1.5rem;
+    /* text-decoration: none; */
+    background-position: 5% 50%;
+    background-repeat: no-repeat;
+}
+
+/* Apply anchor hover */
+.eight a:hover {
+    color: #ff7b29;
+}
+
+/* Apply bg-images */
+.eight a[href$=".pdf"] {
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/29841/pdf.png");
+}
+a[href$=".doc"] {
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/29841/doc.png");
+}
+a[href$=".jpg"] {
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/29841/image.png");
+}
+a[href$=".mp3"] {
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/29841/audio.png");
+}
+a[href$=".mp4"] {
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/29841/video.png");
+}
+
+/* Pseudo-classes */
+
+.nine a:link {
+    color: navy;
+}
+
+.nine a:visited {
+    color: purple;
+}
+
+.nine a:hover {
+    color: aquamarine;
+}
+
+.nine button {
+    width: 10em;
+    height: 5ex;
+    background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.nine button:active {
+    box-shadow: 2px 2px 5px #fc894d;
+}
+
+.nine input:focus {
+    background-color: #ff7b29;
+}
+
+.nine input:enabled {
+    border: 2px solid lime;
+}
+
+.nine input:disabled {
+    border: 2px solid salmon;
+}
+
+.nine input:checked {
+    border: 2px solid plum;
+}
+
+input:indeterminate {
+    box-shadow: 2px 2px 5px red;
+}
+
+.ten > ul li:first-child {
+    border: 2px solid orchid;
+    text-align: center;
+}
+
+.ten li:last-child {
+    text-align: center;
+    border: 2px solid palevioletred;
+}
+
+.ten div:only-child {
+    text-align: center;
+    border: 2px solid darkturquoise;
+}
+
+.ten article h1:only-of-type {
+    border: 2px solid olive;
+    text-align: center;
+}
+
+.ten article p:first-of-type {
+    border: 2px solid olivedrab;
+    text-align: center;
+}
+
+.ten article p:last-of-type {
+    border: 2px solid oldlace;
+    text-align: center;
+}
+
+.ten section li:nth-child(3n) {
+    border: 2px solid ivory;
+    text-align: center;
+}
