@@ -37,9 +37,31 @@ The concepts covered in this chapter:
     * The :nth-of-type(n) CSS pseudo-class - Matches elements based on their position among siblings of the same type (tag name). 
     * The :nth-last-of-type(n) CSS pseudo-class - Matches elements based on their position among siblings of the same type (tag name), counting from the end.
     * The :target CSS pseudo-class - Represents a unique element with an id matching the URL's fragment. 
+    * The :empty CSS pseudo-class - Represents any element that has no children. Children can be either element nodes or text.
+    * The :not() CSS pseudo-class - Represents elements that do not match a list of selectors. Also known as negation pseudo-class.
+* Pseudo-Elements - A CSS pseudo-element is a keyword added to a selector that lets you style a specific part of the selected element(s).
+    * The ::first-letter CSS pseudo-element - Applies styles to the first letter of the first line of a block-level element.
+    * The ::first-line CSS pseudo-element - Applies styles to the first line of a block-level element.
+    * The ::before CSS pseudo-element - Creates a pseudo-element that is the first child of the selected element. 
+        * Used to add cosmetic content to an element with the content property. 
+        * They are inline by default.
+    * The ::after CSS pseudo-element - Creates a pseudo-element that is the last child of the selected element.
+        * Used to add cosmetic content to an element with the content property. 
+        * They are inline by default.
+    * The ::selection CSS pseudo-element applies styles to the part of a document that has been highlighted by the user. 
+        * Must always start with double colons.
+* The content CSS property - Replaces an element with a generated value. 
+* The attr() CSS function - Used to retrieve the value of an attribute of the selected element and use it in the stylesheet. 
 
 ## What did you learn?
-Still reading
+I have no takeaway for those reading my summary. This chapter has packed a ton of information-- I constantly had to stop and look up things on the MDN. It's worth reading when you decide to study deeper.
+
+I enjoyed building the hamburger nav menu, that can be activated with just HTML & CSS. So, so cool.
+
+I didn't even know attribute selectors existed and its purpose seems niche. I'm glad to have learned that I have multiple ways to select elements based on values, attributes, or conditions.
+I'm ashamed that I thought pseudo-classes & pseudo-elements referred to the same thing, but different names for it. 
+
+I discovered about the transparent color keyword while building the arrow with borders. I learned that I am able to build shapes with pointy ends by manipulating the position property, box offset properties, and using the transparent color keyword.
 
 ## Source:
 https://learn.shayhowe.com/advanced-html-css/complex-selectors/

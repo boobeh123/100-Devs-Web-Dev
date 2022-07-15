@@ -128,8 +128,9 @@
             <!-- :last-of-type Pseudo-class -->
             <p>Selected. Lorem ipsum dolor sit amet.</p>
         </article>
-        <section>
+        <div>
             <ul>
+                <!-- nth-child(3n) Pseudo-class -->
                 <li>nope</li>
                 <li>nope</li>
                 <li>This list item will be selected</li>
@@ -137,7 +138,76 @@
                 <li>nope</li>
                 <li>This list item will be selected</li>
             </ul>
-        </section>
+        </div>
+    </div>
+    <div class="eleven">
+        <ul>
+            <!-- nth-last-child(3n+2) -->
+            <li>no</li>
+            <li>This list item will be selected</li>
+            <li>no</li>
+            <li>no</li>
+            <li>This list item will be selected</li>
+            <li>no</li>
+          </ul>
+    </div>
+    <div class="twelve">
+        <article>
+            <!-- nth-of-type(3n) -->
+            <h1>h1 styles target this</h1>
+            <p>...</p>
+            <p>...</p>
+            <p>This paragraph will be selected</p>
+            <h2>...</h2>
+            <p>...</p>
+            <p>...</p>
+            <p>This paragraph will be selected</p>
+          </article>
+    </div>
+    <div class="thirteen">
+        <article>
+            <!-- nth-last-of-type(2n+1) -->
+            <h1>...</h1>
+            <p>...</p>
+            <p>This paragraph will be selected</p>
+            <p>...</p>
+            <h2>...</h2>
+            <p>This paragraph will be selected</p>
+            <p>...</p>
+            <p>This paragraph will be selected</p>
+          </article>
+    </div>
+    <!-- :empty pseudo-class -->
+    <div class="fourteen">
+    <div>Hello</div>
+    <div><!-- Coming soon --></div><!-- This div will be selected -->
+    <div></div><!-- This div will be selected -->
+    <div> </div>
+    <div><strong></strong></div>
+    </div>
+    <!-- Negation pseudo-class -->
+    <div class="fifteen">
+        <div>Hello world</div>
+        <div class="negate">Hello world</div>
+        <section>Hello world</section>
+        <section class="negate">Hello world</section>
+    </div>
+    <!-- Textual Pseudo-elements -->
+    <div class="sixteen">
+        <p class="alpha">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam qui repudiandae est labore hic sunt, quod voluptatibus! Sed, blanditiis quos?</p>
+        <p class="bravo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti recusandae nesciunt quod modi officiis autem minima saepe atque necessitatibus facere.</p>
+    </div>
+    <!-- Generated Content Pseudo-elements -->
+    <div class="seventeen">
+        <a href="http://duckduckgo.com/">Search the web</a>
+    </div>
+    <!-- Fragment pseudo-element -->
+    <div class="eighteen">
+        <p>Highlight this paragraph to see the styles applied by ::selection pseudo-element.</p>
+    </div>
+    <!-- arrow  -->
+    <div class="nineteen">
+        <a class="arrow" href="#">Continue Reading</a>
     </div>
     <script src="main.js"></script>
 </body>

@@ -209,8 +209,56 @@ n+5     -> selector every list item will be selected, starting with the fifth li
 
 The :target CSS pseudo-class represents a unique element with an id matching the URL's fragment. 
 
+The :empty CSS pseudo-class represents any element that has no children. 
+Children can be either element nodes or text (including whitespace). 
+Comments, processing instructions, and CSS content do not affect whether an element is considered empty.
 
+The negation CSS pseudo-class, :not() represents elements that do not match a list of selectors. 
 */
 /**************************************************************
 * Pseudo-classes: Structural & Positioning
+***************************************************************/
+
+
+
+
+/**************************************************************
+* Pseudo-elements
+***************************************************************/
+/*
+Pseudo-elements are dynamic elements that don’t exist in the document tree, 
+and when used within selectors these pseudo-elements allow unique parts 
+of the page to be stylized. 
+One important point to note, 
+only one pseudo-element may be used within a selector at a given time.
+
+A CSS pseudo-element is a keyword added to a selector 
+that lets you style a specific part of the selected element(s). 
+
+The ::first-letter CSS pseudo-element applies styles to the first letter 
+of the first line of a block-level element, 
+but only when not preceded by other content (such as images or inline tables).
+The ::first-line CSS pseudo-element applies styles to the first line of a block-level element.
+
+In CSS, ::before creates a pseudo-element that is the first child 
+of the selected element. 
+In CSS, ::after creates a pseudo-element that is the last child 
+of the selected element.
+::before & ::after are used to add cosmetic content to an element 
+with the content property. They are inline by default.
+
+The content CSS property replaces an element with a generated value. 
+Objects inserted using the content property are anonymous replaced elements.
+
+The attr() CSS function is used to retrieve the value of an attribute 
+of the selected element and use it in the stylesheet. 
+It can also be used on pseudo-elements, in which case 
+the value of the attribute on the pseudo-element's originating element 
+is returned.
+
+The ::selection CSS pseudo-element applies styles to the part of a 
+document that has been highlighted by the user. Must always start with double colons.
+*/
+/**************************************************************
+* Pseudo-elements
 ***************************************************************/

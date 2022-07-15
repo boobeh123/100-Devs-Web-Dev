@@ -358,15 +358,15 @@ a[href$=".mp4"] {
 }
 
 /* Pseudo-classes */
-
+/* Selects a link that has not been visited by a user */
 .nine a:link {
     color: navy;
 }
-
+/* Selects a link that has been visited by a user */
 .nine a:visited {
     color: purple;
 }
-
+/* Selects an element when a user has hovered their cursor over it */
 .nine a:hover {
     color: aquamarine;
 }
@@ -381,62 +381,172 @@ a[href$=".mp4"] {
     color: white;
     cursor: pointer;
 }
-
+/* Selects an element when a user has engaged it */
 .nine button:active {
     box-shadow: 2px 2px 5px #fc894d;
 }
-
+/* Selects an element when a user has made it their focus point */
 .nine input:focus {
     background-color: #ff7b29;
 }
-
+/* Selects an element in the default enabled state */
 .nine input:enabled {
     border: 2px solid lime;
 }
-
+/* Selects an element in the disabled state, by way of the disabled attribute */
 .nine input:disabled {
     border: 2px solid salmon;
 }
-
+/* Selects a checkbox or radio button that has been checked */
 .nine input:checked {
     border: 2px solid plum;
 }
-
+/* Selects a checkbox or radio button that neither been checked or unchecked, leaving it in an indeterminate state */
 input:indeterminate {
     box-shadow: 2px 2px 5px red;
 }
 
+/* Pseudo-classes */
+/* first-child. Selects an element that is the first within a parent */
 .ten > ul li:first-child {
     border: 2px solid orchid;
     text-align: center;
 }
-
+/* last child. Selects an element that is the last within a parent */
 .ten li:last-child {
     text-align: center;
     border: 2px solid palevioletred;
 }
-
+/* only child. Selects an element that is the only element within a parent */
 .ten div:only-child {
     text-align: center;
     border: 2px solid darkturquoise;
 }
-
+/* only-of-type. Selects an element that is the only of its type within a parent*/
 .ten article h1:only-of-type {
     border: 2px solid olive;
     text-align: center;
 }
-
+/* first-of-type. Selects an element that is the first of its type within a parent */
 .ten article p:first-of-type {
     border: 2px solid olivedrab;
     text-align: center;
 }
-
+/* last-of-type. Selects an element that is the last of its type within a parent */
 .ten article p:last-of-type {
     border: 2px solid oldlace;
     text-align: center;
 }
-
+/* nth-child. Selects an element that matches the given number or expression, counting all elements from the beginning of the document tree */
 .ten section li:nth-child(3n) {
     border: 2px solid ivory;
     text-align: center;
 }
+
+/* nth-last-child. Selects an element that matches the given number or expression, counting all elements from the end of the document tree */
+.eleven li:nth-last-child(3n+2) {
+    border: 2px solid greenyellow;
+    text-align: center;
+}
+
+/* nth-of-type. Selects an element that matches the given number or expression, counting only elements of its type from the beginning of the document tree*/
+.twelve p:nth-of-type(3n) {
+    border: 2px solid goldenrod;
+    text-align: right;
+}
+
+/* nth-last-of-type. Selects an element that matches the given number or expression, counting only elements of its type from the end of the document tree */
+.thirteen p:nth-last-of-type(2n+1) {
+    border: 2px solid ghostwhite;
+    text-align: right;
+}
+
+/* :empty pseudo-class. Selects an element that does not contain any children or text nodes*/
+div:empty {
+    border: 2px solid indianred;
+    height: .9em;
+
+}
+
+/* negation pseudo-class. Selects an element not represented by the stated argument */
+/* Selects one div, without negate class
+The div:not(.negate) selector identifies any div without the class of negate */
+.fifteen div:not(.negate) {
+    background-color: forestgreen;
+}
+
+/* Selects two sections 
+the :not(div) selector identifies any element that isn’t a div */
+.fifteen :not(div) {
+    background-color: firebrick;
+}
+
+/* Textual pseudo-elements */
+/* Selects the first letter of text within an element
+ Selects the first line of text within an element*/
+.sixteen .alpha::first-letter,
+.sixteen .bravo::first-line {
+    color: peru;
+}
+
+/* Generated content pseudo-elements */
+/* Creates a pseudo-element inside the selected element at the beginning
+ Creates a pseudo-element inside the selected element at the end */
+.seventeen a::after {
+    color: #999;
+    font-size: 8px;
+    content: " (" attr(href) ")";
+}
+
+/* Fragment pseudo-element */
+/* Selects the part of a document which has been selected, or highlighted, by a users’ actions */
+.eighteen p::selection {
+    background-color: dodgerblue;
+    color: salmon;
+}
+
+/* Arrow demo */
+.arrow {
+    background: #2db34a;
+    color: #fff;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 12px;
+    position: relative;
+    margin-left: 20px;;
+}
+
+.arrow:before,
+.arrow:after {
+    position: absolute;
+    content: "";
+    height: 0;
+    width: 0;
+}
+
+.arrow:before {
+    border-bottom: 15px solid red;
+    border-left: 15px solid transparent;
+    border-top: 15px solid red;
+    left: -15px;
+    
+  }
+
+  .arrow:after {
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid red;
+    border-top: 15px solid transparent;
+    right: -15px;
+  }
+
+  .arrow:hover {
+    background: #ff7b29;
+  }
+  .arrow:hover:before {
+    border-bottom: 15px solid orange;
+    border-top: 15px solid orange;
+  }
+  .arrow:hover:after {
+    border-left: 15px solid orange;
+  }
