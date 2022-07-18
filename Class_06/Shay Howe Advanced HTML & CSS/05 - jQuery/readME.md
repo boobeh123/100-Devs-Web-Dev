@@ -26,6 +26,11 @@ The concepts covered in this chapter:
         * Keyboard Event methods
         * Mouse Event methods
     * Effects
+        * Basic Effects
+        * Custom Effects
+        * Fading Effects
+        * Sliding Effects
+    * The descriptions of every method is in my notes, located in the main.js file. 
 
 
 
@@ -38,6 +43,7 @@ jQuery selectors can select elements and style elements.
 jQuery traversing provides many methods that allows for filtering or selecting elements, adding, removing, or changing styles.
 jQuery also provides a handful of methods that may manipulate elements by altering the DOM, styles, or attributes.
 jQuery easily adds one or multiple event handlers to elements. 
+jQuery has many effects that involve event methods for showing and hiding content. It has animations for fading content in and out, or sliding content up and down. 
 
 
 
@@ -54,3 +60,5 @@ If over 60% of the TOP ten-thousand websites use jQuery, what is the percentage 
 
 ## Source:
 https://learn.shayhowe.com/advanced-html-css/jquery/
+
+Method descriptions provided by: https://api.jquery.com/

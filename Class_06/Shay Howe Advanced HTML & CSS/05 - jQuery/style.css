@@ -253,3 +253,35 @@ a:hover {
   .sixteen .notice-close:hover {
     color: lime;
   }
+
+  /* Slide demo */
+  .seventeen {
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .25);
+    display: none;
+    height: 80px;
+    margin: 0 auto;
+    width: 80%;
+  }
+  .panel-tab {
+    display: block;
+    border: 1px solid #999;
+    border-radius: 0 0 5px 5px;
+    background-color: white;
+    color: dodgerblue;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.25rem;
+    margin: 0 auto;
+    text-align: center;
+    text-transform: uppercase;
+    width: 280px;
+  }
+  .panel-tab:hover {
+    color: orange;
+  }
+  .panel-tab span {
+    font-size: .55rem;
+    padding-left: 0.05rem;
+    /* border: 2px solid green; */
+  }

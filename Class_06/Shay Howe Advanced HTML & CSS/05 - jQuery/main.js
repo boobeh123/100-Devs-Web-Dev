@@ -386,14 +386,14 @@ $( ".twelve ul.level-2" ).children().css( "background-color", "red" );
 
 
 /*============== DOM Tree Traversing: closest()============*/
-$( ".thirteen li.item-a" )
-  .closest( "ul" )
-  .css( "background-color", "red" );
+// $( ".thirteen li.item-a" )
+//   .closest( "ul" )
+//   .css( "background-color", "red" );
 /*============== DOM Tree Traversing: closest()============*/
 
 
 /*============== DOM Tree Traversing: find()============*/
-$( ".fourteen li.item-ii" ).find( "li" ).css( "background-color", "red" );
+// $( ".fourteen li.item-ii" ).find( "li" ).css( "background-color", "red" );
 /*============== DOM Tree Traversing: find()============*/
 /**************************************************************
 * jQuery: Traversing
@@ -496,49 +496,50 @@ by nesting one inside another.
 
 jQuery provides event methods revolved around registering user behaviors as they interact with the browser. 
 jQuery Browser methods:
-  .resize()         -
-  .scroll()         -
+  .resize()         - Bind an event handler to the "resize" JavaScript event, or trigger that event on an element.
+  .scroll()         - Bind an event handler to the "scroll" JavaScript event, or trigger that event on an element.
 jQuery Document Loading methods:
-  .ready()          -
+  .ready()          - Specify a function to execute when the DOM is fully loaded.
 jQuery Event Handler Attachment methods:
-  .off()            -
-  .on()             -
-  .one()            -
-  jQuery.proxy()    -
-  .trigger()        -
-  .triggerHandler() -
-  .unbind()         -
-  .undelegate()     -
+  .off()            - Remove an event handler.
+  .on()             - Attach a handler to an event for the elements. The handler is executed at most once per element per event type.
+  .one()            - Attach a handler to an event for the elements. The handler is executed at most once per element per event type.
+  jQuery.proxy()    - Takes a function and returns a new one that will always have a particular context.
+  .trigger()        - Execute all handlers and behaviors attached to the matched elements for the given event type.
+  .triggerHandler() - Execute all handlers attached to an element for an event.
+  .unbind()         - Remove a previously-attached event handler from the elements.
+  .undelegate()     - Remove a handler from the event for all elements which match the current selector, based upon a specific set of root elements.
 jQuery Event Object methods:
-  event.currentTarget     -
-  event.preventDefault()  -
-  event.stopPropagation() -
-  event.targetevent.type  -
+  event.currentTarget     - The current DOM element within the event bubbling phase.
+  event.preventDefault()  - If this method is called, the default action of the event will not be triggered.
+  event.stopPropagation() - Prevents the event from bubbling up the DOM tree, preventing any parent handlers from being notified of the event.
+  event.target            - The DOM element that initiated the event.
+  event.type              - Describes the nature of the event.
 jQuery Form Event methods:
-  .blur()         -
-  .change()       -
-  .focus()        -
-  .select()       -
-  .submit()       -
+  .blur()         - Bind an event handler to the "blur" JavaScript event, or trigger that event on an element.
+  .change()       - Bind an event handler to the "change" JavaScript event, or trigger that event on an element.
+  .focus()        - Bind an event handler to the "focus" JavaScript event, or trigger that event on an element.
+  .select()       - Bind an event handler to the "select" JavaScript event, or trigger that event on an element.
+  .submit()       - Bind an event handler to the "submit" JavaScript event, or trigger that event on an element.
 jQuery Keyboard Event methods:
-  .focusin()      -
-  .focusout()     -
-  .keydown()      -
-  .keypress()     -
-  .keyup()        -
+  .focusin()      - Bind an event handler to the "focusin" event.
+  .focusout()     - Bind an event handler to the "focusout" JavaScript event.
+  .keydown()      - Bind an event handler to the "keydown" JavaScript event, or trigger that event on an element.
+  .keypress()     - Bind an event handler to the "keypress" JavaScript event, or trigger that event on an element.
+  .keyup()        - Bind an event handler to the "keyup" JavaScript event, or trigger that event on an element.
 jQuery Mouse Event methods:
-  .click()        -
-  .dblclick()     -
-  .focusin()      -
-  .focusout()     -
-  .hover()        -
-  .mousedown()    -
-  .mouseenter()   -
-  .mouseleave()   -
-  .mousemove()    -
-  .mouseout()     -
-  .mouseover()    -
-  .mouseup()      -
+  .click()        - Bind an event handler to the "click" JavaScript event, or trigger that event on an element.
+  .dblclick()     - Bind an event handler to the "dblclick" JavaScript event, or trigger that event on an element.
+  .focusin()      - Bind an event handler to the "focusin" event.
+  .focusout()     - Bind an event handler to the "focusout" JavaScript event.
+  .hover()        - Bind two handlers to the matched elements, to be executed when the mouse pointer enters and leaves the elements.
+  .mousedown()    - Bind an event handler to the "mousedown" JavaScript event, or trigger that event on an element.
+  .mouseenter()   - Bind an event handler to be fired when the mouse enters an element, or trigger that handler on an element.
+  .mouseleave()   - Bind an event handler to be fired when the mouse leaves an element, or trigger that handler on an element.
+  .mousemove()    - Bind an event handler to the "mousemove" JavaScript event, or trigger that event on an element.
+  .mouseout()     - Bind an event handler to the "mouseout" JavaScript event, or trigger that event on an element.
+  .mouseover()    - Bind an event handler to the "mouseover" JavaScript event, or trigger that event on an element.
+  .mouseup()      - Bind an event handler to the "mouseup" JavaScript event, or trigger that event on an element.
 
 */
 
@@ -559,10 +560,6 @@ $(".fifteen li").on("click",function(event) {
   $(this).removeClass("hovered-item");
   $(this).addClass("saved-item");
 })
-
-$('.notice-close').on('click', function(event){
-  $('.notice-warning').remove();
-});
 /**************************************************************
 * jQuery: Events
 ***************************************************************/
@@ -574,8 +571,60 @@ $('.notice-close').on('click', function(event){
 * jQuery: Effects
 ***************************************************************/
 /*
+jQuery also provides a handful of customizable effects. 
+
+These effects include event methods for showing and hiding content, 
+fading content in and out, or sliding content up and down. 
+
+Animations may be done in jQuery, CSS animations offer better performance 
+from a browser processing standpoint and are preferred where possible. 
+
+jQuery animation effects make for a perfect backup solution to any browser 
+not supporting CSS animations.
+
+The duration of an effect can be set. The speed of an animation can be set.
+
+jQuery easing has two keyword values: 
+Swing: Starts the animation at a slow pace, speeds up during the animation, and then slows down again before completion. 
+Linear: Runs the animation at one constant pace for the entire duration.
+
+When an animation is completed it is possible to run another function.
+
+Basic Effects:
+  .hide()         - Hide the matched elements.
+  .show()         - Display the matched elements.
+  .toggle()       - Display or hide the matched elements.
+Custom Effects:
+  .animate()      - Perform a custom animation of a set of CSS properties.
+  .clearQueue()   - Remove from the queue all items that have not yet been run.
+  .delay()        - Set a timer to delay execution of subsequent items in the queue.
+  .dequeue()      - Execute the next function on the queue for the matched elements.
+  jQuery.fx.interval - The rate (in milliseconds) at which animations fire.
+  jQuery.fx.off   - Globally disable all animations.
+  .queue()        - Show the queue of functions to be executed on the matched elements.
+  .stop()         - Stop the currently-running animation on the matched elements.
+Fading Effects:
+  .fadeIn()       - Display the matched elements by fading them to opaque.
+  .fadeOut()      - Hide the matched elements by fading them to transparent.
+  .fadeTo()       - Adjust the opacity of the matched elements.
+  .fadeToggle()   - Display or hide the matched elements by animating their opacity.
+Sliding Effects:
+  .slideDown()    - Display the matched elements with a sliding motion.
+  .slideToggle()  - Display or hide the matched elements with a sliding motion.
+  .slideUp()      - Hide the matched elements with a sliding motion.
 
 */
+
+// Displays paragraphs as animation. number in ms or keyword
+// $('p').show(2000);
+// $('p').show('slow', 'linear');
+
+// Closes notice-popup as animation.
+$('.notice-close').on('click', function(event) {
+  $('.notice-warning').fadeOut('slow', function(event) {
+    $(this).remove();
+  });
+});
 /**************************************************************
 * jQuery: Effects
 ***************************************************************/
