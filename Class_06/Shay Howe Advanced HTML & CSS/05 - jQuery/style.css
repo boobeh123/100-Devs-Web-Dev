@@ -92,3 +92,164 @@ a:hover {
 /**************************************************************
 * PRACTICE
 ***************************************************************/
+
+/* .filter() Demo */
+.one {
+    border: 4px solid #fff;
+}
+
+/* .slice() demo */
+.two {
+    border: 4px solid #fefefe;
+}
+
+/* .not() demo */
+.three {
+    border: 4px solid #fefefe;
+}
+
+/* .last() demo */
+.four {
+    border: 4px solid #fefefe;
+}
+
+/* .first() demo */
+.six {
+    border: 4px solid #fefefe;
+}
+
+/* .is() demo */
+.five {
+    border: 4px solid #fefefe;
+    overflow: auto;
+}
+.five div {
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    float: left;
+    border: 4px outset;
+    background: green;
+    text-align: center;
+    font-weight: bolder;
+    cursor: pointer;
+}
+.five .blue {
+    background: blue;
+}
+.five .red {
+    background: red;
+}
+
+.five span {
+    color: white;
+    font-size: 16px;
+  }
+.five p {
+    color: red;
+    font-weight: bolder;
+    background: yellow;
+    margin: 3px;
+    clear: left;
+    display: none;
+  }
+
+  /* .has() demo */
+  .seven {
+    border: 4px solid wheat;
+  }
+
+  /* .eq() demo */
+  .eight {
+    border: 4px solid #fff;
+}
+
+  /* .add() demo */
+  .nine {
+    border: 4px solid wheat;
+    overflow: auto;
+  }
+
+  .nine div {
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+    float: left;
+  }
+  .nine p {
+    clear: left;
+    font-weight: bold;
+    font-size: 16px;
+    color: blue;
+    margin: 0 10px;
+    padding: 2px;
+  }
+
+  /* .end demo */
+  .ten {
+    border: 4px solid wheat;
+  }
+
+  /* .addBack() / .andSelf() demo */
+  .eleven {
+    border: 4px solid whitesmoke;
+  }
+
+  /* .children() demo */
+  .twelve {
+    border: 4px solid black;
+  }
+
+  /* .closest() demo */
+  .thirteen {
+    border: 4px solid black;
+  }
+
+  /* .find() demo */
+  .fourteen {
+    border: 4px solid wheat;
+  }
+
+  /* Events demo */
+  
+  .fifteen {
+    border: 4px solid wheat;
+  }
+
+  .fifteen .saved-item {
+    border: 2px dashed red;
+  }
+
+  .fifteen .hovered-item {
+    border: 2px dotted salmon;
+  }
+
+  /* Events demo 2 */
+  .sixteen {
+    /* border: 4px solid gold; */
+}
+
+.notice-warning {
+    background: linear-gradient(salmon, red);
+    border-radius: 5px;
+    padding: 1rem;
+    text-shadow: 0 1px 0 rgba(0,0,0, .5);
+  }
+  .sixteen .notice-close {
+    /* background: #ffdc72; */
+    background: rgba(255, 255, 255, .5);
+    border-radius: 25%;
+    box-shadow: inset 0 1px 2px rgba(0,0,0, .9), inset 0 -1px 2px rgba(0,0,0, .25);
+    color: #999;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    height: 1.5rem;
+    float: right;
+    text-align: center;
+    transition: color .5s ease;
+    width: 1.5rem;;
+  }
+  .sixteen .notice-close:hover {
+    color: lime;
+  }
