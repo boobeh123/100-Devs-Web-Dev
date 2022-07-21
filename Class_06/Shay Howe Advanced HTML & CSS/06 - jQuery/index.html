@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- .filter() -->
+    <div class="one">
+        <ul>
+            <p>paragraph in a UL</p>
+            <li>list item 1</li>
+            <li>list item 2</li>
+            <li class="collection">list item 3</li>
+            <li class="collection">list item 4</li>
+            <li class="type">list item 5</li>
+            <li class="type">list item 6</li>
+        </ul>
+    </div>
+    <!-- .slice() -->
+    <div class="two">
+        <ul>
+            <li>list item 1</li>
+            <li>list item 2</li>
+            <li>list item 3</li>
+            <li>list item 4</li>
+            <li>list item 5</li>
+        </ul>
+    </div>
+    <!-- .not() -->
+    <div class="three">
+        <ul>
+            <li>list item 1</li>
+            <li>list item 2</li>
+            <li>list item 3</li>
+            <li>list item 4</li>
+            <li>list item 5</li>
+        </ul>
+    </div>
+    <!-- .last() -->
+    <div class="four">
+        <ul>
+            <li>list item 1</li>
+            <li>list item 2</li>
+            <li>list item 3</li>
+            <li>list item 4</li>
+            <li>list item 5</li>
+        </ul>
+    </div>
+    <!-- .first() -->
+    <div class="six">
+        <ul>
+            <li>list item 1</li>
+            <li>list item 2</li>
+            <li>list item 3</li>
+            <li>list item 4</li>
+            <li>list item 5</li>
+        </ul>
+    </div>
+    <!-- .is() -->
+    <div class="five">
+        <ul>
+            <div></div>
+            <div class="blue"></div>
+            <div></div>
+            <div class="red"></div>
+            <div><br/><span>Peter</span></div>
+            <div class="blue"></div>
+            <p>&nbsp;</p>
+            <!-- Nbsp stands for non-breaking space,
+            meaning that strings separated with this entity will not be separated 
+            and put into separate lines. -->
+        </ul>
+    </div>
+    <!-- .has() -->
+    <div class="seven">
+        <ul>
+            <li>list item 1</li>
+            <li>list item 2
+              <ul>
+                <li>list item 2-a</li>
+                <li>list item 2-b</li>
+              </ul>
+            </li>
+            <li>list item 3</li>
+            <li>list item 4</li>
+          </ul>
+    </div>
+    <!-- .eq() -->
+    <div class="eight">
+        <ul>
+            <li>list item 1</li>
+            <li>list item 2</li>
+            <li>list item 3</li>
+            <li>list item 4</li>
+            <li>list item 5</li>
+          </ul>
+    </div>
+    <!-- .add() -->
+    <div class="nine">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <p>Added this... (notice no border)</p>
+    </div>
+    <!-- .end() -->
+    <div class="ten">
+        <ul class="first">
+            <li class="foo">list item 1</li>
+            <li>list item 2</li>
+            <li class="bar">list item 3</li>
+          </ul>
+          <ul class="second">
+            <li class="foo">list item 1</li>
+            <li>list item 2</li>
+            <li class="bar">list item 3</li>
+          </ul>
+    </div>
+    <!-- .addBack() / .andSelf() -->
+    <!-- <div class="eleven">
+        <ul>
+            <li>list item 1</li>
+            <li>list item 2</li>
+            <li class="third-item">list item 3</li>
+            <li>list item 4</li>
+            <li>list item 5</li>
+          </ul>
+    </div> -->
+    <!-- .children() -->
+    <!-- <div class="twelve">
+        <ul class="level-1">
+            <li class="item-i">I</li>
+            <li class="item-ii">II
+              <ul class="level-2">
+                <li class="item-a">A</li>
+                <li class="item-b">B
+                  <ul class="level-3">
+                    <li class="item-1">1</li>
+                    <li class="item-2">2</li>
+                    <li class="item-3">3</li>
+                  </ul>
+                </li>
+                <li class="item-c">C</li>
+              </ul>
+            </li>
+            <li class="item-iii">III</li>
+          </ul>
+    </div> -->
+    <!-- .closest() -->
+    <!-- <div class="thirteen">
+        <ul class="level-1">
+            <li class="item-i">I</li>
+            <li class="item-ii">II
+              <ul class="level-2">
+                <li class="item-a">A</li>
+                <li class="item-b">B
+                  <ul class="level-3">
+                    <li class="item-1">1</li>
+                    <li class="item-2">2</li>
+                    <li class="item-3">3</li>
+                  </ul>
+                </li>
+                <li class="item-c">C</li>
+              </ul>
+            </li>
+            <li class="item-iii">III</li>
+          </ul>
+    </div> -->
+    <!-- .find() -->
+    <!-- <div class="fourteen">
+        <ul class="level-1">
+            <li class="item-i">I</li>
+            <li class="item-ii">II
+              <ul class="level-2">
+                <li class="item-a">A</li>
+                <li class="item-b">B
+                  <ul class="level-3">
+                    <li class="item-1">1</li>
+                    <li class="item-2">2</li>
+                    <li class="item-3">3</li>
+                  </ul>
+                </li>
+                <li class="item-c">C</li>
+              </ul>
+            </li>
+            <li class="item-iii">III</li>
+        </ul>
+    </div> -->
+    <!-- Events demo -->
+    <div class="fifteen">
+        <ul>
+            <li>Click any of us</li>
+            <li>Click any of us</li>
+            <li>Click any of us</li>
+            <li>Click any of us</li>
+            <li>Click any of us</li>
+          </ul>
+    </div>
+    <!-- Events demo -->
+    <div class="notice-warning sixteen">
+        <div class="notice-close">&#215;</div>
+        <strong>Warning</strong> Warning Warning Warning
+    </div>
+    <!-- Referencing jQuery library -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <!-- Referencing JavaScript -->
+    <script src="main.js"></script>
+</body>
+</html>
