@@ -92,3 +92,160 @@ a:hover {
 /**************************************************************
 * PRACTICE
 ***************************************************************/
+/* Transitions: property, duration, timing-function, delay */
+.one figure {
+    color: black;
+    background: lime;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 95px;
+    width: 95px;
+    text-align: center;
+    
+    /* transition-property: all; */
+    /* transition-property: background; */
+    /* transition-property: background, border-radius, height, width; */
+    /* , visibility; */
+
+    /* transition-duration: .75s, 1s, 1s, 1s, 1s; */
+    
+    /* transition-timing-function: linear; */
+    /* transition-timing-function: ease-out; */
+    /* transition-timing-function: ease-in; */
+    /* transition-timing-function: ease-in-out, ease-in-out, ease-out, ease-in, linear; */
+
+    /* transition-delay: 0s, 0s, 0s, 2s; */
+
+    /* overflow: auto; */
+
+    transition: background-color 1s linear, height .5s ease-in, width .5s ease-in .5s;
+
+    margin-bottom: 1rem;
+}
+.one figure:hover {
+    background: #ff7b29;
+    color: wheat;
+    /* border-radius: 50%; */
+    /* visibility: hidden; */
+}
+
+.one figure:active {
+    height: 25px;
+    width: 0px;
+}
+
+
+/* button  */
+
+button {
+    transition: all .1s linear;
+    background-color: dodgerblue;
+    border: none;
+    border-radius: 5px;
+    color: beige;
+    padding: .75rem 1.25rem;
+    box-shadow: 0 5px 0 darkcyan;
+    margin-bottom: 1rem;
+}
+
+button:active {
+  box-shadow: 0 2px 0 darkblue;
+  transform: translateY(3px);
+}
+
+/* card flip  */
+
+.card-container {
+    border: 2px solid red;
+    height: 150px;
+    width: 150px;
+    position: relative;
+    perspective: 600;
+}
+
+.card {
+    border: 2px solid salmon;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transition: all 2s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+.card:hover {
+    transform: rotateY(180deg);
+}
+.card .back {
+    transform: rotateY(180deg);
+}
+.card .side {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+}
+.card .side:active {
+    backface-visibility: none;
+}
+
+/* Animations */
+
+@keyframes slide {
+    0% {
+      left: 0;
+      top: 0;
+      width: 1%;
+    }
+    50% {
+      left: 244px;
+      top: 100px;
+      width: 10%;
+    }
+    100% {
+      left: 488px;
+      top: 0;
+      width: 25%;
+    }
+}
+
+.four {
+    border: 2px solid rebeccapurple;
+    background: seashell;
+    border-radius: 5px;
+    height: 150px;
+    min-width: 550px;
+    position: relative;
+}
+.four .ball {
+    /* border: 2px solid red; */
+    border-radius: 50%;
+    background: salmon;
+    position: absolute;
+    height: 50px;
+    width: 50px;
+}
+
+/* .four .ball {
+    animation-name: slide;
+    animation-duration: .40s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: backwards;
+} */
+    /* animation-delay: -2s; */
+    /* animation-fill-mode: forwards; */
+    /* animation-fill-mode: both; */
+
+/* .four:active .ball {
+    animation-play-state: paused;
+} */
+
+/* Shorthand version of the animation above */
+
+.four:hover .ball {
+    animation: slide .40s linear infinite alternate;
+}
+.four:active .ball {
+    animation-play-state: paused;
+}
