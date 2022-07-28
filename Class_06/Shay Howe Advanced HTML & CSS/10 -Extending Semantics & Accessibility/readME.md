@@ -27,7 +27,16 @@ The concepts covered in this chapter:
 * WAI-ARIA
 
 ## Lessons learned:
-TBD
+Still reading...TBD
+
+The concepts covered in this chapter deeply cover semantics. 
+I learned that screen readers recognize elements with the hidden attribute. 
+
+There are multiple elements mentioned in this chapter. Each were compared against others and given examples. These examples displays where, how, and why specific elements should be used over others.
+
+I am eager to see where the meter & progress elements can be used! 
+
+I haven't dived into Microdata or WAI-ARIA yet and I know these could change everything.
 
 ## Source:
 https://learn.shayhowe.com/advanced-html-css/semantics-accessibility/
