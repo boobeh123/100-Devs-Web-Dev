@@ -8,7 +8,118 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+    <!-- Hiding elements semantically -->
+    <div class="one">
+        <!-- Good -->
+        <div hidden>
+            <span>...</span>
+        </div>
+        <!-- Not good -->
+        <div style="display: none;">
+            <span>...</span>
+        </div>
+    </div>
+    <!-- Bolding text semantically -->
+    <div class="two">
+        <!-- Strong importance -->
+        <p><strong>Caution:</strong> Falling rocks.</p>
+        <!-- Stylistically offset -->
+        <p>recipe calls for <b>bacon</b> and <b>baconnaise</b>.</p>
+    </div>
+    <!-- Italicizing text semantically -->
+    <div class="three">
+        <!-- Stressed emphasis -->
+        <p>I <em>love</em> Chicago!</p>
+        <!-- Alternative voice or tone -->
+        <p>The name <i>Asakawa</i> means Morning River.</p>
+    </div>
+    <!-- Underlining text semantically -->
+    <div class="four">
+        <!-- Added to the document -->
+        <ins cite="http://learn.shayhowe.com" datetime="2012-07-01">
+        <p>Updated: This website now contains an advanced guide.</p>
+        </ins>
+        <!-- Unarticulated annotation -->
+        <p><u>Urushihara Yuuji</u> won <u>Sasuke 27</u>.</p>
+    </div>
+    <!-- Striking text semantically -->
+    <div class="five">
+        <!-- Deleted from the document -->
+        <p>I am an avid cyclist, <del cite="http://shayhowe.com" datetime="2012-07-01">skateboarder</del> and designer.</p>
+        <!-- No longer accurate or relevant -->
+        <p><s>$13,999.99</s> $0.00</p>
+    </div>
+    <!-- Highlighting text semantically -->
+    <div class="six">
+        <!-- Highlighted for reference purposes -->
+        <p>Search results for <mark>'chicago'</mark>.</p>
+    </div>
+    <!-- Abbreviating text semantically -->
+    <div class="seven">
+        <abbr title="HyperText Markup Language">HTML</abbr>
+        <abbr title="Cascading Style Sheets">CSS</abbr>
+    </div>
+    <!-- Sub & Superscript text semantically -->
+    <div class="eight">
+        <!-- Subscript -->
+        <p>a<sub>2</sub> + b<sub>2</sub> = c<sub>2</sub></p>
+        <!-- Superscripts -->
+        <p>3<sup>rd</sup> Place</p>
+    </div>
+    <!-- Meter & Progress -->
+    <div class="nine">
+        <!-- Meter -->
+        <meter value="7" max="10">Rated 7 out of 10</meter><br>
+        <meter value="6" min="0" max="105" low="5" high="65" optimum="45">The car is moving at a decent average mile per hour.</meter><br>
+        <!-- Progress -->
+        You are <progress value="7" max="10">70%</progress> complete.<br>
+        <progress value="100" min="0" max="100" high="60" optimum="45">Hold tight, you&#8217;re getting there.</progress>
+    </div>
+    <!-- Time & Address  -->
+    <div class="ten">
+        <!-- Time -->
+        <time>2022-08-24</time><br>
+        <time datetime="2022-08-24" pubdate>August 24th, 2022</time><br>
+        <time datetime="18:30">6:30pm</time><br>
+        <time datetime="2022-08-24T18:30">August 24th, 2022 at 6:30pm</time>
+        <!-- Address -->
+        <address>
+            <strong>Bobby Asakawa</strong><br>
+            <a href="https://bobby-asakawa.netlify.app/">https://bobby-asakawa.netlify.app/</a><br>
+            <a href="mailto:boobeh321@gmail.com">boobeh321@gmail.com</a><br>
+            12345 Washington St.<br>
+            Suite 0001<br>
+            City, STATE 90909<br>
+            USA  
+        </address>
+    </div>
+    <!-- Presenting Code  -->
+    <div class="eleven">
+        <!-- Inline code samples -->
+        <p>Use the <code>article</code> element.</p>
+        <!-- Larger, block level code snippets -->
+<pre><code>body {
+    color: #999;
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 22px;
+}</code></pre>
+</div>
+    <!-- Presenting Code  -->
+    <div class="twelve">
+        <!-- Line break -->
+        <address>
+            12345 Washington St.<br>
+            Suite 0001<br>
+            City, STATE 90909<br>
+            USA  
+        </address>
+        <!-- Word break  -->
+        <p>Fernstraßen<wbr>bau<wbr>privat<wbr>finanzierungs<wbr>gesetz</p>
+    </div>
+    
+    <!-- Side comments -->
+    <footer><small>&copy; Online learning</footer>
     <script src="main.js"></script>
 </body>
 </html>
