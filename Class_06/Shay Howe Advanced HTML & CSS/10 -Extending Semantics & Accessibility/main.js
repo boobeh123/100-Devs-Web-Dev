@@ -425,12 +425,10 @@ and provide more relevant results to users.
 ================ Microdata explained by chapter 10 ================
 
 Microdata is HTML extended with nested groups of name-value pairs that allow 
-machines, including browsers and search engines, to pick up additional 
-semantics and information for rich content. 
+machines to pick up additional semantics and information. 
 
 Adding microdata to your website is accomplished by using 
 predetermined attributes and values. 
-These attributes and values will then be interpreted and extended. 
 
 Microdata is used while coding contact information & calendar events.
 There are encoding models for products and reviews.
@@ -441,19 +439,19 @@ more relevant data.
 Searching for a business location yields the address & contact information 
 Chances are this information is being pulled from microdata.
 
-There are actually a handful of rich, structured data standards including:
-1 - microdata: A standard used to nest metadata that is extracted and 
+There are a handful of data standards including:
+microdata, microformats, RDFa.
+
+Microdata is the standard used to nest metadata that is extracted and 
 processed by search engines to provide more relevant results to users.
 
-2 - microformats: Standards used to embed semantics and structured data in HTML, 
+Microformats is are standards used to embed semantics and structured data in HTML, 
 and provide an API to be used by social web applications, search engines, 
 aggregators, and other tools.
 
-3 - RDFa: Adds a set of attribute-level extensions to HTML, XHTML and various 
+RDFa will add a set of attribute-level extensions to HTML, XHTML and various 
 XML-based document types for embedding rich metadata within Web documents. 
 
-Microdata is the recommended format from Google, and other search engines, 
-as well as part of the HTML5 specification. 
 Using one of these standards is substantially better than not using any. 
 
 ================ Microdata explained by chapter 10 ================
@@ -470,37 +468,38 @@ Using one of these standards is substantially better than not using any.
 ***************************************************************/
 /*
 Microdata is identified using three main attributes:
-1 - itemscope: A boolean global attribute that defines the scope of 
-associated metadata. Specifying the itemscope attribute for an element 
-creates a new item, which results in a number of name-value pairs that are 
-associated with the element.
+itemscope, itemtype, itemprop.
 
-2 -  itemtype: A global attribute that specifies the URL of the vocabulary 
-that will be used to define itemprop's (item properties) in the data structure.
-
-3 -  itemprop: A global attribute that is used to add properties to an item. 
-Every HTML element can have an itemprop attribute specified, and an itemprop 
-consists of a name-value pair.
-
-The itemscope Boolean attribute declares the scope of each microdata item. 
+Itemscope is a boolean global attribute.
+It defines the scope of associated metadata. 
+Using the itemscope attribute for an element creates a new item, 
+which results in a number of name-value pairs that are associated with the element.
 Place this attribute on the parent element where all of the microdata 
 information pertaining to this item should reside.
 
-Once you have determined the scope, 
-use the itemtype attribute to identify what microdata vocabulary should be used.
+Itemtype is a global attribute. It specifies the URL of the vocabulary that 
+will be used to define item properties in the data structure.
 The microdata item types have been outlined at Schema.org. 
 
-Once the scope and type of the item have been determined, 
-properties may then be set. 
+Itemprop is a global attribute. 
+It used to add properties to an item. 
+Every HTML element can have an itemprop attribute specified.
+An itemprop consists of a name-value pair.
+The value of this attribute determines what property is being referenced,       (e.g itemprop="streetAddress")
+and the content within the element itself determines the value of the property. (e.g 234 N. Sponge Ave.)
 
-These properties are identified by different elements which include the 
-itemprop attribute. 
+A few elements do not get their itemprop value from the content 
+within the element: 
+<meta>    content attribute   <a>       href attribute
+<audio>   src attribute       <area>    href attribute
+<embed>   src attribute       <link>    href attribute
+<iframe>  src attribute       <object>  data attribute
+<img>     src attribute       <time>    datetime attribute
+<source>  src attribute
+<video>   src attribute
 
-The value of this attribute determines what property is being referenced, 
-and the content within the element itself most commonly determines the value 
-of the property.
-
-
+Their value is determined from the value of another 
+attribute on the element.
 */
 /**************************************************************
 * Outlining MicroData
@@ -510,32 +509,41 @@ of the property.
 
 
 /**************************************************************
+* Person & Event microdata
+***************************************************************/
+/*
+When referring to a person the person microdata library should be used. 
+
+When referring to an event the event microdata library should be used. 
+*/
+/**************************************************************
+* Person & Eventmicrodata
+***************************************************************/
+
+
+
+
+/**************************************************************
 * WAI-ARIA
 ***************************************************************/
 /*
-WAI-ARIA (Web Accessibility Initiative - Accessible Rich Internet Applications) 
-is a specification written by the W3C, defining a set of additional HTML 
-attributes that can be applied to elements to provide additional semantics and 
-improve accessibility wherever it is lacking. 
+WAI-ARIA: Web Accessibility Initiative-Accessible Rich Internet Applications.
+This is a specification written by the W3C, 
+defining a set of additional HTML attributes that can be applied to elements 
+to provide semantics and improve accessibility. 
 
-There are three main features defined in the spec:
-     Roles: These define what an element is or does. Provide semantic meaning to content.
-Properties: These define properties of elements.
-    States: Special properties that define the current conditions of elements
+WAI-ARIA is a specification that helps make web pages and applications more 
+accessible to those with disabilities. 
 
-Making complex UI controls that involve unsemantic HTML and dynamic 
-JavaScript-updated content can be difficult. 
+WAI-ARIA helps define what blocks of content do, 
+how blocks of content are configured, and additional properties to support 
+assistive technologies. 
 
-WAI-ARIA is a technology that can help with such problems by adding in 
-further semantics that browsers and assistive technologies can recognize and
-use to let users know what is going on. 
-
-HTML5 introduced a number of semantic elements to define common page features 
-(<nav>, <footer>, etc.) 
-Before these were available, developers would use <div>s with IDs or classes, 
-e.g. <div class="nav">
-The problem here is that visually they work, but screenreaders can't make 
-any sense of what they are at all.
+There are three main features defined in the specification:
+Roles, Properties, States.
+Roles define what an element is or does. Provides semantic meaning to content.
+Properties define properties of elements.
+States are special properties that define the current conditions of elements.
 */
 /**************************************************************
 * WAI-ARIA
@@ -545,12 +553,33 @@ any sense of what they are at all.
 
 
 /**************************************************************
-* 
+* WAI-ARIA Roles
 ***************************************************************/
 /*
+Setting WAI-ARIA roles is accomplished using the role attribute. 
+These roles specify what certain elements and blocks of content do on a page.
+
+WAI-ARIA roles break down into four different categories, 
+including abstract, widget, document structure, and landmark roles. 
+
+Document-structure roles define the organizational structure of content on a 
+page. 
+Landmark roles define the regions of a page. 
+
+ARIA document-structure roles are used to provide a structural description 
+for a section of content.
+A landmark is an important subsection of a page. 
+The landmark role is an abstract superclass for the aria role values for 
+sections of content that are important enough that users will be able to 
+navigate directly to them.
+
+If multiple header and footer elements exist on a page,
+banner & contentinfo roles should be applied on the elements 
+directly tied to the document from a top level perspective, 
+not elements nested within other regions of the document structure.
 */
 /**************************************************************
-* 
+* WAI-ARIA Roles
 ***************************************************************/
 
 
@@ -558,101 +587,28 @@ any sense of what they are at all.
 
 
 /**************************************************************
-* 
+* WAI-ARIA States & Properties
 ***************************************************************/
 /*
+In combination with WAI-ARIA roles there are also states and properties 
+which help inform assistive technologies how content is configured. 
+
+WAI-ARIA States & Properties are broken into four categories, including: 
+widget attributes, live region attributes, drag-and-drop attributes, and 
+relationship attributes.
+
+The widget attributes support widget roles and are specific to the user 
+interface and where users take actions. 
+
+The live region attributes may be applied to any element and are used to 
+indicate content changes for assistive technologies.
+
+Drag-and-drop attributes supply information about drag-and-drop interface 
+elements and provide alternate behaviors to assistive technologies. 
+
+Relationship attributes outline the relationship between elements when the 
+document structure cannot be determined.
 */
 /**************************************************************
-* 
-***************************************************************/
-
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-*/
-/**************************************************************
-* 
-***************************************************************/
-
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-*/
-/**************************************************************
-* 
-***************************************************************/
-
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-*/
-/**************************************************************
-* 
-***************************************************************/
-
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-*/
-/**************************************************************
-* 
-***************************************************************/
-
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-*/
-/**************************************************************
-* 
-***************************************************************/
-
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-*/
-/**************************************************************
-* 
-***************************************************************/
-
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-*/
-/**************************************************************
-* 
+* WAI-ARIA States & Properties
 ***************************************************************/

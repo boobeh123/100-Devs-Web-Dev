@@ -137,7 +137,40 @@
           <abbr itemprop="addressRegion" title="Hawaii">HI</abbr>
           <span itemprop="postalCode">96801</span>
         </address>
-      </section>
+    </section>
+    <!-- Event microdata  -->
+    <section itemscope itemtype="http://schema.org/Event">
+        <a itemprop="url" href="https://100devsconference-11.netlify.app/">
+            <span itemprop="name">100Devs Conference</span>
+        </a>
+        <time itemprop="startDate" datetime="2022-01-1118:30">Tuesday, January 11, 2022 at 6:30 p.m.</time>
+        <div itemprop="location" itemscope itemtype="http://schema.org/Place">
+            <a itemprop="url" href="#">We Outside</a>
+            <address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                <div itemprop="streetAddress">123 S. State St.</div>
+                <span itemprop="addressLocality">Honolulu</span>,
+                <abbr itemprop="addressRegion" title="Hawaii">HI</abbr>
+                <span itemprop="postalCode">96801</span>
+            </address>
+        </div>
+    </section>
+    <!-- WAI-ARIA document-structure & landmark roles -->
+    <header role="banner">
+        <nav role="navigation">
+            ...
+        </nav>
+    </header>
+    <article role="article">
+        <section role="region">
+            ...
+        </section>
+    </article>
+    <aside role="complementary">
+        ...
+    </aside>
+    <footer role="contentinfo">
+        ...
+    </footer>
     <!-- Side comments -->
     <footer><small>&copy; Online learning</footer>
     <script src="main.js"></script>
