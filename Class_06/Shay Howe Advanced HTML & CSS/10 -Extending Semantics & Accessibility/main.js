@@ -402,8 +402,15 @@ prev            search      tag
 * MicroData
 ***************************************************************/
 /*
+================ Microdata explained by MDN ================
 Microdata is part of the WHATWG HTML Standard 
 and is used to nest metadata within existing content on web pages. 
+
+Microdata is an attempt to provide a simpler way of annotating HTML elements 
+with machine-readable tags than the similar approaches of using RDFa and microformats.
+
+Microdata uses a supporting vocabulary to describe an item and name-value pairs 
+to assign values to its properties. 
 
 Search engines and web crawlers can extract and process microdata from a web page 
 and use it to provide a richer browsing experience for users. 
@@ -412,15 +419,91 @@ Search engines benefit greatly from direct access to this structured
 data because it allows search engines to understand the information on web pages 
 and provide more relevant results to users. 
 
-Microdata uses a supporting vocabulary to describe an item and name-value pairs 
-to assign values to its properties. 
+================ Microdata explained by MDN ================
 
-Microdata is an attempt to provide a simpler way of annotating HTML elements 
-with machine-readable tags than the similar approaches of using RDFa and classic 
-microformats.
+
+================ Microdata explained by chapter 10 ================
+
+Microdata is HTML extended with nested groups of name-value pairs that allow 
+machines, including browsers and search engines, to pick up additional 
+semantics and information for rich content. 
+
+Adding microdata to your website is accomplished by using 
+predetermined attributes and values. 
+These attributes and values will then be interpreted and extended. 
+
+Microdata is used while coding contact information & calendar events.
+There are encoding models for products and reviews.
+
+One example of microdata is within Google.
+Microdata is interpreted & used within search results to display 
+more relevant data. 
+Searching for a business location yields the address & contact information 
+Chances are this information is being pulled from microdata.
+
+There are actually a handful of rich, structured data standards including:
+1 - microdata: A standard used to nest metadata that is extracted and 
+processed by search engines to provide more relevant results to users.
+
+2 - microformats: Standards used to embed semantics and structured data in HTML, 
+and provide an API to be used by social web applications, search engines, 
+aggregators, and other tools.
+
+3 - RDFa: Adds a set of attribute-level extensions to HTML, XHTML and various 
+XML-based document types for embedding rich metadata within Web documents. 
+
+Microdata is the recommended format from Google, and other search engines, 
+as well as part of the HTML5 specification. 
+Using one of these standards is substantially better than not using any. 
+
+================ Microdata explained by chapter 10 ================
 */
 /**************************************************************
 * MicroData
+***************************************************************/
+
+
+
+
+/**************************************************************
+* Outlining MicroData
+***************************************************************/
+/*
+Microdata is identified using three main attributes:
+1 - itemscope: A boolean global attribute that defines the scope of 
+associated metadata. Specifying the itemscope attribute for an element 
+creates a new item, which results in a number of name-value pairs that are 
+associated with the element.
+
+2 -  itemtype: A global attribute that specifies the URL of the vocabulary 
+that will be used to define itemprop's (item properties) in the data structure.
+
+3 -  itemprop: A global attribute that is used to add properties to an item. 
+Every HTML element can have an itemprop attribute specified, and an itemprop 
+consists of a name-value pair.
+
+The itemscope Boolean attribute declares the scope of each microdata item. 
+Place this attribute on the parent element where all of the microdata 
+information pertaining to this item should reside.
+
+Once you have determined the scope, 
+use the itemtype attribute to identify what microdata vocabulary should be used.
+The microdata item types have been outlined at Schema.org. 
+
+Once the scope and type of the item have been determined, 
+properties may then be set. 
+
+These properties are identified by different elements which include the 
+itemprop attribute. 
+
+The value of this attribute determines what property is being referenced, 
+and the content within the element itself most commonly determines the value 
+of the property.
+
+
+*/
+/**************************************************************
+* Outlining MicroData
 ***************************************************************/
 
 

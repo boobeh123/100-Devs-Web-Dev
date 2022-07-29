@@ -117,7 +117,27 @@
         <!-- Word break  -->
         <p>Fernstraßen<wbr>bau<wbr>privat<wbr>finanzierungs<wbr>gesetz</p>
     </div>
-    
+    <!-- Outlining microdata / itemscope / itemtype  -->
+    <div class="thirteen">
+        <section itemscope itemtype="http://schema.org/Person">
+            <span itemprop="name">Jane Doe</span>
+        </section>
+    </div>
+    <!-- Person microdata  -->
+    <section itemscope itemtype="http://schema.org/Person">
+        <strong itemprop="name">Bobby Asakawa</strong>
+        <img src="#" itemprop="image" alt="Image-of-a-human">
+        <div itemprop="jobTitle">Front-end Developer</div>
+        <a href="https://bobby-asakawa.netlify.app/" itemprop="url">bobby-asakawa.netlify.app</a>
+        <div itemprop="telephone">(808) 123-4567</div>
+        <a href="mailto:boobeh321@gmail.com" itemprop="email">boobeh321@gmail.com</a>
+        <address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+          <span itemprop="streetAddress">12345 FooBar St.</span>
+          <span itemprop="addressLocality">Honolulu</span>,
+          <abbr itemprop="addressRegion" title="Hawaii">HI</abbr>
+          <span itemprop="postalCode">96801</span>
+        </address>
+      </section>
     <!-- Side comments -->
     <footer><small>&copy; Online learning</footer>
     <script src="main.js"></script>
