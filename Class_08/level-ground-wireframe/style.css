@@ -1,0 +1,630 @@
+
+/**************************************************************
+* http://meyerweb.com/eric/tools/css/reset/ 2. v2.0 | 20110126
+* License: none (public domain)
+***************************************************************/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/**************************************************************
+* HTML5 display-role reset for older browsers
+***************************************************************/
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/**************************************************************
+* Clearfix
+***************************************************************/
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    clear: both;
+    *zoom: 1;
+}
+
+/**************************************************************
+* Base styles
+***************************************************************/
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  text-shadow: 1px 1px 2px rgba(0,0,0, .5);
+}
+
+a {
+  text-decoration: none;
+  color: #fefefe;
+  /* text-transform: uppercase; */
+}
+a:hover {
+  color: #a9b2b9;
+}
+
+strong, 
+b {
+  font-weight: 700;
+}
+/**************************************************************
+* Header
+***************************************************************/
+header {
+  background: #64768B;
+  /* border: 2px solid green; */
+}
+/**************************************************************
+* NAV
+***************************************************************/
+header nav ul li:nth-child(1) {
+  /* border: 2px solid green; */
+  display: inline-block;
+}
+
+header nav ul li:nth-child(2) {
+  /* border: 2px solid green; */
+  display: inline-block;
+}
+
+header nav ul li:nth-child(3) {
+  /* border: 2px solid green; */
+  float: right;
+}
+
+header nav ul li:nth-child(4) {
+  /* border: 2px solid green; */
+  margin: 0 auto;
+  text-align: center;
+  width: 5%;
+}
+header button {
+  background-color: #fefefe;
+  border: none;
+  border-radius: 5px;
+  padding: 0.45rem;
+  font-weight: 700;
+  color: #64768B;
+  /* text-transform: uppercase; */
+  cursor: pointer;
+  transition: all .1s linear;
+  box-shadow: 0 5px 0 darkcyan;
+}
+button:active {
+box-shadow: 0 2px 0 darkblue;
+transform: translateY(3px);
+}
+
+button:hover {
+  background-color: #c8d4e3;
+}
+header img {
+  /* border: 2px solid red; */
+  max-width: 75%;
+}
+/**************************************************************
+* First Section
+***************************************************************/
+.background-image {
+  background-color: #64768B;
+  background-image: url('images/pexels-annushka-ahuja-7991653.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0px -500px;
+  height: 50vh;
+  color: #fefefe;
+}
+
+.background-image h1 {
+  /* border: 2px solid red; */
+  text-align: center;
+  font-size: 4rem;
+  padding: 1rem 0;
+}
+
+.background-image p {
+  /* border: 2px solid red; */
+  text-align: center;
+  margin: 0 auto;
+  padding: 1rem 0;
+  width: 40%;
+  font-size: 1.25rem;
+  color: aliceblue;
+  text-shadow: black;
+  font-weight: 700;
+}
+
+.background-image span {
+  border: 2px solid #fff;
+  background-color: #64768B;
+  border-radius: 50%;
+  display: block;
+  width: 2.25%;
+  height: 5.5%;
+  text-align: center;
+  margin: 0 auto;
+  cursor: pointer;
+}
+/**************************************************************
+* Second Section
+***************************************************************/
+
+.heading-para-centered {
+  /* border: 2px solid red; */
+  background-color: #fefefe;
+  text-align: center;
+}
+
+.heading-para-centered h2 {
+  /* border: 2px solid red; */
+  font-size: 2.5rem;
+  padding: 5rem 0 1.5rem 0;
+}
+
+.heading-para-centered p {
+  /* border: 2px solid red; */
+  width: 25%;
+  margin: 0 auto;
+  padding-bottom: 5rem;
+}
+
+
+/**************************************************************
+* Third Section
+***************************************************************/
+.background-color {
+  /* border: 2px solid red; */
+  background-color: RGB(219,222,227);
+  padding: 5rem 0;
+}
+
+.background-color section {
+  /* border: 2px solid red; */
+  display: inline-block;
+  width: 50%;
+}
+
+.background-color section img {
+  /* border: 2px dashed red; */
+  display: block;
+  max-width: 65%;
+  margin: 0 auto;
+}
+
+.background-color section h3 {
+  /* border: 2px solid red; */
+  text-align: center;
+  padding: 2rem 0 1rem 0;
+  font-size: 1.75rem;
+}
+
+.background-color section p {
+  /* border: 2px solid red; */
+  text-align: center;
+  width: 40%;
+  margin: 0 auto;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+}
+
+.background-color section + section {
+  /* border: 2px solid red; */
+  display: inline-block;
+  width: 50%;
+}
+
+.main-button {
+  border: 2px solid #777;
+  display: block;
+  background-color: RGB(219,222,227);
+  font-weight: 700;
+  padding: 1rem 3rem;
+  margin: 0 auto;
+}
+.main-button:active {
+  box-shadow: 2px 2px 5px #fc894d;
+}
+
+.main-button:hover {
+  background-color: #c8d4e3;
+}
+/**************************************************************
+* Fourth Section
+***************************************************************/
+.heading-para-centered:last-of-type {
+  padding: 0 0 5rem 0;
+  
+}
+
+.heading-para-centered:last-of-type h2 {
+  /* border: 2px solid red; */
+  margin: 1rem auto;
+  padding: 5rem 0 0 0;
+}
+
+.heading-para-centered:last-of-type p {
+  /* border: 2px solid red; */
+  margin: 1rem auto;
+  padding: 1rem;
+}
+
+.heading-para-centered:last-of-type .main-button {
+  background-color: #fefefe;
+}
+.heading-para-centered:last-of-type .main-button:hover {
+  background-color: #c8d4e3;
+}
+/**************************************************************
+* Footer
+***************************************************************/
+
+footer,
+.footer {
+  /* border: 2px solid red; */
+  background-color: #161F2A;
+  border-top: 2px solid #fefefe;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-left i {
+  margin: 2rem .5rem 1rem .5rem;
+}
+.fa-square-facebook:hover {
+  color: navy;
+}
+.fa-twitter:hover {
+  color: dodgerblue;
+}
+.float-left p {
+  /* border: 2px solid red; */
+  color: #999;
+  margin: 0 .5rem;
+}
+
+.float-left ul li {
+  /* border: 2px solid red; */
+  display: inline-block;
+  margin: 0 .5rem .5rem .5rem;
+
+}
+
+.float-right {
+  float: right;
+  color: #fefefe;
+}
+
+.float-right h4 {
+  /* border: 2px solid red; */
+  width: 56%;
+  margin: 2rem .5rem 1rem .5rem;
+  font-size: .9rem;
+}
+
+.float-right p {
+  /* border: 2px solid red; */
+  width: 60%;
+  font-weight: 300;
+  padding-left: .25rem;
+}
+
+.float-right span {
+  /* border: 2px solid red; */
+  display: block;
+}
+.float-right span:nth-child(2),
+.float-right span:nth-child(4) {
+  /* border: 2px solid red; */
+  display: inline-block;
+}
+
+footer p {
+  color: #fefefe;
+}
+
+footer img {
+  float: right;
+  width: 3%;
+  cursor: pointer;
+}
+
+/**************************************************************
+* Media queries
+***************************************************************/
+
+@media screen and (max-device-width: 1440px) {
+
+  /* body {
+      border: 2px solid green;
+  }  */
+
+  /* First section  */
+  .background-image {
+    background-position: 0px -375px;
+    background-size: cover;
+  }
+
+  .background-image span {
+    width: 2%;
+    height: 6%;
+  }
+
+  /* Second section  */
+  .background-image + section p {
+    width: 30%;
+  }
+
+  /* Third section */
+  .background-color section p {
+    /* border: 2px solid red; */
+    width: 70%;
+  }
+
+  /* Fourth section */
+  .heading-para-centered:last-of-type p {
+    /* border: 2px solid red; */
+    width: 30%;
+  }
+}
+
+@media screen and (max-device-width: 1024px) {
+
+  /* body {
+      border: 2px solid fuchsia;
+  }  */
+
+    /* First section  */
+  .background-image {
+    background-position: 0px -225px;
+    background-size: cover;
+
+  }
+
+  .background-image p {
+    padding-top: 4rem;
+    width: 75%;
+  }
+
+  .background-image span {
+    width: 3%;
+    height: 6%;
+  }
+
+    /* Second section  */
+  .background-image + section p {
+    width: 45%;
+  }
+
+    /* Third section */
+    .background-color section p {
+      /* border: 2px solid red; */
+      width: 80%;
+    }
+
+  /* Fourth section */
+  .heading-para-centered:last-of-type p {
+    /* border: 2px solid red; */
+    width: 40%;
+  }
+
+}
+
+@media screen and (max-device-width: 768px) {
+
+  /* body {
+      border: 2px solid salmon;
+  }  */
+
+    /* First section  */
+  .background-image {
+    background-position: 0px -50px;
+    background-size: cover;
+
+  }
+
+  .background-image h1 {
+    line-height: 55px;
+  }
+
+  .background-image p {
+    padding-top: 3.5rem;
+    width: 75%;
+  }
+
+  .background-image span {
+    width: 4%;
+    height: 6%;
+  }
+
+    /* Second section  */
+  .background-image + section p {
+    width: 60%;
+  }
+
+    /* Third section */
+    .background-color section p {
+      /* border: 2px solid red; */
+      width: 95%;
+    }
+
+      /* Fourth section */
+  .heading-para-centered:last-of-type p {
+    /* border: 2px solid red; */
+    width: 55%;
+  }
+
+}
+
+@media screen and (max-device-width: 565px) {
+
+  /* body {
+      border: 2px solid gold;
+  }  */
+
+    /* First section  */
+  .background-image {
+    background-position: -125px 0px;
+    background-size: cover;
+
+  }
+
+  .background-image p {
+    padding-top: 2.5rem;
+    width: 90%;
+  }
+
+  .background-image span {
+    width: 7.5%;
+    height: 6%;
+  }
+
+    /* Second section  */
+  .background-image + section p {
+    width: 90%;
+  }
+
+    /* Third section */
+    .background-color section,
+    .background-color section + section {
+      display: block;
+      text-align: center;
+      margin: 0 auto;
+      padding: 1rem 0;
+    }
+
+  /* Fourth section */
+  .heading-para-centered:last-of-type h2 {
+    /* border: 2px solid red; */
+    line-height: 35px;
+  }
+
+  .heading-para-centered:last-of-type p {
+    /* border: 2px solid red; */
+    width: 95%;
+  }
+
+  /* Footer */
+  .float-right,
+  .float-left {
+    /* border: 2px solid red; */
+    float: none;
+    text-align: center;
+  }
+
+  .float-right h4,
+  .float-right p,
+  .float-right span {
+    /* border: 2px solid green; */
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .float-right p {
+    width: 40%;
+  }
+
+}
+
+@media screen and (max-device-width: 345px) {
+
+  /* body {
+      border: 2px solid red;
+  }  */
+
+    /* First section  */
+  .background-image {
+    background-position: -185px 0px;
+    background-size: cover;
+  }
+
+  .background-image h1 {
+    font-size: 3.75rem;
+  }
+
+  .background-image p {
+    padding-top: 1.5rem;
+    width: 95%;
+  }
+
+  .background-image span {
+    width: 9.5%;
+    height: 6%;
+  }
+
+    /* Second section  */
+  .background-image + section p {
+    width: 95%;
+  }
+
+    /* Third section */
+    .background-color section,
+    .background-color section + section {
+      display: block;
+      text-align: center;
+      margin: 0 auto;
+      padding: 1rem 0;
+    }
+
+      /* Fourth section */
+  .heading-para-centered:last-of-type h2 {
+    /* border: 2px solid red; */
+    line-height: 35px;
+  }
+
+  .heading-para-centered:last-of-type p {
+    /* border: 2px solid red; */
+    width: 99%;
+  }
+
+}
