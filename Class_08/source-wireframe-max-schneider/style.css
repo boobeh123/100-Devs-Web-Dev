@@ -289,28 +289,26 @@ header label {
 
 @media screen and (max-device-width: 1440px) {
 
-  body {
+  /* body {
       border: 2px solid green;
-  } 
+  }  */
 
   /* First section */
   .background-image {
     background-position: 855px 0;
   }
-
   /* Second section */
-.background-color section p {
-  width: 90%;
-  margin-bottom: 1rem;
-}
-
+  .background-color section p {
+    width: 90%;
+    margin-bottom: 1rem;
+  }
 }
 
 @media screen and (max-device-width: 1024px) {
 
-  body {
+  /* body {
       border: 2px solid fuchsia;
-  } 
+  }  */
 
   /* First section */
   .background-image {
@@ -318,152 +316,143 @@ header label {
   }
 
   /* Third section  */
-
   .centered > h2 {
     /* border: 2px solid red; */
     width: 35%;
     line-height: 35px;
   }
-  
-  
   .centered p {
     /* border: 2px solid red; */
     width: 50%;
   }
-  
-
 }
 
 @media screen and (max-device-width: 768px) {
 
-  body {
+  /* body {
       border: 2px solid salmon;
-  } 
+  }  */
 
   /* Nav */
-header input:checked + label{
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
-  color: lime;
-}
-header label,
-header ul {
-border: 1px solid #304658;
-border-radius: 6px;
-}
-header label {
-  display: inline-block;
-  padding: .4rem .6rem;
-  font-size: 1.1rem;
-  transition: all .15s ease;
-  color: #fefefe;
-  cursor: pointer;
-  background-color: #304658;
-}
-header label:hover {
-  color: royalblue;
-}
-header nav {
-  max-height: 0;
-  overflow: hidden;
-  transition: all .15s ease;
-}
-header input:checked ~ nav {
-  max-height: 500px;
-}
-header ul {
-  margin: .25rem 0 0 0;
-  padding: 0;
-  width: 100px;
-}
-header li {
-  border-bottom: 1px solid #304658;
-}
-header li:last-child {
-  border-bottom: 0;
-}
-header a {
-  display: block;
-}
-header > a {
-  display: none;
-}
-header a:hover {
-  color: royalblue;
-}
-
-/* First section */
-.background-image {
-  background-position: 185px 250px;
-  height: 70vh;
+  header input:checked + label {
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
+    color: lime;
+  }
+  header label,
+  header ul {
+    border: 1px solid #304658;
+    border-radius: 6px;
+  }
+  header label {
+    display: inline-block;
+    padding: .4rem .6rem;
+    font-size: 1.1rem;
+    transition: all .15s ease;
+    color: #fefefe;
+    cursor: pointer;
+    background-color: #304658;
+  }
+  header label:hover {
+    color: royalblue;
+  }
+  header nav {
+    max-height: 0;
+    overflow: hidden;
+    transition: all .15s ease;
+  }
+  header input:checked ~ nav {
+    max-height: 500px;
+  }
+  header ul {
+    margin: .25rem 0 0 0;
+    padding: 0;
+    width: 100px;
+  }
+  header li {
+    border-bottom: 1px solid #304658;
+  }
+  header li:last-child {
+    border-bottom: 0;
+  }
+  header a {
+    display: block;
+  }
+  header > a {
+    display: none;
+  }
+  header a:hover {
+    color: royalblue;
 }
 
-.background-image section span {
-  /* border: 2px solid red; */
-  display: block;
-  width: 50%;
-  text-align: center;
-}
+  /* First section */
+  .background-image {
+    background-position: 185px 250px;
+    height: 70vh;
+  }
 
-.background-image section h1 {
-  /* border: 2px solid red; */
-  width: 75%;
-  margin: 0 auto 0 auto;
-  text-align: center;
-}
+  .background-image section span {
+    /* border: 2px solid red; */
+    display: block;
+    width: 50%;
+    text-align: center;
+  }
 
-.background-image section input {
-  /* border: 2px solid red; */
-  display: block;
-  margin: 1rem auto 0 auto;
-  width: 50%;
-}
+  .background-image section h1 {
+    /* border: 2px solid red; */
+    width: 75%;
+    margin: 0 auto 0 auto;
+    text-align: center;
+  }
 
-.background-image section .button {
-  /* border: 2px solid red; */
-  display: block;
-  margin: 0 auto 1rem auto;
-  width: 50%;
-}
+  .background-image section input {
+    /* border: 2px solid red; */
+    display: block;
+    margin: 1rem auto 0 auto;
+    width: 50%;
+  }
 
-.background-image section p {
-  /* border: 2px solid red; */
-  display: block;
-  text-align: center;
-  margin: 0 auto 1rem auto;
-  width: 75%;
+  .background-image section .button {
+    /* border: 2px solid red; */
+    display: block;
+    margin: 0 auto 1rem auto;
+    width: 50%;
+  }
 
-}
+  .background-image section p {
+    /* border: 2px solid red; */
+    display: block;
+    text-align: center;
+    margin: 0 auto 1rem auto;
+    width: 75%;
 
-/* Second section */
-.background-color section {
-  display: inline-block;
-  width: 50%;
-  margin: 1rem 0;
-}
-.background-color section p {
-  margin-bottom: 1rem;
-}
+  }
+
+  /* Second section */
+  .background-color section {
+    display: inline-block;
+    width: 50%;
+    margin: 1rem 0;
+  }
+  .background-color section p {
+    margin-bottom: 1rem;
+  }
 
   /* Third section  */
-
   .centered > h2 {
     /* border: 2px solid red; */
     width: 45%;
   }
-  
-  
   .centered  p {
     /* border: 2px solid red; */
     width: 60%;
   }
-
 }
 
 @media screen and (max-device-width: 565px) {
   
-  body {
+  /* body {
     border: 2px solid gold;
-  } 
+  }  */
 
   /* first section  */
   .background-image {
@@ -482,69 +471,66 @@ header a:hover {
   .background-image section input {
     width: 75%;
   }
-  
-.background-image section .button {
-  width: 75%;
-}
+    
+  .background-image section .button {
+    width: 75%;
+  }
 
-.background-image section p {
-  /* border: 2px solid red; */
-  width: 90%;
-}
+  .background-image section p {
+    /* border: 2px solid red; */
+    width: 90%;
+  }
 
-/* Second section */
-.background-color section {
-  display: block;
-  text-align: center;
-  margin: 0 auto;
-}
+  /* Second section */
+  .background-color section {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+  }
 
-.background-color section p {
-  width: 100%;
-}
+  .background-color section p {
+    width: 100%;
+  }
 
-.background-color section .button {
-  margin-bottom: 1rem;
-}
+  .background-color section .button {
+    margin-bottom: 1rem;
+  }
 
   /* Third section  */
-
   .centered > h2 {
     width: 80%;
   }
-  
-  .centered  p {
+  .centered p {
     width: 90%;
   }
-  
 }
 
 @media screen and (max-device-width: 345px) {
 
-  body {
+  /* body {
       border: 2px solid red;
-  } 
+  }  */
 
-    /* first section  */
-    .background-image {
-      background-position: -75px 300px;
-      height: 75vh;
-    }
+  /* first section  */
+  .background-image {
+    background-position: -75px 300px;
+    height: 75vh;
+  }
+  
+  .background-image section span {
+    /* border: 2px solid red; */
+    display: block;
+    margin: 0 auto;
+  }
 
-    .background-image section span {
-      /* border: 2px solid red; */
-      display: block;
-      margin: 0 auto;
-    }
+  .background-image section h1 {
+    width: 100%;
+  }
+
+  .background-image section input {
+    width: 95%;
+  }
   
-    .background-image section h1 {
-      width: 100%;
-    }
-  
-    .background-image section input {
-      width: 95%;
-    }
-    
   .background-image section .button {
     width: 95%;
   }
@@ -552,19 +538,15 @@ header a:hover {
   .background-image section p {
     /* border: 2px solid red; */
     width: 100%;
-  
   }
+  
+  /* Third section  */
 
-    /* Third section  */
-
-    .centered > h2 {
-      width: 95%;
-    }
-    
-    .centered p {
-      width: 95%;
-    }
-
+  .centered > h2 {
+    width: 95%;
+  }
+  
+  .centered p {
+    width: 95%;
+  }
 }
-
-
