@@ -2,7 +2,7 @@
 This web page features Source-wireframe. 
 I am coming back to build these websites to apply the principles I learned from the reading in class 4 and 6.
 
-This webpage is hosted on netlify: 
+This webpage is hosted on netlify: https://boobeh123-source.netlify.app/
 
 ## Demo
 ![demogif](sourcedemo.gif)
