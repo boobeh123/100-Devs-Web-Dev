@@ -8,13 +8,13 @@ This webpage is hosted on netlify:
 ![demogif](sourcedemo.gif)
 
 ## Features
-* 
+* Responsive design to view most device viewports.
+* Functional hamburger menu with CSS, no JavaScript.
+* Use of sprites.
 
 ## Technologies
 <img src="https://profilinator.rishav.dev/skills-assets/html5-original-wordmark.svg" alt="HTML5" height="50" /><img src="https://profilinator.rishav.dev/skills-assets/css3-original-wordmark.svg" alt="CSS3" height="50" />
 
 ## Optimitzation
-* 
-
-## What did you learn?
-* 
+* Make a horizontal hamburger menu for narrower viewports.
+* Add a footer with columns.
