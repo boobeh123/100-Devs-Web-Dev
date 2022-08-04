@@ -178,7 +178,7 @@ display: none;
   /* border: 2px solid red; */
   height: 55vh;
   background-color: #1B2031;
-  background: linear-gradient(-5deg, #fefefe 25%, #1B2031 25%);
+  background: linear-gradient(-5deg, #F8F8FA 25%, #1B2031 25%);
   
 }
 .background-color section {
@@ -233,7 +233,6 @@ display: none;
 }
 
 .background-color .image-container {
-  /* border: 2px solid green; */
   display: inline-block;
   border: 2px solid #fefefe;
   background-color: #fefefe;
@@ -242,6 +241,7 @@ display: none;
   width: 30%;
   height: 75%;
   margin: 4.5rem 2rem 0 0;
+  /* border: 2px solid green; */
 }
 .image-container-overlay {
   border: 2px solid lightgray;
@@ -259,6 +259,168 @@ display: none;
 /**************************************************************
 * Second Section
 ***************************************************************/
+.logos {  
+  border: 2px solid red;
+  background-color: #F8F8FA;
+  color: #1A2031;
+}
+
+.logos aside {
+  /* border: 2px solid green; */
+  margin-bottom: 3rem;
+}
+
+.logos span {
+  /* border: 2px solid red; */
+  background-image: url("images/logos.jpg");
+  height: 5rem;
+  width: 10rem;
+}
+
+.logos span:nth-child(7) {
+  /* border: 2px solid fuchsia; */
+  background-position: -6px;
+}
+.logos span:nth-child(6) {
+  /* border: 2px solid fuchsia; */
+  background-position: -195px;
+}
+.logos span:nth-child(5) {
+  /* border: 2px solid fuchsia; */
+  background-position: -390px;
+}
+.logos span:nth-child(4) {
+  /* border: 2px solid fuchsia; */
+  background-position: -550px;
+}
+.logos span:nth-child(3) {
+  /* border: 2px solid fuchsia; */
+  background-position: -695px;
+}
+.logos span:nth-child(2) {
+  /* border: 2px solid fuchsia; */
+  background-position: -895px;
+}
+.logos span:nth-child(1) {
+  /* border: 2px solid fuchsia; */
+  background-position: -1075px;
+}
+
+.logos p:first-of-type {
+  /* border: 2px solid red; */
+  font-size: .9rem;
+  font-weight: 700;
+  margin: 0 0 1rem 5rem;
+  width: 45%;
+  /* display:inline-block; */
+}
+
+.logos h2 {
+  border: 2px solid salmon;
+  font-size: 2rem;
+  margin: 0 0 1rem 5rem;
+  width: 45%;
+  line-height: 35px;
+  /* display:inline-block; */
+
+}
+
+.logos p:last-of-type,
+.logos p:nth-last-of-type(2) {
+  /* border: 2px solid gold; */
+  font-weight: 300;
+  margin: 0 0 1rem 5rem;
+  width: 45%;
+  /* display:inline-block; */
+
+}
+
+.logos button {
+  background-color: #1B2031;
+  color: #fefefe;
+  margin: 0 0 1rem 5rem;
+  padding: .75rem 2.5rem;
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: 0;
+  border: 2px solid lime;
+  cursor: pointer;
+  transition: all .1s linear;
+  box-shadow: 0 5px 0 #333;
+  font-weight: 700;
+  /* display:block; */
+
+}
+.logos button:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #1B2031;
+}
+
+.logos .image-container {
+  border: 2px solid gold;
+  display: inline-block;
+  border: 2px solid #fefefe;
+  background-color: #fefefe;
+  box-shadow: 2px 2px 5px #999;
+  border-radius: 10px;
+  width: 45%;
+  height: 50rem;
+  margin: 1rem;
+
+}
+
+.logos .image-container .image-container-overlay {
+  /* border: 2px solid red; */
+  display: inline-block;
+  border: 2px solid #fefefe;
+  background-color: #fefefe;
+  box-shadow: 2px 2px 5px #999;
+  border-radius: 10px;
+  width: 45%;
+  height: 45%;
+  margin: 1rem 1rem 1rem 2rem;
+  background: linear-gradient(0deg,#fefefe 25%, #999 25%);
+  perspective: 600;
+}
+.logos .image-container .image-container-overlay:nth-child(1) {
+  background: linear-gradient(0deg,#fefefe 25%, #1B2031 25%);
+}
+.logos .image-container-overlay {
+  transition: all 2s ease-in-out;
+  transform-style: preserve-3d;
+}
+.logos .image-container-overlay:hover {
+  transform: rotateY(180deg);
+}
+.logos .image-container-overlay .back {
+  transform: rotateY(180deg);
+}
+.logos .image-container-overlay .side {
+  position: absolute;
+  height: 65%;
+  width: 100%;
+  backface-visibility: hidden;
+}
+.logos .image-container-overlay .side:active {
+  backface-visibility: none;
+} 
+
+.logos .image-container-overlay h3 {
+  margin: 19rem 10rem 0 10rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.logos .image-container-overlay p {
+  border: 2px solid green;
+  color: #fefefe;
+  margin: 5rem auto;
+  text-align: center;
+  font-size: 2rem;
+  line-height: 30px;
+}
+
+*/
 
 /**************************************************************
 * Third Section
@@ -310,7 +472,8 @@ display: none;
     
     }
     .image-container-overlay img {
-      width: 65%;
+      width: 85%;
+      height: 85%;
     }
 
 }
@@ -355,9 +518,54 @@ display: none;
     height: 90%;
   }
   .image-container-overlay img {
-    height: 75%;
+    width: 85%;
+    height: 85%;
   }
 
+    /* Second Section */
+    .logos span:nth-child(7) {
+      /* border: 2px solid fuchsia; */
+      display: inline-block;
+      margin: 1rem;
+      float: none;
+    }
+    .logos span:nth-child(6) {
+      /* border: 2px solid fuchsia; */
+      display: inline-block;
+      margin: 1rem;
+      float: none;
+    }
+    .logos span:nth-child(5) {
+      /* border: 2px solid fuchsia; */
+      display: inline-block;
+      margin: 1rem 1rem 1rem 13rem;
+      float: none;
+    }
+    .logos span:nth-child(4) {
+      /* border: 2px solid fuchsia; */
+      display: inline-block;
+      margin: 1rem;
+      float: none;
+    }
+    .logos span:nth-child(3) {
+      /* border: 2px solid fuchsia; */
+      display: inline-block;
+      margin: 1rem;
+      float: none;
+    }
+    .logos span:nth-child(2) {
+      /* border: 2px solid fuchsia; */
+      display: inline-block;
+      margin: 1rem;
+
+      float: none;
+    }
+    .logos span:nth-child(1) {
+      /* border: 2px solid fuchsia; */
+      display: inline-block;
+      margin: 1rem 1rem 1rem 5rem;
+      float: none;
+    }
 
 }
 
@@ -426,6 +634,10 @@ display: none;
 
   /* First section */
 
+  .background-color {
+    height: 65vh;
+  }
+
   .background-color section h1 {
     width: 95%;
     margin-left: 2.5rem;
@@ -438,11 +650,12 @@ display: none;
   .background-color section button {
     /* border: 2px solid red; */
     display: block;
-    margin: 0 auto;
+    margin: 0 auto 1rem auto;
 
   }
   .background-color section span {
     margin-left: 17.5rem;
+
   }
   .background-color section {
     /* border: 2px solid gold; */
@@ -450,12 +663,12 @@ display: none;
     float: none;
   }
   .background-color .image-container {
-    border: 2px solid green;
+    /* border: 2px solid green; */
     float: none;
     display: block;
-    margin: 1rem auto;
-    width: 70%;
-    height: 70%;
+    margin: 1rem auto 1rem auto;
+    width: 85%;
+    height: 50%;
 
   }
   .image-container-overlay {
@@ -463,8 +676,55 @@ display: none;
     height: 90%;
   }
   .image-container-overlay img {
-    height: 75%;
+    width: 85%;
+    height: 85%;
   }
+
+    /* Second Section */
+    .logos span:nth-child(7) {
+      /* border: 2px solid fuchsia; */
+      display: block;
+      margin: 0 auto;
+      float: none;
+    }
+    .logos span:nth-child(6) {
+      /* border: 2px solid fuchsia; */
+      display: inline-block;
+      margin: 1rem;
+      float: none;
+    }
+    .logos span:nth-child(5) {
+      /* border: 2px solid fuchsia; */
+      display: inline-block;
+      margin: 1rem;
+      float: none;
+    }
+    .logos span:nth-child(4) {
+      /* border: 2px solid fuchsia; */
+      display: inline-block;
+      margin: 1rem 1rem 1rem 5rem;
+      float: none;
+    }
+    .logos span:nth-child(3) {
+      /* border: 2px solid fuchsia; */
+      display: inline-block;
+      margin: 1rem;
+      float: none;
+    }
+    .logos span:nth-child(2) {
+      /* border: 2px solid fuchsia; */
+      display: inline-block;
+      margin: 1rem;
+
+      float: none;
+    }
+    .logos span:nth-child(1) {
+      /* border: 2px solid fuchsia; */
+      display: inline-block;
+      margin: 1rem 1rem 1rem 5rem;
+      float: none;
+    }
+  
 
 }
 
@@ -473,8 +733,6 @@ display: none;
   body {
       border: 2px solid gold;
   } 
-
-  /* This is where I last left off  */
 
     /* First section */
     .background-color section h1 {
@@ -494,6 +752,76 @@ display: none;
     .background-color section span {
       margin-left: 6.5rem;
     }
+
+    .background-color section {
+      /* border: 2px solid gold; */
+      width: 95%;
+      float: none;
+    }
+
+    .background-color .image-container {
+      border: 2px solid green;
+      /* margin: 1rem auto 1rem auto;
+      width: 85%;
+      height: 60%; */
+      display: none;
+  
+    }
+    .image-container-overlay {
+      /* width: 90%;
+      height: 90%; */
+      display: none;
+
+    }
+    .image-container-overlay img {
+      /* height: 85%; */
+      display: none;
+    }
+
+      /* Second Section */
+  .logos span:nth-child(7) {
+    /* border: 2px solid fuchsia; */
+    display: block;
+    margin: 0 auto;
+    float: none;
+  }
+  .logos span:nth-child(6) {
+    /* border: 2px solid fuchsia; */
+    display: block;
+    margin: 0 auto;
+    float: none;
+  }
+  .logos span:nth-child(5) {
+    /* border: 2px solid fuchsia; */
+    display: block;
+    margin: 0 auto;
+    float: none;
+  }
+  .logos span:nth-child(4) {
+    /* border: 2px solid fuchsia; */
+    display: block;
+    margin: 0 auto;
+    float: none;
+  }
+  .logos span:nth-child(3) {
+    /* border: 2px solid fuchsia; */
+    display: block;
+    margin: 0 auto;
+    float: none;
+  }
+  .logos span:nth-child(2) {
+    /* border: 2px solid fuchsia; */
+    display: block;
+    margin: 0 auto;
+    float: none;
+  }
+  .logos span:nth-child(1) {
+    /* border: 2px solid fuchsia; */
+    display: block;
+    margin: 0 auto;
+    float: none;
+  }
+
 
 }
 
@@ -521,5 +849,53 @@ display: none;
       .background-color section span {
         margin-left: 4.5rem;
       }
+
+      .image-container-overlay img {
+        width: 85%;
+      }
+
+  /* Second Section */
+  .logos span:nth-child(7) {
+    /* border: 2px solid fuchsia; */
+    display: block;
+    margin: 0 auto;
+    float: none;
+  }
+  .logos span:nth-child(6) {
+    /* border: 2px solid fuchsia; */
+    display: block;
+    margin: 0 auto;
+    float: none;
+  }
+  .logos span:nth-child(5) {
+    /* border: 2px solid fuchsia; */
+    display: block;
+    margin: 0 auto;
+    float: none;
+  }
+  .logos span:nth-child(4) {
+    /* border: 2px solid fuchsia; */
+    display: block;
+    margin: 0 auto;
+    float: none;
+  }
+  .logos span:nth-child(3) {
+    /* border: 2px solid fuchsia; */
+    display: block;
+    margin: 0 auto;
+    float: none;
+  }
+  .logos span:nth-child(2) {
+    /* border: 2px solid fuchsia; */
+    display: block;
+    margin: 0 auto;
+    float: none;
+  }
+  .logos span:nth-child(1) {
+    /* border: 2px solid fuchsia; */
+    display: block;
+    margin: 0 auto;
+    float: none;
+  }
 
 }
