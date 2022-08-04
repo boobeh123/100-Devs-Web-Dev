@@ -1,37 +1,83 @@
 /**************************************************************
-* 
+* How to use promises
+***************************************************************/
+/*
+Promises are the foundation of asynchronous programming in modern JavaScript.
+
+A promise is an object returned by an asynchronous function, 
+which represents the current state of the operation. 
+
+When the promise is returned to the caller, the operation often isn't finished.
+The promise object provides methods to handle the eventual success or
+failure of the operation.
+
+We talked about the use of callbacks to implement asynchronous functions. 
+You call the asynchronous function, passing in your callback function. 
+The function returns immediately and calls your callback when the operation is 
+finished.
+
+With a promise-based API, 
+You can then attach handlers to this promise object, and these handlers will 
+be executed when the operation has succeeded or failed.
+*/
+/**************************************************************
+* How to use promises
+***************************************************************/
+
+
+
+
+/**************************************************************
+* Using the fetch() API
+***************************************************************/
+/*
+1 - Open a browser tab and visit https://example.org
+2 - Open the console, copy examples, and paste it into the console. 
+3 - Reload the page for every new example. Otherwise the console will complain that you have redeclared fetchPromise.
+
+To download JSON files we will make an HTTP request to the server.
+We want to download the JSON file and log information about it:
+https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json
+
+In an HTTP request, 
+we send a request message to a remote server, and it sends us back a response.
+
+The fetch() API is the modern, promise-based replacement for XMLHttpRequest.
+
+In the example below, 
+- I call the fetch() API and assign the return value into variable, fetchPromise.
+- Logging the fetchPromise variable outputs Promise { <state>: "pending" }.
+    - This tells us that we have a Promise object & it has a state of "pending"
+- I pass a handler function into the Promise's then() method.
+    - If fetch succeeds, the promise calls our handler & passes in a Response object.
+        - This response object contains the server's response.
+
+Notice that the console logged "Started request…" before we receive the response. 
+Unlike a synchronous function, fetch() returns while the request is still going on, 
+enabling our program to stay responsive. 
+The response shows the 200 (OK) status code, meaning that our request succeeded.
+*/
+const fetchPromise = fetch('https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json');
+console.log(fetchPromise);  // Output -> Promise {<pending>}
+fetchPromise.then((response) => {
+  console.log(`Received response: ${response.status}`); // Output -> Received response: 200
+});
+console.log("Started request…");    // Output -> Started request…
+/**************************************************************
+* Using the fetch() API
+***************************************************************/
+
+
+
+
+/**************************************************************
+* Chaining Promises
 ***************************************************************/
 /*
 
 */
 /**************************************************************
-* 
-***************************************************************/
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-
-*/
-/**************************************************************
-* 
-***************************************************************/
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-
-*/
-/**************************************************************
-* 
+* Chaining Promises
 ***************************************************************/
 
 
