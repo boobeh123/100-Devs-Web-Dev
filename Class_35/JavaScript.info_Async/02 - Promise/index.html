@@ -1,13 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript.Info - Async/await</title>
+    <title>JavaScript.Info - Promises</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .message-ball {
+            font-size: 20px;
+            line-height: 200px;
+            text-align: center;
+        }
+        .circle {
+            transition-property: width, height;
+            transition-duration: 2s;
+            position: fixed;
+            transform: translateX(-50%) translateY(-50%);
+            background-color: red;
+            border-radius: 50%;
+        }
+    </style>
 </head>
 <body>
-    <script src="main.js"></script>
+    <button onclick="go()">Answer for base+promise</button>
+<script>
+function go() {                                 // go() function executes on click
+    showCircle(150, 150, 100).then(div => {     // Calls showCircle function & passes parameters, waits for circle to complete, THEN ->
+        div.classList.add('message-ball');      // -> Adds .message-ball class to created div elements
+        div.append("Hello world");              // -> Appends a string to created div elements
+    })
+}
+
+function showCircle(circleWidth, circleHeight, radius) {
+    const div = document.createElement('div');  // Creates <div> elements
+    div.style.width = 0;                        // Setting width property on created <div> elements
+    div.style.height = 0;                       // Setting height property on created <div> elements
+    div.className = 'circle';                   // Applies the .circle class -> Circle class contains position property
+    div.style.left = circleWidth + 'px';        // Setting left property on created <div> elements
+    div.style.top = circleHeight + 'px';        // Setting top property on created <div> elements
+    document.body.append(div);                  // Appending a createdElement to the document body
+    
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            div.style.width = radius * 2 + 'px';        // Overwrites width property-value from 0 to the result of the expression
+            div.style.height = radius * 2 + 'px';       // Overwrites height property-value from 0 to the result of the exprssion
+            
+            div.addEventListener('transitionend', function handler() {  // Listening for a transition event, on event run anonymous handler() function
+                div.removeEventListener('transitionend', handler);      // Removes the eventlistener & anonymous handler function??
+                resolve(div);                                           // Fulfills the promise with a result of div variable?
+            })
+    }, 250)                                                             // Delay of quarter of a second.
+});
+}
+</script>
+<!-- <script src="main.js"></script> -->
 </body>
 </html>
