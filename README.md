@@ -1,7 +1,5 @@
 ## Hello 👋 Welcome to my web dev repository. 
 This repo contains my perspective reading & coding along to various HTML, CSS, and JavaScript resources.
-
-## For folks: Class 26 is when I learned Git & Github. Any previous uploads are refactored code and not submissions.
  
 * Video tutorials, guides, & articles
     * Traversy Media
@@ -20,4 +18,6 @@ This repo contains my perspective reading & coding along to various HTML, CSS, a
 * Codewars
 
 ## Technologies
-<img src="https://profilinator.rishav.dev/skills-assets/html5-original-wordmark.svg" alt="HTML5" height="50" /><img src="https://profilinator.rishav.dev/skills-assets/css3-original-wordmark.svg" alt="CSS3" height="50" /><img src="https://profilinator.rishav.dev/skills-assets/javascript-original.svg" alt="JavaScript" height="40" /><img src="https://profilinator.rishav.dev/skills-assets/nodejs-original-wordmark.svg" alt="NodeJS" height="50" />
+<img src="https://profilinator.rishav.dev/skills-assets/html5-original-wordmark.svg" alt="HTML5" height="50" /><img src="https://profilinator.rishav.dev/skills-assets/css3-original-wordmark.svg" alt="CSS3" height="50" /><img src="https://profilinator.rishav.dev/skills-assets/javascript-original.svg" alt="JavaScript" height="40" /> <img src="https://profilinator.rishav.dev/skills-assets/nodejs-original-wordmark.svg" alt="NodeJS" height="50" />
+
+## For folks: Class 26 is when I started uploading to Github. <br> Every previous folder contains refactored code. These are not submissions.
