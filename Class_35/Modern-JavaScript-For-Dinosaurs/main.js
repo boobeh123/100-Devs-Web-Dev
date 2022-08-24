@@ -13,7 +13,7 @@ tools have evolved to what they are today.
 We’ll start from the beginning and build an example website like 
 the dinosaurs did — no tools, just plain HTML and JavaScript. 
 Then we’ll introduce different tools incrementally to see the problems 
-that they solve one at a time. 
+that they solve one at a time.  
 
 With this historical context, 
 you’ll be better able to learn and adapt to the ever-changing JavaScript 
@@ -156,21 +156,27 @@ similar language.
 Browsers are slow to add new features. New languages were created with 
 experimental features that transpile to browser compatible languages.
 
-For CSS, there’s Sass, Less, and Stylus, to name a few. 
-For JavaScript, the most popular transpiler for a while was CoffeeScript, 
-whereas nowadays most people use babel or TypeScript. 
+** Note from me: I have created a new directory for this example,   **
+** It is in the folder "Transpiling-code-example"                   **
 
-CoffeeScript is a language focused on improving JavaScript by significantly 
-changing the language — optional parentheses, significant whitespace, etc. 
+We’re installing 3 separate packages as dev dependencies— 
+@babel/core is the main part of babel, 
+@babel/preset-env is a preset defining which new JavaScript features to transpile, 
+babel-loader is a package to enable babel to work with webpack. 
+We can configure webpack to use babel-loader by editing the webpack.config.js.
 
-Babel is not a new language but a transpiler that transpiles next generation 
-JavaScript with features not yet available to all browsers to older more 
-compatible JavaScript (ES5). 
+We’re telling webpack to look for any .js files and apply 
+babel transpilation using babel-loader with the @babel/preset-env preset. 
 
-Typescript is a language that is essentially identical to next generation 
-JavaScript, but also adds optional static typing. 
+Most modern browsers support all ES2015 features, 
+you can see the transpiled code that babel made by searching the dist/main.js
+file and look for the "Hello" console.log in the example.
+Here you can see babel transpiled the ES2015 template string into 
+regular JavaScript string concatenation to maintain browser compatibility. 
 
-
+Transpilation may at times seem tedious and painful, 
+it has led to a dramatic improvement of the language in the past few years, 
+as people are testing out tomorrow’s features today.
 */
 /**************************************************************
 * Transpiling code for new language features (babel)
@@ -180,24 +186,74 @@ JavaScript, but also adds optional static typing.
 
 
 /**************************************************************
-* 
+* Using a task runner (npm scripts)
 ***************************************************************/
 /*
+Now that we’re invested in using a build step to work with JavaScript modules, 
+it makes sense to use a task runner, which is a tool that automates different parts of the build process. 
 
+Tasks include minifying code, optimizing images, running tests.
+
+The npm package manager has scripting capabilities
+
+We've added two scripts, build and watch. These scripts can run webpack 
+without having to specify the full path
+
+** Note from me: I have created a new directory for this example,   **
+** It is in the folder "Task-runner-example"                        **
+
+The build script will run webpack with the --mode=production option 
+to minimize the code for production.
+The watch script uses the --watch option to automatically re-run webpack 
+each time any JavaScript file changes.
+(My build & watch scripts detects changes in the index.js file)
+
+Installing the webpack-dev-server is a separate tool which provides 
+a simple web server with live reloading. 
+
+This will automatically open the index.html website in your browser 
+with an address of localhost:8080 (by default). 
+
+Any time you change your JavaScript in index.js, 
+webpack-dev-server will rebuild its own bundled JavaScript and refresh the browser automatically. 
+(My webpack dev server does not detect changes in the index.js file)
+(It also does not bundle the new file & refresh the browser automatically)
 */
 /**************************************************************
-* 
+* Using a task runner (npm scripts)
 ***************************************************************/
 
 
 
 
 /**************************************************************
-* 
+* Conclusion
 ***************************************************************/
 /*
+So this is modern JavaScript in a nutshell. 
+We went from plain HTML and JS 
+to using a package manager 
+to automatically download 3rd party packages, 
+a module bundler to create a single script file, 
+a transpiler to use future JavaScript features, 
+and a task runner to automate different parts of the build process. 
 
+Definitely a lot of moving pieces here, especially for beginners. 
+
+It’s nice and consistent to use npm as a package manager, 
+node require or import statements for modules, 
+and npm scripts for running tasks. 
+
+However, these tools aren’t magic, 
+it’s still very critical to understand what each piece does as we’ve covered in this article.
+
+Modern JavaScript can definitely be frustrating to work with 
+as it continues to change and evolve at a rapid pace. 
+But even though it may seem at times like re-inventing the wheel, 
+JavaScript’s rapid evolution has helped push innovations 
+such as hot reloading, real-time linting, and time-travel debugging. 
+It’s an exciting time to be a developer, and I hope this information can serve as a roadmap to help you on your journey!
 */
 /**************************************************************
-* 
+* Conclusion
 ***************************************************************/
