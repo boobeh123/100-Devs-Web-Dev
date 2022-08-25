@@ -1,9 +1,7 @@
-## Summary:
-The concepts covered in this reading:
+## String submissions:
+[Link to my codewars solutions](https://github.com/boobeh123/Codewars)
 
-* 
+8kyu: 
 
-## Lessons learned:
-
-## Source:
-DO: 5 String-related Code Challenges from Codewars
+## Assignment:
+Do: 5 Codewars (search string problems)
