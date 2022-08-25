@@ -74,8 +74,6 @@ in a larger string and returns true or false.
 
 This has many applications, 
 but one common use-case is for string matching for searching/parsing.
-
-
 */
 
 // Using the .includes() method
@@ -83,8 +81,8 @@ const author = 'olleh dlrow';
 const userSearchTermA = 'hello';
 const userSearchTermB = 'olleh';
 
-console.log(name.includes(userSearchTermA));    // Output -> false
-console.log(name.includes(userSearchTermB));    // Output -> true
+console.log(author.includes(userSearchTermA));    // Output -> false
+console.log(author.includes(userSearchTermB));    // Output -> true
 /**************************************************************
 * String Method: .includes() (Determine if string contains substring)
 ***************************************************************/
@@ -115,8 +113,8 @@ const author = 'olleh dlrow';
 const userSearchTermA = 'world';
 const userSearchTermB = 'dlrow';
 
-console.log(name.indexOf(userSearchTermA));    // Output -> -1
-console.log(name.indexOf(userSearchTermB));    // Output -> 6
+console.log(author.indexOf(userSearchTermA));    // Output -> -1
+console.log(author.indexOf(userSearchTermB));    // Output -> 6
 
 // Mimicing the behavior of .includes() using .indexOf()
 const author = 'olleh dlrow';
@@ -179,7 +177,17 @@ since it uses a string pattern.
 */
 
 // Using the .replace() method
+let twoWorlds = 'Hi folx, My name is also folx. How funny.';
+const removeTheseWords = /folx/ig;
+const removeThisWord = 'folx';
+const replaceWith = 'world';
 
+// Original string
+console.log(twoWorlds);                                         // Output -> Hi folx, My name is also folx. How funny.
+// Using regex pattern
+console.log(twoWorlds.replace(removeTheseWords, replaceWith));  // Output ->​ Hi world, My name is also world. How funny.
+// Using string pattern
+console.log(twoWorlds.replace(removeThisWord, replaceWith));    // Output ->​ Hi world, My name is also folx. How funny.
 /**************************************************************
 * String Method: .replace() (Replaces strings with new values)
 ***************************************************************/
@@ -188,86 +196,179 @@ since it uses a string pattern.
 
 
 /**************************************************************
-* 
+* String Method: .slice() (Return a section of a string)
 ***************************************************************/
 /*
+The slice() method will extract a section of a string based on 
+the index supplied and return it as a new string. 
+
+This is useful when you know the structure of a string 
+and want to retrieve a certain portion, 
+or it can be used with the indexOf method where you can find the index of the 
+first occurrence of a substring and use that as a reference point for slicing.
+
+slice() takes the beginning index as the first parameter 
+and an optional ending index as the second parameter.
+
+If no ending index is supplied, 
+it slices to the end of the string starting with your beginIndex. 
+If a negative beginIndex is used, 
+it will slice backwards from the end of the string. 
 */
+
+// Using the slice() method
+let str = 'User input: Hello there friends';
+console.log(str.slice(12,17));          // Output -> Hello
+
+// Using .indexOf() and slice()
+let str = `We don't get got, we go get`;
+let firstIndex = str.indexOf(',') + 1;  // Without the +1 the ',' is not extracted. Account for the , character
+let newStr = str.slice(firstIndex);
+console.log(newStr);                    // Output -> we go get
+
+// Using negative index
+let str = 'Test test one two three';
+console.log(str.slice(-5));             // Output -> three
+console.log(str.slice(-13, -6));        // Output -> one two
 /**************************************************************
-* 
+* String Method: .slice() (Return a section of a string)
 ***************************************************************/
 
 
 
 
 /**************************************************************
-* 
+* String Method: .split() (Converts string into an array of strings)
 ***************************************************************/
 /*
+The split() method takes a separator 
+which you want to split apart the string on, 
+and it returns an array of strings. 
+
+This is useful when you know your string uses 
+a certain character to separate data, 
+or if you want to operate on specific substrings individually.
 */
+
+// Using the split() method
+let str = 'The cow jumped over the moon';
+let words = str.split(' ');
+let letters = str.split('');
+console.log(words);             // Output -> ['The', 'cow', 'jumped', 'over', 'the', 'moon']
+console.log(words.length);      // Output -> 6
+console.log(letters);           // Output -> ['T', 'h', 'e', ' ', 'c', 'o', 'w', ' ', 'j', 'u', 'm', 'p', 'e', 'd', ' ', 'o', 'v', 'e', 'r', ' ', 't', 'h', 'e', ' ', 'm', 'o', 'o', 'n']
+console.log(letters.length);    // Output -> 28
+
+// Splitting string by character
+let strColumns = 'username:firstName:lastName:email';
+let columIds = strColumns.split(':');
+console.log(columIds);          // Output -> ['username', 'firstName', 'lastName', 'email']
 /**************************************************************
-* 
+* String Method: .split() (Converts string into an array of strings)
 ***************************************************************/
 
 
 
 
 /**************************************************************
-* 
+* String Method: .repeat() (Repeats a string a specified number of times)
 ***************************************************************/
 /*
+The repeat() function returns a string 
+consisting of the elements of the object 
+repeated the given number of times.
 */
+
+// Using the repeat() method
+let nums = '21 ';
+console.log(nums.repeat(21));   // Output -> 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 
 /**************************************************************
-* 
+* String Method: .repeat() (Repeats a string a specified number of times)
 ***************************************************************/
 
 
 
 
 /**************************************************************
-* 
+* String Method: .match() (Returns array of matching strings)
 ***************************************************************/
 /*
+match() retrieves the matches when matching a string against a regular expression.
+
+The example below searches our string for all capital letters. 
+It returns an array of strings for the values that match the regex.
 */
+
+let js = `How Can Mirrors Be Real If Our Eyes Aren't Real`;
+let capitalRegex = /[A-Z]/g;
+let capitalLetters = js.match(capitalRegex);
+console.log(capitalLetters);    // Output -> ['H', 'C', 'M', 'B', 'R', 'I', 'O', 'E', 'A', 'R']
 /**************************************************************
-* 
+* String Method: .match() (Returns array of matching strings)
 ***************************************************************/
 
 
 
 
 /**************************************************************
-* 
+* String Method: .charAt() (Returns the character at an index)
 ***************************************************************/
 /*
+The charAt() function returns the string character at a given index.
 */
+
+// Using charAt() method
+const greet = 'Hello world';
+console.log(greet.charAt(0));   // Output -> H
+console.log(greet.charAt(6));   // Output -> W
 /**************************************************************
-* 
+* String Method: .charAt() (Returns the character at an index)
 ***************************************************************/
 
 
 
 
 /**************************************************************
-* 
+* String Method: .charAt() (Returns the character at an index)
 ***************************************************************/
 /*
+charCodeAt() returns the unicode of the character 
+at a specified index in a string. 
+
+This an UTF-16 cone integer between 0 and 65535.
 */
+
+// Using charCodeAt() method
+const greet = 'Hello world 🤠';
+console.log(greet.charAt(12));   // Output -> Output -> � (cowboy emoji)
+console.log(greet.charCodeAt(12));   // Output -> Output -> 55358
 /**************************************************************
-* 
+* String Method: .charAt() (Returns the character at an index)
 ***************************************************************/
 
 
 
 
 /**************************************************************
-* 
+* Conclusion
 ***************************************************************/
 /*
+This list covers an essential list of string methods used in JavaScript.
+
+Methods not covered in this list include:
+lastIndexOf, 
+search, 
+substring, 
+substr, 
+concat, 
+localeCompare, and others. 
+
+It’s not that these functions are not important, 
+but they are not core methods utilized in JavaScript, 
+and you are much less likely to see or need them. 
+
+For a more comprehensive list, refer to the MDN string documentation.
 */
 /**************************************************************
-* 
+* Conclusion
 ***************************************************************/
-
-
-
-
