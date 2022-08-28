@@ -7,5 +7,7 @@
 
 8kyu: Multiplication Table For Number
 
+8kyu: Vowel remover
+
 ## Assignment:
 Do: 5 Codewars (search string problems)
