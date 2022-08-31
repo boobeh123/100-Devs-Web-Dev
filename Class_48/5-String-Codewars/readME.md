@@ -9,5 +9,7 @@
 
 8kyu: Vowel remover
 
+8kyu: Palindrome Strings
+
 ## Assignment:
 Do: 5 Codewars (search string problems)
