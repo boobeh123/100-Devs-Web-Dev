@@ -3,11 +3,14 @@
 `New week:`
 ```
 8kyu: Dollars and Cents
+
+8kyu: Alan Partridge II Apple Turnover
 ```
 
 `Previous week:`
 ```
-8kyu:
+8kyu: Correct the mistakes of the character recognition software
+
 8kyu:
 8kyu:
 8kyu:
