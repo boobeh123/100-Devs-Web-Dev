@@ -5,15 +5,20 @@
 8kyu: Dollars and Cents
 
 8kyu: Alan Partridge II Apple Turnover
+
+8kyu: Contamination #1 String
 ```
 
 `Previous week:`
 ```
 8kyu: Correct the mistakes of the character recognition software
 
+8kyu:Capitalization and Mutability
+
 8kyu:
+
 8kyu:
-8kyu:
+
 8kyu:
 ```
 
