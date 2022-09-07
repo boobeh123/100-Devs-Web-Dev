@@ -154,7 +154,7 @@ If we don't need to send the browser information, we ask the browser to redirect
 // Using the insertOne method to add into a MongoDB collection
 app.post('/quotes', (request, response) => {
     quotesCollection.insertOne(request.body)
-    .then(result {
+    .then(result => {
         console.log(result);
     })
     .catch(error => console.error(error));
@@ -167,254 +167,148 @@ app.post('/quotes', (request, response) => {
 
 
 /**************************************************************
-* 
+* Displaying quotes to users (READ Operation)
 ***************************************************************/
 /*
+We need to do two things to display quotes 
+from MongoDB Atlas to our users.
+    * Get quotes from MongoDB Atlas
+    * Rendering the quotes in HTML with a template engine
+
+There's no way to add dynamic content to an HTML file.
+We will use Embedded JavaScript as the template engine to generate the HTML.
+When setting the view engine to EJS, place it before app.use, app.get, app.post
+
+The render method needs a 'view' directory. 
+Locals is the data passed into the file.
+
+EJS cannot convert objects in HTML. 
+Use a for loop to iterate through the object & bracket notation to access
+the object property-values.
 */
+
+// Using the find method & toArray to convert data into an array
+app.get('/', (request, response) => {
+    db.collection('quotes').find().toArray()
+    .then(results => {
+        console.log(results);
+    })
+    .catch(error => console.error(error));
+})
+
+// Setting the view engine to EJS 
+app.set('view engine', 'ejs');
+
+// Using the render method to render index.ejs
+response.render(view, locals);  // Syntax
+response.render('index.ejs', {quotes: results});  // In use
 /**************************************************************
-* 
+* Displaying quotes to users (READ Operation)
 ***************************************************************/
 
 
 
 
 /**************************************************************
-* 
+* CRUD - Update
 ***************************************************************/
 /*
+We use the UPDATE operation when we want to change something. 
+It can be triggered with a PUT request. 
+PUT can be triggered through JavaScript or through a <form> element.
+
+We will execute PUT requests in an external JS file in the 'public' directory
+
+The Fetch API is the easiest way to trigger a PUT request.
+
+Modern applications send JSON data to servers. 
+They also receive JSON data back to servers. 
+
+MongoDB collections has a findOneAndUpdate method that finds and changes one
+item in the database.
+    * The query parameter filters the collection with key-value pairs
+        * { name: 'Edgar Guest' } Filters quotes written by Edgar Guest.
+    * The update parameter is what we want to change.
+        * Uses $set, $inc, $push update operators.
+    * The options parameter defines additional options for this update request.
+        * The upsert: true option will insert a document if no documents can be updated.
+
+JavaScript can update the DOM so users will see changes immediately.
 */
+
+// Using the fetch API to send requests
+fetch(endpoint, options)    // Fetch syntax
+fetch('/quotes', {          // In use
+    method: 'put',
+    headers: { 'Content-Type': 'application/json' },
+});
+
+// Using findOneAndUpdate method
+quotesCollection.findOneAndUpdatE(query, update, options)   // Syntax
+quotesCollection.findOneAndUpdatE(                          // In use
+    { name: 'Edgar Guest' }, 
+    { 
+        $set: {
+            name: request.body.name,
+            quote: request.body.quote
+        }
+    }, 
+    {
+        upsert: true
+    })
+.then(result =>{})
+.catch(error => console.error(error))
 /**************************************************************
-* 
+* CRUD - Update
 ***************************************************************/
 
 
 
 
 /**************************************************************
-* 
+* CRUD - Delete
 ***************************************************************/
 /*
+The DELETE operation can be triggered through a DELETE request. 
+
+MongoDB Collections has a deleteOne() method that removes a document
+from the database.
+    * The query parameter filters the collection to the entries we search for
+
+The browser will send the DELETE request through Fetch when the delete button is clicked.
+The server will respond by printing an error or message.
+
+result.deletedCount can be used if there is nothing to delete.
 */
+
+// Using deleteOne method
+quotesCollection.deleteOne(query, options)  // Syntax
+quotesCollection.deleteOne(                 // In use
+    { name: req.body.name }
+)
+.then(result => {
+    result.json(`Changes removed`)
+})
+.catch(error => console.error(error))
 /**************************************************************
-* 
+* CRUD - Delete
 ***************************************************************/
 
 
 
 
 /**************************************************************
-* 
+* Final thoughts
 ***************************************************************/
 /*
+
+* We understood what Express, Node, and MongoDB are used for.
+* We understood CRUD and executed Create, Read, Update and Delete operations.
+* We created an Atlas account for MongoDB.
+* We performed Save, read, update, and delete from MongoDB.
+* We displayed variable data with template engines
+
 */
 /**************************************************************
-* 
+* Final thoughts
 ***************************************************************/
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-*/
-/**************************************************************
-* 
-***************************************************************/
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-*/
-/**************************************************************
-* 
-***************************************************************/
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-*/
-/**************************************************************
-* 
-***************************************************************/
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-*/
-/**************************************************************
-* 
-***************************************************************/
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-*/
-/**************************************************************
-* 
-***************************************************************/
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-*/
-/**************************************************************
-* 
-***************************************************************/
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-*/
-/**************************************************************
-* 
-***************************************************************/
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-*/
-/**************************************************************
-* 
-***************************************************************/
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-*/
-/**************************************************************
-* 
-***************************************************************/
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-*/
-/**************************************************************
-* 
-***************************************************************/
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-*/
-/**************************************************************
-* 
-***************************************************************/
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-*/
-/**************************************************************
-* 
-***************************************************************/
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-*/
-/**************************************************************
-* 
-***************************************************************/
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-*/
-/**************************************************************
-* 
-***************************************************************/
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-*/
-/**************************************************************
-* 
-***************************************************************/
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-*/
-/**************************************************************
-* 
-***************************************************************/
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-*/
-/**************************************************************
-* 
-***************************************************************/
-
-
-
-
