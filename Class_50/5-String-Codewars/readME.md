@@ -7,6 +7,9 @@
 8kyu: Alan Partridge II Apple Turnover
 
 8kyu: Contamination #1 String
+
+8kyu: String Templates - Bug Fixing #5
+
 ```
 
 `Previous week:`
@@ -15,7 +18,7 @@
 
 8kyu:Capitalization and Mutability
 
-8kyu:
+8kyu: Multiplication Table For Number
 
 8kyu:
 
