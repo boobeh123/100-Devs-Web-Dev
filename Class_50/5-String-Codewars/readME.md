@@ -10,6 +10,7 @@
 
 8kyu: String Templates - Bug Fixing #5
 
+8kyu: Holiday VI Shark Pontoon
 ```
 
 `Previous week:`
@@ -20,11 +21,12 @@
 
 8kyu: Multiplication Table For Number
 
-8kyu:
+8kyu: Vowel remover
 
 8kyu:
 ```
 
 ## Assignment:
 Do: 5 Another Codewars (search string problems)
+
 REDO: 5 String Codewars (from previous week)
