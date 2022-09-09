@@ -23,7 +23,7 @@
 
 8kyu: Vowel remover
 
-8kyu:
+8kyu: Palindrome strings
 ```
 
 ## Assignment:
