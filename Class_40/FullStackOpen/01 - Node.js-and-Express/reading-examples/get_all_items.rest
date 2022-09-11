@@ -1,0 +1,8 @@
+# DELETE http://localhost:3000/api/inventory/4
+# GET http://localhost:3000/api/inventory/
+# POST http://localhost:3000/api/inventory/
+# Content-Type: application/json
+
+# {
+#     "content": "Backups are nice"
+# }
