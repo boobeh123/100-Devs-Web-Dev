@@ -12,18 +12,24 @@ The concepts covered in this reading:
 
 
 ## Lessons learned:
-TO BE CONTINUED...
-This repository contains notes from this reading. 
-The examples & tasks will in a separate directory or repository.
+This `notes` directory contains notes from this reading. 
+
+The `examples` contains the code used to send GET, DELETE, & POST requests to my server.
 
 I built a few web servers using Node's built-in http module & using the Express framework. 
+
 I learned that Express automatically sets the value of the `Content-Type header` & the status code.
+
 It is extremely convenient that Express also automatically transforms raw data into a JSON format without explicitly using the `JSON.stringify` method.
 
 I finally found out what the REST acronym spells out. 
+
 I am starting to understand the convention to create a unique address for resources.
+
 I was able to fetch a single resource using its id property as the resource's unique identifier.
+
 I learned that I can tell the server to respond with a status code of 404 when an item is searched with a non-existant id.
+
 
 ## Source:
 https://fullstackopen.com/en/part3/node_js_and_express
