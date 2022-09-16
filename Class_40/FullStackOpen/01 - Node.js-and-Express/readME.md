@@ -27,3 +27,7 @@ I learned that I can tell the server to respond with a status code of 404 when a
 
 ## Source:
 https://fullstackopen.com/en/part3/node_js_and_express
+
+`Postman: Desktop Agent Unavailable`: https://community.postman.com/t/desktop-agent-unavailable/16201/13
+If you are receiving this error when testing APIs on localhost, (Desktop Agent installed & active in the toolbar) are you using the Brave browser? 
+If so turn the "Brave Shield" off and the desktop agent should be able to connect.
