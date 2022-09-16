@@ -358,8 +358,27 @@ if (item) {
 * Deleting resources
 ***************************************************************/
 /*
+Deletion happens by making an HTTP DELETE request to the url of the resource
 
+If deleting the resource is successful, 
+we respond to the request with the status code 204 no content 
+and return no data with the response.
+
+The status codes returned on a DELETE request can be 204 or 404. 
+
+How do we test the delete operation? 
+HTTP GET requests are easy to make from the browser. 
+We could write some JavaScript for testing deletion, 
+but we will use 3rd-party tools to test our application.
 */
+
+// Creating a route to delete a resource
+app.delete('/api/inventory/:id', (request, response) => {
+    const id = Number(request.params.id)
+    item = inventory.filter(item => item.id !== id)
+  
+    response.status(204).end()
+})
 /**************************************************************
 * Deleting resources
 ***************************************************************/
@@ -368,39 +387,151 @@ if (item) {
 
 
 /**************************************************************
-*
+* Postman
 ***************************************************************/
 /*
+Define the url and select the correct request type (DELETE).
 
+Because the inventory in the application are only saved to memory, 
+the list of items will return to its original state 
+when we restart the application.
+
+Postman also allows users to save requests.
+
+* Note from me: I am using Postman Desktop Agent for this reading.
 */
 /**************************************************************
-*
+* Postman
 ***************************************************************/
 
 
 
 
 /**************************************************************
-*
+* The Visual Studio Code REST client
 ***************************************************************/
 /*
+Let's create a file ending with a .rest extension &
+define the request using the correct request type.
 
+Clicking the Send Request text, executes the HTTP request 
+and response from the server is opened in the editor.
+
+One benefit that the REST client has over Postman 
+is that the requests are handily available 
+at the root of the project repository, 
+and they can be distributed to everyone in the development team. 
+You can also add multiple requests in the same file.
+
+Problems can occur with the VS REST client 
+if you accidentally add an empty line between the top row 
+and the row specifying the HTTP headers. 
 */
+// Sending a DELETE request with REST Client Plugin
+DELETE http://localhost:3000/api/inventory/4
+
+// Sending a GET request with REST Client Plugin
+GET http://localhost:3000/api/inventory/
+
+// Sending a POST request with REST Client Plugin
+POST http://localhost:3000/api/inventory/
+Content-Type: application/json
+
+{
+    "content": "Backups are nice"
+}
 /**************************************************************
-*
+* The Visual Studio Code REST client
 ***************************************************************/
 
 
 
 
 /**************************************************************
-*
+* Receiving Data
 ***************************************************************/
 /*
+Adding an item happens by making an HTTP POST request and by sending 
+all the information for the new item in the request body as JSON.
+
+Express json-parser allows us to access the data easily, 
+and implement an initial handler for dealing with the HTTP POST requests.
+
+The event handler function can access the data from the body property 
+of the request object.
+
+The json-parser functions so that it takes the JSON data of a request, 
+transforms it into a JavaScript object and then attaches it 
+to the body property of the request object before the route handler is called.
+
+The server will not be able to parse the data correctly 
+without the correct value in the header. 
+
+You will be able to spot missing Content-Type headers in your code if
+you print all of the request headers with console.log(request.headers)
+
+It is better to generate timestamps on the server than in the browser, 
+since the machine running the browser may have its clock set differently. 
+
+In the helper function:
+* inventory.map(item => item.id) creates a new array that contains all the ids of the inventory. 
+* Math.max returns the maximum value of the numbers that are passed to it. 
+* inventory.map(item => item.id) is an array so it can't directly be given as a parameter to Math.max. 
+* The array can be transformed into individual numbers by using spread syntax ....
 
 */
+// Activating the express json-parser
+app.use(express.json());
+
+// Handles & Prints POST requests to the terminal
+app.post('/api/inventory', (request, response) => {
+    const note = request.body
+    console.log(note)
+    response.json(note)
+})
+
+// Stores POST requests in inventory
+app.post('/api/inventory', (request, response) => {
+    // Checks inventory for largest id number & stores into maxId
+    const maxId = inventory.length > 0 ? Math.max(...inventory.map(item => item.id)) : 0
+    const item = request.body
+    // Creates a unique & unused ID 
+    item.id = maxId + 1
+    // Stores new item into inventory
+    inventory = inventory.concat(item)
+    console.log(item)
+    response.json(item)
+})
+
+// Stores POST requests in inventory (improved)
+// Helper function
+const generateId = () => {
+    // Checks inventory for largest id number & stores into maxId
+    const maxId = inventory.length > 0 ? Math.max(...inventory.map(item => item.id)) : 0
+    // Creates a unique & unused ID 
+    return maxId + 1
+}
+app.post('/api/inventory', (request, response) => {
+    const body = request.body;
+    // If received data is missing,
+    if (!body.content) {
+        // Respond with bad request status code
+        return response.status(400).json({
+            error: 'content missing'
+        })
+    }
+    // If received data has content,
+    const item = {
+        content: body.content,  // Item will be based on the received data.
+        important: body.important || false,// Important property defaults to false if non-existant. 
+        date: new Date(),       // Generates timestamp on the server-side
+        id: generateId(),       // Calls helper function for item.id
+    }
+    inventory = inventory.concat(item)
+    response.json(item)
+})
 /**************************************************************
-*
+* Receiving Data
 ***************************************************************/
 
 
