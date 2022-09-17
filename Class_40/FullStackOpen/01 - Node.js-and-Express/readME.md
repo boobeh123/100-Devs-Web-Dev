@@ -16,20 +16,18 @@ This `notes` directory contains notes from this reading.
 
 The `examples` contains the code used to send GET, DELETE, & POST requests to my server.
 
+The tasks are in a separate repo & is deployed here: https://mysterious-island-88506.herokuapp.com/
+
 I built a few web servers using Node's built-in http module & using the Express framework. 
-
 I learned that Express automatically sets the value of the `Content-Type header` & the status code.
-
 It is extremely convenient that Express also automatically transforms raw data into a JSON format without explicitly using the `JSON.stringify` method.
 
 I finally found out what the REST acronym spells out. 
-
 I am starting to understand the convention to create a unique address for resources.
-
 I was able to fetch a single resource using its id property as the resource's unique identifier.
-
 I learned that I can tell the server to respond with a status code of 404 when an item is searched with a non-existant id.
 
+The tasks have taught me the many ways to interact & use requests. The last few exercises gave me some documentation to use the `morgan` module. It was intimidating to read someone elses code and learn how to create a custom token to return my own requests. It was extremely rewarding to be able to read from start to finish, struggle through, and make it to the end.
 
 ## Source:
 https://fullstackopen.com/en/part3/node_js_and_express

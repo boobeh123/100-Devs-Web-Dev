@@ -533,3 +533,69 @@ app.post('/api/inventory', (request, response) => {
 /**************************************************************
 * Receiving Data
 ***************************************************************/
+
+
+
+
+/**************************************************************
+* About HTTP request types
+***************************************************************/
+/*
+The HTTP standard talks about two properties related to request types, 
+safety and idempotence.
+
+The HTTP GET request should be safe.
+All HTTP requests except POST should be idempotent.
+
+Safety means that the executing request must not cause any side effects in the server. 
+The state of the database must not change as a result of the request, 
+and the response must only return data that already exists on the server.
+
+HEAD requests returns the status code & response headers. It does not return the response body.
+
+POST is the only HTTP request type that is neither safe nor idempotent. 
+*/
+/**************************************************************
+* About HTTP request types
+***************************************************************/
+
+
+
+
+/**************************************************************
+* Middleware
+***************************************************************/
+/*
+The Express json-parser is middleware.
+Middleware are functions that can be used for handling request and response objects.
+
+The json-parser takes the raw data from the requests that's stored in the request object, 
+parses it into a JavaScript object and assigns it to the request object as a new property body.
+
+You may use several middleware at the same time. 
+When using more than one, they're executed one by one in the order that they were taken into use in express.
+
+The next function yields control to the next middleware.
+
+Middleware functions have to be taken into use before routes 
+*/
+// Middleware prints request data sent to server
+const requestLogger = (request, response, next) => {
+    console.log('Method:', request.method)
+    console.log('Path:  ', request.path)
+    console.log('Body:  ', request.body)
+    console.log('---')
+    next()
+}
+
+// Using the Middleware
+app.use(requestLogger)
+
+// Middleware responds to nonexistent routes
+const unknownEndpoint = (request, response) => {
+    response.status(404).send({ error: 'unknown endpoint' })
+}
+app.use(unknownEndpoint)
+/**************************************************************
+* Middleware
+***************************************************************/
