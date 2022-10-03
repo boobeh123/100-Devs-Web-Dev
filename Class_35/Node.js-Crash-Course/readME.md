@@ -4,7 +4,11 @@ My notes from the crash course are in main.js & the everything "code-related" af
 This is the (basic) web server I developed through the Node.js Crash Course video from Traversy Media. 
 It contains an index.html, an about.html, and a 404 page.
 
-This webserver is deployed to heroku: https://cryptic-reaches-99689.herokuapp.com/
+(DEAD-LINK-HEROKU-NOT-FREE-ANYMORE) 
+
+This webserver is deployed to heroku: https://cryptic-reaches-99689.herokuapp.com/ 
+
+(DEAD-LINK-HEROKU-NOT-FREE-ANYMORE) 
 
 ## Lessons learned:
 I learned to create a server. I used the path module to look into the public folder and evaluate the request url to render pages. I also used the path module to get the extension of a file and used that file-extension-name to set the content type.
