@@ -16,7 +16,11 @@ This `notes` directory contains notes from this reading.
 
 The `examples` contains the code used to send GET, DELETE, & POST requests to my server.
 
+(DEAD-LINK-HEROKU-NOT-FREE-ANYMORE)
+
 The tasks are in a separate repo & is deployed here: https://mysterious-island-88506.herokuapp.com/
+
+(DEAD-LINK-HEROKU-NOT-FREE-ANYMORE)
 
 I built a few web servers using Node's built-in http module & using the Express framework. 
 I learned that Express automatically sets the value of the `Content-Type header` & the status code.
