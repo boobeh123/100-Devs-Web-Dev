@@ -1,2 +1,2 @@
 ## My MVC Lecture
-[Link to my lecture](Coming soon.)
+[Link to my lecture](https://www.youtube.com/watch?v=YWnG3atlNMQ)
