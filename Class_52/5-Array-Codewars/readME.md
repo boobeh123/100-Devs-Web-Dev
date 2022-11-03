@@ -3,7 +3,7 @@
 ```
 8kyu: Find Multiples Of A Number
 
-8kyu:
+8kyu: Remove Duplicates From List
 
 8kyu:
 
