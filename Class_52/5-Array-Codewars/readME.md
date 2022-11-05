@@ -5,9 +5,9 @@
 
 8kyu: Remove Duplicates From List
 
-8kyu:
+8kyu: Take An Arrow To The Knee Functionally
 
-8kyu:
+8kyu: Swap Values
 
 8kyu:
 ```
