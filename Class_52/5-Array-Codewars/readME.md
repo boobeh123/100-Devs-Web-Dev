@@ -9,7 +9,7 @@
 
 8kyu: Swap Values
 
-8kyu:
+8kyu: Logical Calculator
 ```
 
 ## Assignment:
