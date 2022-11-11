@@ -4,6 +4,7 @@
 New week:
 ```
 8kyu: UEFA EURO 2016
+8kyu: Arguments To Binary Addition
 ```
 Previous week:
 ```
