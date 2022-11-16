@@ -7,6 +7,7 @@ New week:
 8kyu: Arguments To Binary Addition
 7kyu: Fizz Buzz
 7kyu: Olympic Rings
+7kyu: Largest Elements
 ```
 Previous week:
 ```
