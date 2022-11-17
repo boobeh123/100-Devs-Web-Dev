@@ -11,6 +11,7 @@ New week:
 ```
 Previous week:
 ```
+8kyu: Find Multiples Of A Number
 ```
 
 ## Assignment:
