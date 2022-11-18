@@ -12,6 +12,7 @@ New week:
 Previous week:
 ```
 8kyu: Find Multiples Of A Number
+8kyu: Remove Duplicates From List
 ```
 
 ## Assignment:
