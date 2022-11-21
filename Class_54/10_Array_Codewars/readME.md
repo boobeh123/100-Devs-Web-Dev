@@ -13,6 +13,9 @@ Previous week:
 ```
 8kyu: Find Multiples Of A Number
 8kyu: Remove Duplicates From List
+8kyu: Swap Values
+8kyu: Take An Arrow To The Knee Functionally
+8kyu: Logical Calculator
 ```
 
 ## Assignment:
