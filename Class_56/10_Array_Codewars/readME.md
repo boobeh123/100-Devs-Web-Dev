@@ -3,6 +3,7 @@
 
 New week:
 ```
+7kyu: Odd Or Even?
 ```
 Previous week:
 ```
