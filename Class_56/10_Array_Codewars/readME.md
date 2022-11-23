@@ -4,6 +4,7 @@
 New week:
 ```
 7kyu: Odd Or Even?
+7kyu: The Highest Profit Wins
 ```
 Previous week:
 ```
