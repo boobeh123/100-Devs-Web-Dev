@@ -5,6 +5,7 @@ New week:
 ```
 7kyu: Odd Or Even?
 7kyu: The Highest Profit Wins
+7kyu: Remove The Minimum
 ```
 Previous week:
 ```
