@@ -7,6 +7,7 @@ New week:
 7kyu: The Highest Profit Wins
 7kyu: Remove The Minimum
 7kyu: Testing-1-2-3
+7kyu: Don't Give Me 5
 ```
 Previous week:
 ```
