@@ -11,6 +11,7 @@ New week:
 ```
 Previous week:
 ```
+8kyu: UEFA EURO 2016
 ```
 
 ## Assignment:
