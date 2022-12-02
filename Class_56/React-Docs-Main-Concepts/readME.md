@@ -1,9 +1,9 @@
 This directory contains my notes & a summary of concepts covered from the reading.
 
-The actual code from the documentation is located in a seperate repository which you can find here: 
+The actual code from the documentation is located in a seperate repository which you can find here: https://github.com/boobeh123/React-main-concepts
 
 ## Summary:
-The concepts covered in this reading:
+The concepts covered in this reading: 
 
 * Creating a react app / setting up local development environment
 * JSX - A syntax extension to JavaScript and evaluates to a JS object.
