@@ -14,6 +14,7 @@ Previous week:
 8kyu: UEFA EURO 2016
 8kyu: Arguments To Binary Addition
 7kyu: Fizz Buzz
+7kyu: Olympic Rings
 ```
 
 ## Assignment:
