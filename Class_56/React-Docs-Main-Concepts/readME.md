@@ -20,13 +20,21 @@ The concepts covered in this reading:
     * Component names start with a capital letter.
 * Props - A user-defined object.
     * A component must never modify its own props.
+* State - Similar to props, but private and controlled by the component.
+* Lifecycle methods - Special methods on the component class.
+    * Mounting
+    * Unmounting
+* setState:
+    * Do not modify state directly
+    * State updates may be asynchronous
+    * State updates are merged
 * TBD
 * TBD
 
 ## Lessons learned:
 The official documentation is excellent. It taught me how to get started, offers different styles of learning (by doing & step-by-step), and teaches from a zero-knowledge perspective. 
 
-I plan to finish the Main Concept section, go through the "learn by doing" section, and build a project to soldify the concepts learned.
+I'm currently going through both the Main Concepts & learn by doing sections. 
 ...TBD...
 ...TBD...
 
