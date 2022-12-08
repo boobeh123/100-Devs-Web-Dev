@@ -28,15 +28,30 @@ The concepts covered in this reading:
     * Do not modify state directly
     * State updates may be asynchronous
     * State updates are merged
-* TBD
-* TBD
+* Key - A special string attribute that must be included when creating lists of elements.
+    * Helps React identify which items have changed, are added, or are removed.
+* Controlled components - An input form element whose value is controlled by React.
+* Lifting State Up - Sharing state between components by moving it up to the closest common ancestor.
+* Composition - Allows code to be reused between components.
 
 ## Lessons learned:
 The official documentation is excellent. It taught me how to get started, offers different styles of learning (by doing & step-by-step), and teaches from a zero-knowledge perspective. 
 
 I'm currently going through both the Main Concepts & learn by doing sections. 
-...TBD...
-...TBD...
+
+The last chapter gave me a JSON data model and wanted me to build a component.
+This component contained a search bar, a filter-checkbox, and a table displaying the data. 
+
+I started by creating the class that rendered a container and used the `border` property within `CSS` to visualize the container. 
+I didn't render any other sub-components during this time.
+
+I created the next class which contained my form with two inputs and represents the searchbar + filtered-checkbox components in one class.
+I switched back to the first class and rendered the first sub-component.
+
+At this point I had to view the CodePen and extracted components and gradually built top-down until the static version was completed. 
+I felt overwhelmed when it came time to implement state. Despite having the answers, I ran into a bug where using the searchbar feature would append the categories. Searching & deleting would keep appending more text.
+
+The solution was that the conditionals for searchbar & filter-checkbox must come before the props were pushed into the subcomponents.
 
 ## Source:
 Read/Do: https://reactjs.org/docs/hello-world.html
