@@ -3,6 +3,7 @@
 
 New week:
 ```
+8kyu: Safen User Input Part I htmlspecialchars
 ```
 
 ## Assignment:
