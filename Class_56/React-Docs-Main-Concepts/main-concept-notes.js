@@ -387,20 +387,11 @@ to their props.""
 We have only learned one way to update the UI. 
 We call root.render() to change the rendered output.
 
-We will learn how to make the Clock component truly reusable and encapsulated. 
-It will set up its own timer and update itself every second.
-
 State is similar to props, 
 but it is private and fully controlled by the component.
 
 ## Converting a Function to a Class
 A function component can be converted to a class.
-
-The render method will be called each time an update happens, 
-but as long as we render <Clock /> into the same DOM node, 
-only a single instance of the Clock class will be used. 
-This lets us use additional features such as 
-local state and lifecycle methods.
 
 ## Adding Local State to a Class
 Class components should always call the base constructor with props.
@@ -410,38 +401,9 @@ In applications with many components,
 it’s very important to free up resources taken by the components 
 when they are destroyed.
 
-We want to set up a timer whenever the Clock is rendered to the DOM 
-for the first time. This is called “mounting” in React.
-
-We also want to clear that timer whenever the DOM 
-produced by the Clock is removed. This is called “unmounting” in React.
-
 We can declare special methods on the component class 
 to run some code when a component mounts and unmounts.
 These methods are called “lifecycle methods”.
-
-## Recap
-When <Clock /> is passed to root.render(), 
-React calls the constructor of the Clock component. 
-
-React then calls the Clock component’s render() method. 
-This is how React learns what should be displayed on the screen. 
-
-When the Clock output is inserted in the DOM, 
-React calls the componentDidMount() lifecycle method. 
-The Clock component asks the browser to set up a timer 
-to call the component’s tick() method once a second.
-
-Every second the browser calls the tick() method. 
-The Clock component schedules a UI update by calling setState() 
-with an object containing the current time. 
-
-Thanks to the setState() call, React calls the render() method again to learn what should be on the screen. 
-This time, this.state.date in the render() method will be different, 
-and so the render output will include the updated time.
-
-If the Clock component is ever removed from the DOM, 
-React calls the componentWillUnmount() lifecycle method so the timer is stopped.
 
 ## Using State Correctly
 There are three things you should know about setState().
@@ -617,7 +579,38 @@ A “key” is a special string attribute you need to include
 when creating lists of elements. 
 
 ## Keys
+Keys help React identify which items have changed, are added, or are removed. 
+Keys should be given to the elements inside the array 
+to give the elements a stable identity.
 
+The best way to pick a key is to use a string that 
+uniquely identifies a list item among its siblings. 
+Most often you would use IDs from your data as keys.
+
+We don’t recommend using indexes for keys if the order of items may change. 
+If you choose not to assign an explicit key to list items 
+then React will default to using indexes as keys.
+
+## Extracting Components with Keys
+A good rule of thumb is that elements inside the map() call need keys.
+
+## Keys Must Only Be Unique Among Siblings
+Keys used within arrays should be unique among their siblings. 
+We can use the same keys when we produce two different arrays.
+
+Keys serve as a hint to React but they don’t get passed to your components. 
+If you need the same value in your component, 
+pass it explicitly as a prop with a different name.
+
+## Embedding map() in JSX
+JSX allows embedding any expression in curly braces 
+so we could inline the map() result.
+Sometimes this results in clearer code, but this style can also be abused. 
+
+Like in JavaScript, 
+it is up to you to decide whether it is worth extracting a variable for readability. 
+Keep in mind that if the map() body is too nested, 
+it might be a good time to extract a component.
 
 */
 /**************************************************************
@@ -628,206 +621,229 @@ when creating lists of elements.
 
 
 /**************************************************************
-* 
+* Forms
 ***************************************************************/
 /*
+
+HTML form elements work a bit differently from other DOM elements in React, 
+because form elements naturally keep some internal state. 
+
+It’s convenient to have a JavaScript function that handles the submission 
+of the form and has access to the data that the user entered into the form. 
+
+## Controlled Components
+
+In HTML, form elements typically maintain their own state & update it based on user input. 
+In React, mutable state is typically kept in the state property of components, 
+and only updated with setState().
+
+The React component that renders a form also controls what happens in that form. 
+An input form element whose value is controlled by React is called a “controlled component”.
+
+Since the value attribute is set on our form element, 
+the displayed value will always be this.state.value.
+
+Since handleChange runs on every keystroke to update the React state, 
+the displayed value will update as the user types.
+
+With a controlled component, you can now pass the value to other UI elements too,
+or reset it from other event handlers.
+
+## The Textarea Tag
+In HTML, a <textarea> element defines its text by its children.
+In React, a <textarea> uses a value attribute instead. 
+
+# The Select Tag
+React uses a value attribute on the root select tag instead of using this selected attribute.
+You can pass an array into the value attribute, 
+allowing you to select multiple options in a select tag.
+
+## The File Input Tag
+Because its value is read-only, it is an uncontrolled component in React.
+
+## Handling Multiple Inputs
+When you need to handle multiple controlled input elements, 
+you can add a name attribute to each element 
+and let the handler function choose what to do 
+based on the value of event.target.name.
+
+## Controlled Input Null Value
+Specifying the value prop on a controlled component 
+prevents the user from changing the input unless you desire so. 
+
+If you’ve specified a value but the input is still editable, 
+you may have accidentally set value to undefined or null.
+
+## Alternatives to Controlled Components
+It can sometimes be tedious to use controlled components, 
+because you need to write an event handler for every way your data can change 
+and pipe all of the input state through a React component. 
+
+This can become particularly annoying when you are converting a preexisting codebase to React, 
+or integrating a React application with a non-React library. 
+In these situations, you might want to check out uncontrolled components, 
+an alternative technique for implementing input forms.
+
+## Fully-Fledged Solutions
+If you’re looking for a complete solution including validation, 
+keeping track of the visited fields, and handling form submission, 
+Formik is one of the popular choices. 
+However, it is built on the same principles of controlled components 
+and managing state — so don’t neglect to learn them.
+
 */
 /**************************************************************
-* 
+* Forms
 ***************************************************************/
 
 
 
 
 /**************************************************************
-* 
+* Lifting State Up
 ***************************************************************/
 /*
+
+Often, several components need to reflect the same changing data. 
+We recommend lifting the shared state up to their closest common ancestor. 
+
+In React, sharing state is accomplished by moving it up to the 
+closest common ancestor of the components that need it. 
+This is called “lifting state up”.
+
+There should be a single “source of truth” for any data 
+that changes in a React application. 
+
+The state is first added to the component that needs it for rendering. 
+If other components also need it, you can lift state up. 
+
+Yyou can implement any custom logic to reject or transform user input.
+
+If something can be derived from either props or state, 
+it probably shouldn’t be in the state. 
+
 */
 /**************************************************************
-* 
+* Lifting State Up
 ***************************************************************/
 
 
 
 
 /**************************************************************
-* 
+* Composition vs Inheritance
 ***************************************************************/
 /*
+
+React has a powerful composition model, 
+and we recommend using composition instead of inheritance 
+to reuse code between components.
+
+## Containment
+Some components don’t know their children ahead of time. 
+This is especially common for components like Sidebar or Dialog 
+that represent generic “boxes”.
+
+We recommend that such components use the special children prop 
+to pass children elements directly into their output.
+
+## Specialization
+Sometimes we think about components as being “special cases” of other components. 
+For example, we might say that a WelcomeDialog is a special case of Dialog.
+
+In React, this is also achieved by composition, 
+where a more “specific” component renders a more “generic” one 
+and configures it with props.
+
 */
 /**************************************************************
-* 
+* Composition vs Inheritance
 ***************************************************************/
 
 
 
 
 /**************************************************************
-* 
+* Thinking in React
 ***************************************************************/
 /*
+
+React is, in our opinion, the premier way to build big, fast Web apps with JavaScript. 
+One of the many great parts of React is how it makes you think about apps 
+as you build them. 
+
+### Start With A Mock
+
+## Step 1: Break The UI Into A Component Hierarchy
+The first thing you’ll want to do is to draw boxes around every component 
+(and subcomponent) in the mock and give them all names. 
+
+One technique is the single responsibility principle, 
+a component should ideally only do one thing. 
+If it ends up growing, it should be decomposed into smaller subcomponents.
+
+## Step 2: Build A Static Version in React
+Now that you have your component hierarchy, 
+build a version that renders the UI but has no interactivity. 
+
+Build components that reuse other components and pass data using props. 
+props are a way of passing data from parent to child. 
+Don’t use state at all to build this static version. 
+
+You can build top-down or bottom-up. 
+In simpler examples, it’s easier to go top-down.
+In larger projects, it’s easier to go bottom-up and write tests as you build.
+
+At the end of this step, 
+you’ll have a library of reusable components. 
+The components will only have render() methods since this is a static version of your app. 
+
+## Step 3: Identify The Minimal (but complete) Representation Of UI State
+To make your UI interactive, 
+you need to be able to trigger changes to your underlying data model. 
+React achieves this with state.
+
+To build your app correctly, 
+you first need to think of the minimal set of mutable state that your app needs. 
+The key here is DRY: Don’t Repeat Yourself. 
+Figure out the absolute minimal representation of the state 
+
+Think of all the pieces of data.
+* Is it passed in from a parent via props? If so, it probably isn’t state.
+* Does it remain unchanged over time? If so, it probably isn’t state.
+* Can you compute it based on any other state or props in your component? If so, it isn’t state.
+* The original list of products is passed in as props, so that’s not state.
+* A filtered list of products isn’t state because it can be computed by combining the original list of products with the search text and value of the checkbox.
+
+* The search text and the checkbox seem to be state since they change over time and can’t be computed from anything. 
+
+Our state is:
+* The search text the user has entered
+* The value of the checkbox
+
+## Step 4: Identify Where Your State Should Live
+We’ve identified what the minimal set of app state is. 
+We need to identify which component owns this state.
+
+React is all about one-way data flow down the component hierarchy. 
+It may not be immediately clear which component should own what state. 
+
+For each piece of state in your application:
+
+* Identify every component that renders something based on that state.
+* Find a common owner component.
+* Either the common owner or another component higher up in the hierarchy should own the state.
+* If you can’t find a component where it makes sense to own the state, 
+  * create a new component solely for holding the state and add it somewhere in the hierarchy above the common owner component.
+
+## Step 5: Add Inverse Data Flow
+We’ve built an app that renders correctly as a function of props 
+and state flowing down the hierarchy. 
+
+React makes this data flow explicit to help you understand how your program works, 
+but it does require a little more typing than traditional two-way data binding.
+
 */
 /**************************************************************
-* 
+* Thinking in React
 ***************************************************************/
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-*/
-/**************************************************************
-* 
-***************************************************************/
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-*/
-/**************************************************************
-* 
-***************************************************************/
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-*/
-/**************************************************************
-* 
-***************************************************************/
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-*/
-/**************************************************************
-* 
-***************************************************************/
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-*/
-/**************************************************************
-* 
-***************************************************************/
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-*/
-/**************************************************************
-* 
-***************************************************************/
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-*/
-/**************************************************************
-* 
-***************************************************************/
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-*/
-/**************************************************************
-* 
-***************************************************************/
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-*/
-/**************************************************************
-* 
-***************************************************************/
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-*/
-/**************************************************************
-* 
-***************************************************************/
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-*/
-/**************************************************************
-* 
-***************************************************************/
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-*/
-/**************************************************************
-* 
-***************************************************************/
-
-
-
-
-/**************************************************************
-* 
-***************************************************************/
-/*
-*/
-/**************************************************************
-* 
-***************************************************************/
-
-
-
-
