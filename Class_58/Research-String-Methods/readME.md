@@ -1,5 +1,5 @@
 ## Lessons learned:
-The logic came to me naturally and I added the functionality before finishing the VOD. 
+
 ## Source:
 Give a short description of:
 * What the method does
