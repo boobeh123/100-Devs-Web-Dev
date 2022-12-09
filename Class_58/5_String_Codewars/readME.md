@@ -4,6 +4,7 @@
 New week:
 ```
 8kyu: Safen User Input Part I htmlspecialchars
+8kyu: Name On Billboard
 ```
 
 ## Assignment:
