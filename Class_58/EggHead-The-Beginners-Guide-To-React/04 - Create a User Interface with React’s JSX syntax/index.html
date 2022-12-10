@@ -1,0 +1,27 @@
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@16.7.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js"></script>
+    <!-- Babel Compiled Code  -->
+    <!-- <script type="text/javascript">
+        const rootElement = document.querySelector('#root');
+
+        // Uncompiled JSX 
+        const element = <div className='Greeting'>Hello world</div>
+        // JSX Compiled w/ Babel
+        const element = /*#__PURE__*/React.createElement("div", {
+            className: "Greeting"
+        }, "Hello world");
+
+        ReactDOM.render(element, rootElement)
+    </script> -->
+
+    <!-- Babel StandAlone Package -->
+    <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+    <script type="text/babel">
+        const rootElement = document.querySelector('#root');
+        // JSX Syntax
+        const element = <div className='Greeting'>Hello world</div>
+        ReactDOM.render(element, rootElement)
+    </script>
+</body>
