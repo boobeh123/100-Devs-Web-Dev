@@ -6,6 +6,7 @@ New week:
 8kyu: Safen User Input Part I htmlspecialchars
 8kyu: Name On Billboard
 8kyu: String Cleaning
+8kyu: Define A Card Suit
 ```
 
 ## Assignment:
