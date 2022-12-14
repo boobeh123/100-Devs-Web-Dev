@@ -7,6 +7,7 @@ New week:
 8kyu: Name On Billboard
 8kyu: String Cleaning
 8kyu: Define A Card Suit
+8kyu: Exclamation Marks Series #1: Remove An Exclamation Mark From The End Of String
 ```
 
 ## Assignment:
