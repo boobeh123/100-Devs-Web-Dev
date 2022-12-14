@@ -1,0 +1,34 @@
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@16.7.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+    <script type="text/babel">
+        const rootElement = document.querySelector('#root');
+        {/* const message = <div className="message">Hello World</div> */}
+        {/* const message = (props) => <div className="message">{props.msg}</div> */}
+        const Message = (props) => <div className="message">{props.msg}</div>
+        const element = (
+            <div className="container">
+                {/* <div className="message">Hello World</div> */}
+                {/* <div className="message">Hello World</div> */}
+
+                {/* {message} */}
+                {/* {message} */}
+
+                {/* {Message({msg: 'Hello World'})} */}
+                {/* {Message({msg: 'Olleh Dlrow'})} */}
+
+                <Message msg="Hello world"/>
+                <Message msg="Olleh Dlrow"/>
+
+                <Message>Hello world</Message>
+            </div>
+        )
+
+        console.log(<div>Hello World</div>)
+        console.log(<Message>Hello World</Message>)
+
+        ReactDOM.render(element, rootElement)
+    </script>
+</body>

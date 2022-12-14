@@ -5,7 +5,22 @@
     <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
     <script type="text/babel">
         const rootElement = document.querySelector('#root');
-
+        
+        function CharacterCount({text}) {
+            return (
+                <div>
+                    {`The text "${text}"`} has 
+                    {text.length > 0 ? ` ${text.length}` : ' no'} characters.
+                </div>
+            )
+        }
+        const element = (
+            <>
+                <CharacterCount text='Hello world' />
+                <CharacterCount text='' />
+            </>
+        )
+        
         ReactDOM.render(element, rootElement)
     </script>
 </body>
