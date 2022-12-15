@@ -21,6 +21,6 @@ slice
 split
 substr
 toLowerCase
-toUpperCase
+~toUpperCase~
 trim
 ```
