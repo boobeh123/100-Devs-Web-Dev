@@ -20,7 +20,7 @@ search
 slice
 split
 substr
-toLowerCase
+~toLowerCase~
 ~toUpperCase~
 trim
 ```
