@@ -7,22 +7,22 @@
         const rootElement = document.querySelector('#root');
 
         function Greeting() {
-            // const stateArray = React.useState('')
-            // const name = stateArray[0]
-            // const setName = stateArray[1]
-
-            const [name, setName] = React.useState('')
-
-            function handleChange(e) {
-                setName(e.target.value)
-            }
-
+            // const [name, setName] = React.useState(window.localStorage.getItem('name') || '')
+            const [name, setName] = React.useState(() => {
+                console.log('test');
+                window.localStorage.getItem('name') || ''
+            })
+            console.log('render');
+            React.useEffect(() => {
+                window.localStorage.setItem('name', name)
+            })
+            const handleChange = e => setName(e.target.value)
             return (
                 <div>
                     {name ? `Hello ${name}` : 'Please type your name'}
                     <form>
-                        <label htmlFor="name">Name: </label>
-                        <input id="name" onChange={handleChange} />
+                        <label htmlFor='name'>Name:</label>
+                        <input id='name' onChange={handleChange} value={name} />
                     </form>
                 </div>
             )
