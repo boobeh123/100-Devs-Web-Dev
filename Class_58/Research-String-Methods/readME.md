@@ -7,20 +7,32 @@ Give a short description of:
 * It's time complexity 
 * Give three examples of it in action
 
-```
 charAt
+
 charCodeAt
+
 concat
+
 includes
+
 indexOf
+
 match
+
 repeat
+
 replace
+
 search
+
 slice
+
 split
+
 substr
+
 ~toLowerCase~
+
 ~toUpperCase~
-trim
-```
+
+~trim~
