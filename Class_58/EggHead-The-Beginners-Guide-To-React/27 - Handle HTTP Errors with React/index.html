@@ -7,30 +7,44 @@
         const rootElement = document.querySelector('#root');
 
         function PokemonInfo({pokemonName}) {
-
+            const [status, setStatus] = React.useState('idle')
             const [pokemon, setPokemon] = React.useState(null)
+            const [error, setError] = React.useState(error)
 
             React.useEffect(() => {
 
                 if (!pokemonName) {
                     return
                 }
+                
+                setStatus('pending')
             
                 fetchPokemon(pokemonName)
                 .then(data => {
+                    setStatus('resolved')
                     setPokemon(data)
+                }, errorData => {
+                    setStatus('rejected')
+                    setError(errorData)
                 })
             }, [pokemonName])
             
-            if (!pokemonName) {
+            if (status === 'idle') {
                 return 'Submit a pokemon'
             }
 
-            if (!pokemon) {
+            if (status === 'rejected') {
+                return 'Server error'
+            }
+
+            if (status === 'pending') {
                 return 'Loading...'
             }
 
-            return <pre>{JSON.stringify(pokemon, null, 2)}</pre>
+            if (status === 'resolved') {
+                return <pre>{JSON.stringify(pokemon, null, 2)}</pre>
+            }
+
         }
 
         function App() {
