@@ -7,13 +7,13 @@ Give a short description of:
 * It's time complexity 
 * Give three examples of it in action
 
-charAt
+~charAt~
 
-charCodeAt
+~charCodeAt~
 
-concat
+~concat~
 
-includes
+~includes~
 
 indexOf
 

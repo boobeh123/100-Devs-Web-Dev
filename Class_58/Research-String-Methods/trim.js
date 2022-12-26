@@ -9,7 +9,7 @@ Calling this method on a string returns a new string with whitespace removed fro
 Trimming whitespace from just one end, can be done with the trimStart() or trimEnd() method.
 
 Time complexity:
-
+Will comeback to answer this after reading about algorithms:
 
 */
 
