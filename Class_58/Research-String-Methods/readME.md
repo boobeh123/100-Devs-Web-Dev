@@ -15,21 +15,21 @@ Give a short description of:
 
 ~includes~
 
-indexOf
+~indexOf~
 
-match
+~match~
 
-repeat
+~repeat~
 
-replace
+~replace~
 
-search
+~search~
 
-slice
+~slice~
 
-split
+~split~
 
-substr
+~substr~
 
 ~toLowerCase~
 
