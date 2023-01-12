@@ -1,0 +1,149 @@
+/**************************************************************
+* Clearfix
+***************************************************************/
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    clear: both;
+    *zoom: 1;
+}
+
+/**************************************************************
+* Base
+***************************************************************/
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@font-face {
+	font-family: 'Pacifico';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Pacifico Regular'), local('Pacifico-Regular'),
+	  url(https://fonts.gstatic.com/s/pacifico/v12/FwZY7-Qmy14u9lezJ-6H6MmBp0u-.woff2)
+		format('woff2');
+	font-display: swap;
+}
+
+body {
+    font-family: 'Roboto', 'Times New Roman', sans-serif;
+    font-size: 1rem;
+    overflow: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+} 
+/**************************************************************
+* Header
+***************************************************************/
+.nav-wrapper {
+	background-color: #FFFFFF !important;
+	padding: 0 1rem;
+}
+.nav-wrapper a {
+	color: #000000;
+}
+.nav-wrapper img {
+	margin-top: 1rem;
+}
+.header-container {
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+}
+.header-background {
+	height: 25vh;
+	width: 100vw;
+	background-image: url('./images/HTC_Heritage\ Library_Peachy\ Peaches\ 03Element\ 7.webp');
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	margin-top: 1rem;
+}
+.header-text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0 1rem;
+}
+.header-text h1 {
+	font-size: 4rem;
+}
+.header-input-container {
+	display: flex;
+}
+#searchbar {
+	border: 1px solid #999;
+	border-radius: 4px 0 0 4px;
+	height: 2.5rem;
+	text-indent: 1.5rem;
+}
+#searchbar::placeholder {
+	background-image: url('./images/magnifying-glass.jpg');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+}
+.header-input-container .btn {
+	border-radius: 0 4px 4px 0;
+}
+.header-social-stats .fab {
+	padding-left: 2rem;
+}
+/**************************************************************
+* Footer
+***************************************************************/
+/* .footer {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-evenly;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	border-top: 1px solid #000;
+}
+.icon-container {
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+}
+.copyright-container {
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+} */
+/**************************************************************
+* Media queries
+***************************************************************/
+@media screen and (min-device-width: 565px) {
+	.header-container {
+		display: flex;
+		flex-direction: row-reverse;
+		align-items: center;
+	}
+	.header-background {
+		background-position: right;
+		height: 75vh;
+		width: 100vw;	
+		background-size: contain;
+	}
+}
+
+/* @media screen and (min-device-width: 1024px) {
+
+} */
