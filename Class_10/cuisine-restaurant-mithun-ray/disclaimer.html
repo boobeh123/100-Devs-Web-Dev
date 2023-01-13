@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Bobby Asakawa version of a cuisine restaurant website" />
+    <meta name="keywords" content="Bobby, asakawa, hawaii, HI, oahu, ewa, ewa beach, portfolio, software, engineer, full, stack, web, developer" />
+    <meta name="author" content="Bobby Asakawa" />
+    <!-- Preload webp -->
+    <link rel="preload" fetchpriority="high" as="image" href="./public/css/images/HTC_Heritage Library_Peachy Peaches 03Element 7.webp" type="image/webp">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+    <!-- MaterializeCSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- External CSS  -->
+    <link rel="stylesheet" href="/public/css/normalize.css">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <title>Cuisine Restaurant</title>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="/" class="brand-logo waves-effect" aria-label="Logo"><img src="./public/css/images/logo.png" height="37px" width="32px" alt="restaurant-logo-bowl-of-noodles-and-chopsticks"/>Itadaki</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">&equiv;</i></a>
+            </div>
+        </nav>
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="/" class="waves-effect">Home</a></li>
+        </ul>
+        <div class="header-container">
+            <div class="header-background"></div>
+            <section class="header-text">
+                <h1><strong>Oops!</strong></h1>
+                <p>This webpage is a mock design to demonstrate web development skills. All content and images are fictional and do not represent a real business.</p>
+                <div class="header-btn-container">
+                    <a href="/" class="waves-effect waves-light btn black">&larr; Go back</a>
+                </div>
+            </section>
+        </div>
+    </header>
+    <!-- MaterializeCSS JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Fontawesome Icons -->
+	<script src="https://kit.fontawesome.com/9f91d488b5.js" crossorigin="anonymous"></script>
+    <script type="text/JavaScript" src="/public/js/main.js"></script>
+    <script>
+        M.Sidenav.init(document.querySelector('.sidenav'))
+    </script>
+</body>
+</html>

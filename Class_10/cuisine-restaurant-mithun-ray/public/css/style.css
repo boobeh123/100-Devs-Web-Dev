@@ -39,7 +39,7 @@ body {
     font-family: 'Roboto', 'Times New Roman', sans-serif;
     font-size: 1rem;
     overflow: auto;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     display: flex;
     flex-direction: column;
 }
@@ -47,6 +47,9 @@ body {
 main {
     flex: 1 0 auto;
 } 
+a {
+	color: black;
+}
 /**************************************************************
 * Header
 ***************************************************************/
@@ -57,10 +60,12 @@ main {
 .nav-wrapper a {
 	color: #000000;
 }
-.nav-wrapper img {
-	margin-top: 1rem;
+.brand-logo {
+	font-family: 'Lato';
+	font-weight: 400;
 }
 .header-container {
+	background-color: rgba(115, 115, 115, 0.05);
 	display: flex;
 	flex-direction: column;
 	width: 100vw;
@@ -79,38 +84,120 @@ main {
 	flex-direction: column;
 	justify-content: center;
 	margin: 0 1rem;
+	text-align: center;
 }
 .header-text h1 {
 	font-size: 4rem;
+	margin-bottom: 0;
 }
-.header-input-container {
-	display: flex;
-}
-#searchbar {
-	border: 1px solid #999;
-	border-radius: 4px 0 0 4px;
-	height: 2.5rem;
-	text-indent: 1.5rem;
-}
-#searchbar::placeholder {
-	background-image: url('./images/magnifying-glass.jpg');
-    background-repeat: no-repeat;
-    background-position: left;
-    background-size: contain;
-}
-.header-input-container .btn {
-	border-radius: 0 4px 4px 0;
+.header-btn-container .btn {
+	border-radius: 40px;
+	margin: 0.25rem 0;
 }
 .header-social-stats .fab {
 	padding-left: 2rem;
+	cursor: pointer;
+}
+.header-btn-container .transparent {
+	color: black;
+}
+.stat {
+	cursor: pointer;
+}
+.fa-facebook-f:hover,
+.social-stat:hover .fa-facebook-f {
+	color: #1877f2;
+}
+.fa-twitter:hover,
+.social-stat:hover .fa-twitter  {
+	color: dodgerblue;
+}
+.fa-instagram:hover,
+.social-stat:hover .fa-instagram {
+	color: #C13584;
+}
+/**************************************************************
+* Main
+***************************************************************/
+/**************************************************************
+* About us
+***************************************************************/
+.about-us-background-one {
+	height: 25vh;
+	width: 100vw;
+	background-image: url('./images/HTC_Heritage\ Library_Peachy\ Peaches\ 03Element\ 3.webp');
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	margin: 1rem 0;
+}
+.about-us-background-two {
+	height: 25vh;
+	width: 100vw;
+	background-image: url('./images/HTC_Heritage\ Library_Peachy\ Peaches\ 03Element\ 4.webp');
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	margin: 1rem 0;
+}
+.about-us-text {
+	padding: 0 1rem;
+}
+.about-us-text h2 {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.about-us-text span {
+	color: orange;
+	font-weight: 700;
+}
+.about-us-btn-container {
+	text-align: center;
+}
+.about-us-btn-container .orange {
+	border-radius: 40px 0 0 4px;
+}
+.about-us-btn-container .yellow {
+	border-radius: 0 4px 40px 0;
+}
+/**************************************************************
+* Menu
+***************************************************************/
+.menu-container {
+	background-color: rgba(115, 115, 115, 0.05);
+}
+.menu-text {
+	padding-top: 3rem;
+	text-align: center;
+}
+.menu-text span {
+	color: orange;
+	font-weight: 700;
+}
+.menu-text h2 {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.carousel-item span {
+	text-align: center;
+	display: block;
+	border: 1px solid rgba(115, 115, 115, 0.25);
+	padding: 0;
+	margin: 0;
+	border-radius: 40px;
+}
+/**************************************************************
+* Contact us
+***************************************************************/
+.contact-us-container {
+	padding: 0 1rem;
 }
 /**************************************************************
 * Footer
 ***************************************************************/
 /* .footer {
 	display: flex;
-	flex-direction: row-reverse;
-	justify-content: space-evenly;
+	flex-direction: column;
 	position: fixed;
 	bottom: 0;
 	right: 0;
@@ -119,18 +206,33 @@ main {
 }
 .icon-container {
 	display: flex;
-	flex-direction: row;
-	gap: 1rem;
+	justify-content: center;
+}
+.icon-container li {
+	margin: 1rem 1rem 0 1rem;
 }
 .copyright-container {
 	display: flex;
-	flex-direction: row;
-	gap: 1rem;
+	flex-direction: column;
+	align-items: center;
+}
+.copyright-container span {
+	margin: 0.25rem 0;
+}
+.footer .fa-twitter:hover {
+	color: dodgerblue;
+}
+.footer .fa-github:hover {
+	color: #D5D5D5;
+}
+.footer .fab, .footer .fa {
+	color: #000000;
 } */
 /**************************************************************
 * Media queries
 ***************************************************************/
 @media screen and (min-device-width: 565px) {
+	/* header  */
 	.header-container {
 		display: flex;
 		flex-direction: row-reverse;
@@ -139,9 +241,47 @@ main {
 	.header-background {
 		background-position: right;
 		height: 75vh;
-		width: 100vw;	
+		width: 50vw;
 		background-size: contain;
 	}
+
+	/* main */
+	.about-us-container {
+		display: flex;
+		padding-top: 1rem;
+	}
+	.about-us-background-one {
+		background-position: top;
+		height: 75vh;
+		width: 50vw;
+		background-size: contain;
+		margin: 0;
+		padding: 0;
+
+	}
+	.about-us-background-two {
+		background-position: bottom;
+		height: 75vh;
+		width: 50vw;
+		background-size: contain;
+		margin: 0;
+		padding: 0;
+	}
+	.about-us-text {
+		padding: 0 3rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.about-us-btn-container {
+		text-align: left;
+	}
+
+	/* footer */
+	/* .copyright-container {
+		flex-direction: row;
+		justify-content: space-around;
+	} */
 }
 
 /* @media screen and (min-device-width: 1024px) {

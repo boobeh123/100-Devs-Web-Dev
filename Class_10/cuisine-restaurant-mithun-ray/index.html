@@ -12,7 +12,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
     <!-- MaterializeCSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- External CSS  -->
@@ -25,54 +25,166 @@
     <header class="header">
         <nav>
             <div class="nav-wrapper">
-                <a href="/" class="brand-logo" aria-label="Logo"><img src="./public/css/images/logo2.png" height="37px" width="32px" alt="restaurant-logo-bowl-of-noodles-and-chopsticks"/></a>
+                <a href="/" class="brand-logo waves-effect" aria-label="Logo"><img src="./public/css/images/logo.png" height="37px" width="32px" alt="restaurant-logo-bowl-of-noodles-and-chopsticks"/>Itadaki</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">&equiv;</i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="#one">Home</a></li>
-                    <li><a href="#two">About Us</a></li>
-                    <li><a href="#three">Menu</a></li>
-                    <li><a href="#four">Order Now</a></li>
-                    <li><a href="#five">Blog</a></li>
-                    <li><a href="#six"><i class="fas fa-shopping-cart" aria-hidden="true" aria-label="Shopping cart"></i></a></li>
-                    <li><a href="#searchbar"><i class="fas fa-search" aria-hidden="true" aria-label="Search bar"></i></a></li>
+                    <li><a href="/" class="waves-effect">Home</a></li>
+                    <li><a href="#two" class="waves-effect">About Us</a></li>
+                    <li><a href="#three" class="waves-effect">Menu</a></li>
+                    <li><a href="#four" class="waves-effect">Contact us</a></li>
+                    <li><a href="/disclaimer.html" class="waves-effect">Blog</a></li>
+                    <li><a href="#" class="waves-effect" aria-label="Shopping cart"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a></li>
+                    <li><a href="#" class="waves-effect" aria-label="Search bar"><i class="fas fa-search" aria-hidden="true"></i></a></li>
                 </ul>
             </div>
         </nav>
         <ul class="sidenav" id="mobile-demo">
-            <li><a href="#one">Home</a></li>
-            <li><a href="#two">About Us</a></li>
-            <li><a href="#three">Menu</a></li>
-            <li><a href="#four">Order Now</a></li>
-            <li><a href="#five">Blog</a></li>
-            <li><a href="#six">Shopping cart</a></li>
-            <li><a href="#seven">Search</a></li>
+            <li><a href="/" class="waves-effect">Home</a></li>
+            <li><a href="#two" class="waves-effect">About Us</a></li>
+            <li><a href="#three" class="waves-effect">Menu</a></li>
+            <li><a href="#four" class="waves-effect">Contact us</a></li>
+            <li><a href="/disclaimer.html" class="waves-effect">Blog</a></li>
+            <li><a href="#" class="waves-effect">Shopping cart</a></li>
+            <li><a href="#" class="waves-effect">Search</a></li>
         </ul>
         <div class="header-container">
             <div class="header-background"></div>
             <section class="header-text">
-                <h1>Welcome To Our Cuisine Restaurant</h1>
-                <form class="header-input-container">
-                    <input type="text" placeholder="Search here" id="searchbar" />
-                    <input type="submit" class="btn black" />
-                </form>
+                <h1>Japanese style <strong>ramen</strong></h1>
+                <p>Itadaki imports ingredients from Japan and our noodles are made in-house, <strong>daily</strong>.</p>
+                <div class="header-btn-container">
+                    <a href="https://www.opentable.com/" target="_blank" class="waves-effect waves-light btn black">Book reservation</a>
+                    <a href="https://www.ubereats.com/" target="_blank" class="waves-effect waves-green btn transparent">Order online</a>
+                </div>
                 <p class="header-social-stats">
-                    <span class="fab fa-facebook-f"></span> <span>52k</span>
-                    <span class="fab fa-twitter"></span> <span>62k</span>
-                    <span class="fab fa-instagram"></span> <span>55k</span>
+                    <span class="social-stat">
+                        <span class="fab fa-facebook-f"></span>
+                        <span class="stat">52k</span>
+                    </span>
+                    <span class="social-stat">
+                        <span class="fab fa-twitter"></span>
+                        <span class="stat">62k</span>
+                    </span>
+                    <span class="social-stat">
+                        <span class="fab fa-instagram"></span>
+                        <span class="stat">55k</span>
+                    </span>
                 </p>
             </section>
         </div>
     </header>
+    <main>
+        <div id="two" class="about-us-container scrollspy">
+            <div class="about-us-background-one"></div>
+            <section class="about-us-text">
+                <span>About us</span>
+                <h2>Providing a pleasant <strong>experience</strong></h2>
+                <p>Here at Itadaki, we support local industries by sourcing our produce on island. We strive to serve the highest quality entrees for a family-friendly price.</p>
+                <p>Our broth is cooked for several hours with a variety of meats. This allows us to serve natural ingredients instead of artificial flavors.</p>
+                <p>We prioritize the well-being of our employees and maintain high retention. This leads to an experienced workforce, increased job satisfaction, and in turn an excellent experience for <strong>you</strong>.</p>
+                <div class="about-us-btn-container">
+                    <a href="/disclaimer.html" class="waves-effect waves-light btn orange lighten-1">Careers</a><!--
+                    --><a href="/disclaimer.html" class="waves-effect waves-light btn yellow darken-2">&rarr;</a>
+                </div>
+            </section>
+            <div class="about-us-background-two"></div>
+        </div>
+        <div id="three" class="menu-container scrollspy">
+            <section class="menu-text">
+                <span>Menu</span>
+                <h2>Serving our most <strong>popular</strong> dishes</h2>
+                <p>All bowls are mild.</p>
+                <p>Ask your waiter or waitress to add levels of spicy</p>
+            </section>
+            <div class="carousel">
+                <a class="carousel-item" href="#one!">
+                    <span> Shoyu Ramen</span>
+                    <img src="./public/css/images/HTC_Heritage Library_An Apple A Day 04Element 5.webp" alt="HTC_Heritage Library_An Apple A Day 04Element 5">
+                </a>
+                <a class="carousel-item" href="#two!">
+                    <span>TanTan Ramen</span>
+                    <img src="./public/css/images/HTC_Heritage Library_Berry Boost 02Element 2.webp" alt="HTC_Heritage Library_Berry Boost 02Element 2">
+                </a>
+                <a class="carousel-item" href="#three!">
+                    <span>Miso Ramen</span>
+                    <img src="./public/css/images/HTC_Heritage Library_Vibrant Vineyard 02Element 3.webp" alt="HTC_Heritage Library_Vibrant Vineyard 02Element 3">
+                </a>
+                <a class="carousel-item" href="#four!">
+                    <span>Tonkotsu Ramen</span>
+                    <img src="./public/css/images/HTC_Heritage Library_Citrus Club 04Element 2.webp" alt="HTC_Heritage Library_Citrus Club 04Element 2">
+                </a>
+                <a class="carousel-item" href="#five!">
+                    <span>Vegetable Ramen</span>
+                    <img src="./public/css/images/HTC_Heritage Library_Citrus Club 04Element 8.webp" alt="HTC_Heritage Library_Citrus Club 04Element 8">
+                </a>
+                <a class="carousel-item" href="#six!">
+                    <span>Wonton Ramen</span>
+                    <img src="./public/css/images/HTC_Heritage Library_Vibrant Vineyard 02Element 5.webp" alt="HTC_Heritage Library_Vibrant Vineyard 02Element 5">
+                </a>
+                <a class="carousel-item" href="#seven!">
+                    <span>Tempura Ramen</span>
+                    <img src="./public/css/images/HTC_Heritage Library_Plum Power 02Element 3.webp" alt="HTC_Heritage Library_Plum Power 02Element 3">
+                </a>
+                <a class="carousel-item" href="#eight!">
+                    <span>Black Garlic Ramen</span>
+                    <img src="./public/css/images/HTC_Heritage Library_Sweet ApricotsElement 2.webp" alt="HTC_Heritage Library_Sweet ApricotsElement 2">
+                </a>
+                <a class="carousel-item" href="#nine!">
+                    <span>Char Siu Ramen</span>
+                    <img src="./public/css/images/HTC_Heritage Library_Vibrant Vineyard 02Element 6.webp" alt="HTC_Heritage Library_Vibrant Vineyard 02Element 6">
+                </a>
+            </div>
+        </div>
+        <div id="four" class="contact-us-container">
+            <!-- <section class="hours-text">
+                <span>Additional information</span>
+                <h3>Hours of Operation</h3>
+            </section>
+            <div class="hours-table">
+                <p>Monday: 08:00 AM to 10:00 PM</p>
+                <p>Tuesday: 08:00 AM to 10:00 PM</p>
+                <p>Wednesday: 08:00 AM to 10:00 PM</p>
+                <p>Thursday: 08:00 AM to 10:00 PM</p>
+                <p>Friday: 08:00 AM to 10:00 PM</p>
+                <p>Saturday: 08:00 AM to 10:00 PM</p>
+                <p>Sunday: Closed</p>
+            </div> -->
+            <!-- <section class="contact-us-text">
+                <span>Contact us</span>
+                <h3>Your experience why we come to work.</h3>
+                <p>Voice your questions or concerns using our contact form and we will be sure to reply within the business day.</p>
+            </section>
+            <form class="col s12" action="/success" name="contact" method="POST">
+                <div class="input-field col s12">
+                    <input type="text" name="name" id="name" placeholder="Name" class="validate">
+                    <label for="name">Name</label>
+                </div>
+                <div class="input-field col s12">
+                    <input type="email" name="email" id="email" placeholder="Email" class="validate" required>
+                    <label for="name">Email</label>
+                </div>
+                <div class="input-field col s12">
+                    <textarea name="message" id="message" class="materialize-textarea" placeholder="Enter your message" row="6" required></textarea>
+                    <label for="message">Message</label>
+                </div>
+                <div class="input-field col s12">
+                    <input type="submit" name="submit">
+                    <input type="reset" name="reset">
+                </div>
+            </form> -->
+        </div>
+    </main>
 	<!-- Footer -->
 	<!-- <footer class="footer">
 		<ul class="icon-container">
 			<li><a href="https://twitter.com/boobeh123" class="fa fa-2xl fa-twitter" target="_blank" aria-label="Twitter"></a></li>
-			<li><a href="https://www.linkedin.com/in/bobby-asakawa" class="fab fa-2xl fa-linkedin-in" target="_blank" aria-label="LinkedIn"></a></li>
 			<li><a href="https://github.com/boobeh123/" class="fa fa-2xl fa-github" target="_blank" aria-label="Github"></a></li>
 		</ul>
-		<ul class="copyright-container">
-			<li>&copy; 2023 Bobby Asakawa</li><li> All rights reserved</li>Icons: <a href="https://fontawesome.com/">Fontawesome</a></li>
-		</ul>
+        <div class="copyright-container">
+            <span>&copy; 2023 Bobby Asakawa</span>
+            <span>All rights reserved</span>
+            <span>Icons: <a href="https://fontawesome.com/">Fontawesome</a></span>
+        </div>
 	</footer> -->
     <!-- MaterializeCSS JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -81,6 +193,8 @@
     <script type="text/JavaScript" src="/public/js/main.js"></script>
     <script>
         M.Sidenav.init(document.querySelector('.sidenav'))
+        M.ScrollSpy.init(document.querySelectorAll('.scrollspy'))
+        M.Carousel.init(document.querySelectorAll('.carousel'))
     </script>
 </body>
 </html>
