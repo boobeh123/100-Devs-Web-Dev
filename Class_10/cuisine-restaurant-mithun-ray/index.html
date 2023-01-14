@@ -7,6 +7,8 @@
     <meta name="description" content="Bobby Asakawa version of a cuisine restaurant website" />
     <meta name="keywords" content="Bobby, asakawa, hawaii, HI, oahu, ewa, ewa beach, portfolio, software, engineer, full, stack, web, developer" />
     <meta name="author" content="Bobby Asakawa" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./public/css/images/icons8-rice-bowl-32.png"/>
     <!-- Preload webp -->
     <link rel="preload" fetchpriority="high" as="image" href="./public/css/images/HTC_Heritage Library_Peachy Peaches 03Element 7.webp" type="image/webp">
     <!-- Fonts -->
@@ -25,7 +27,7 @@
     <header class="header">
         <nav>
             <div class="nav-wrapper">
-                <a href="/" class="brand-logo waves-effect waves-orange" aria-label="Logo"><img src="./public/css/images/logo.png" height="37px" width="32px" alt="restaurant-logo-bowl-of-noodles-and-chopsticks"/>Itadaki</a>
+                <a href="/" class="brand-logo waves-effect waves-orange" aria-label="Logo"><img src="./public/css/images/logo.png" class="header-logo" alt="restaurant-logo-bowl-of-noodles-and-chopsticks"/>Itadaki</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">&equiv;</i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="/" class="waves-effect waves-green">Home</a></li>
@@ -98,39 +100,39 @@
             </section>
             <div class="carousel center">
                 <div class="carousel-item grey lighten-1" href="#one!">
-                    <h5>Shoyu Ramen</h5>
+                    <h3>Shoyu Ramen</h3>
                     <img src="./public/css/images/HTC_Heritage Library_An Apple A Day 04Element 5.webp" alt="HTC_Heritage Library_An Apple A Day 04Element 5.webp">
                 </div>
                 <div class="carousel-item grey lighten-1" href="#two!">
-                    <h5>TanTan Ramen</h5>
+                    <h3>TanTan Ramen</h3>
                     <img src="./public/css/images/HTC_Heritage Library_An Apple A Day 04Element 5.webp" alt="HTC_Heritage Library_An Apple A Day 04Element 5.webp">
                 </div>
                 <div class="carousel-item grey lighten-1" href="#three!">
-                    <h5>Miso Ramen</h5>
+                    <h3>Miso Ramen</h3>
                     <img src="./public/css/images/HTC_Heritage Library_An Apple A Day 04Element 5.webp" alt="HTC_Heritage Library_An Apple A Day 04Element 5.webp">
                 </div>
                 <div class="carousel-item grey lighten-1" href="#four!">
-                    <h5>Tonkotsu Ramen</h5>
+                    <h3>Tonkotsu Ramen</h3>
                     <img src="./public/css/images/HTC_Heritage Library_An Apple A Day 04Element 5.webp" alt="HTC_Heritage Library_An Apple A Day 04Element 5.webp">
                 </div>
                 <div class="carousel-item grey lighten-1" href="#five!">
-                    <h5>Vegetable Ramen</h5>
+                    <h3>Vegetable Ramen</h3>
                     <img src="./public/css/images/HTC_Heritage Library_An Apple A Day 04Element 5.webp" alt="HTC_Heritage Library_An Apple A Day 04Element 5.webp">
                 </div>
                 <div class="carousel-item grey lighten-1" href="#six!">
-                    <h5>Wonton Ramen</h5>
+                    <h3>Wonton Ramen</h3>
                     <img src="./public/css/images/HTC_Heritage Library_An Apple A Day 04Element 5.webp" alt="HTC_Heritage Library_An Apple A Day 04Element 5.webp">
                 </div>
                 <div class="carousel-item grey lighten-1" href="#seven!">
-                    <h5>Tempura Ramen</h5>
+                    <h3>Tempura Ramen</h3>
                     <img src="./public/css/images/HTC_Heritage Library_An Apple A Day 04Element 5.webp" alt="HTC_Heritage Library_An Apple A Day 04Element 5.webp">
                 </div>
                 <div class="carousel-item grey lighten-1" href="#eight!">
-                    <h5>Black Garlic Ramen</h5>
+                    <h3>Black Garlic Ramen</h3>
                     <img src="./public/css/images/HTC_Heritage Library_An Apple A Day 04Element 5.webp" alt="HTC_Heritage Library_An Apple A Day 04Element 5.webp">
                 </div>
                 <div class="carousel-item grey lighten-1" href="#nine!">
-                    <h5>Char Siu Ramen</h5>
+                    <h3>Char Siu Ramen</h3>
                     <img src="./public/css/images/HTC_Heritage Library_An Apple A Day 04Element 5.webp" alt="HTC_Heritage Library_An Apple A Day 04Element 5.webp">
                 </div>
             </div>
@@ -138,21 +140,21 @@
         <div id="four" class="contact-us-container scrollspy">
             <section class="contact-us-text">
                 <span>Contact us</span>
-                <h3><strong>If it matters to you, it matters to me</strong>.</h3>
+                <h4><strong>If it matters to you, it matters to me</strong>.</h4>
                 <p>Voice your questions or concerns using our contact form and we will be sure to reply.</p>
             </section>
-            <form class="" action="/success" name="contact" method="POST">
+            <form action="/success" name="contact" method="POST" netlify>
                 <div class="input-field">
                     <input type="text" name="name" id="name" class="validate">
                     <label for="name">Name</label>
                 </div>
                 <div class="input-field">
-                    <input type="email" name="email" id="email" class="validate" required>
-                    <label for="name">Email</label>
+                    <input type="email" name="email" id="contact-us-email" class="validate" required>
+                    <label for="contact-us-email">Email</label>
                 </div>
                 <div class="input-field">
-                    <textarea name="message" id="message" class="materialize-textarea" required></textarea>
-                    <label for="message">Message</label>
+                    <textarea name="message" id="contact-us-message" class="materialize-textarea" required></textarea>
+                    <label for="contact-us-message">Message</label>
                 </div>
                 <div class="contact-us-btn-container">
                     <input type="submit" name="submit" class="btn black">
@@ -169,9 +171,9 @@
                 <h5>OUR GUARANTEE</h5>
                 <p>All products are created with passion and great attention to detail. Web pages should help you to create your own significant designs whether for business, personal, or any other medium.</p>
                 <div class="page-footer-icon-container">
-                    <a href="https://twitter.com/boobeh123" class="fa fa-twitter" target="_blank" aria-label="Twitter"></a>
-                    <a href="https://github.com/boobeh123/" class="fa fa-github" target="_blank" aria-label="Github"></a>
-                    <a href="https://btawebdevelopment.com" class="fas fa-globe" target="_blank" aria-label="Portfolio"></a>
+                    <a href="https://twitter.com/boobeh123" target="_blank" aria-label="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a href="https://github.com/boobeh123/" target="_blank" aria-label="Github"><i class="fa fa-github" aria-hidden="true"></i></a>
+                    <a href="https://btawebdevelopment.com" target="_blank" aria-label="Portfolio"><i class="fas fa-globe" aria-hidden="true"></i></a>
                 </div>
             </section>
             <div class="footer-links">
@@ -187,11 +189,11 @@
             <div class="footer-form">
                 <h5>Newsletter</h5>
                 <p>Subscribe to our newsletter and get updates for free.</p>
-                <form>
-                    <input type="hidden" name="message" id="message" value="Subscribed"></textarea>
+                <form action="/subscribe" name="subscribe" method="POST" netlify>
+                    <input type="hidden" name="message" id="subscription-message" value="Subscribed"></textarea>
                     <div class="input-field">
-                        <input type="email" name="email" id="email" class="validate" required>
-                        <label for="name">Email</label>
+                        <input type="email" name="email" id="subscription-email" class="validate" required>
+                        <label for="subscription-email">Email</label>
                     </div>
                     <div class="footer-btn-container">
                         <input type="submit" name="submit" class="btn black" value="Subscribe">

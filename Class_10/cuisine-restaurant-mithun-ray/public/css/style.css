@@ -64,6 +64,10 @@ a {
 	font-family: 'Lato';
 	font-weight: 400;
 }
+.header-logo {
+	height: 40px;
+	width: 40px;
+}
 .header-container {
 	background-color: rgba(115, 115, 115, 0.05);
 	display: flex;
@@ -194,6 +198,10 @@ a {
 }
 .carousel-item {
 	height: 260px !important;
+}
+.carousel-item img {
+	height: 200px;
+	width: 200px;
 }
 /**************************************************************
 * Contact us
