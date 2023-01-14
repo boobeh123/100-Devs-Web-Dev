@@ -5,7 +5,7 @@ I wanted to build this project as a way to demonstrate my design, development, a
 The current site is deployed on netlify at: https://btacuisine-restaurant.netlify.app/
 
 ## Demo
-(Demo1.gif)
+![](Demo1.gif)
 
 ### Tech used:
 <img src="https://profilinator.rishav.dev/skills-assets/html5-original-wordmark.svg" alt="HTML5" height="50" /><img src="https://profilinator.rishav.dev/skills-assets/css3-original-wordmark.svg" alt="CSS3" height="50" /><img src="https://profilinator.rishav.dev/skills-assets/javascript-original.svg" alt="JavaScript" height="40" />
