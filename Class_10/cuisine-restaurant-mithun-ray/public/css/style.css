@@ -39,8 +39,8 @@ body {
     font-family: 'Roboto', 'Times New Roman', sans-serif;
     font-size: 1rem;
     overflow: auto;
-    /* min-height: 100vh; */
     display: flex;
+    min-height: 100vh;
     flex-direction: column;
 }
 
@@ -160,6 +160,20 @@ a {
 .about-us-btn-container .yellow {
 	border-radius: 0 4px 40px 0;
 }
+.yellow:hover,
+.about-us-btn-container:hover .orange {
+	border-radius: 0 0 0 40px;
+}
+.orange:hover,
+.about-us-btn-container:hover .yellow {
+	border-radius: 0 40px 0 0;
+}
+/* .yellow:hover,
+.about-us-btn-container:hover .orange,
+.orange:hover,
+.about-us-btn-container:hover .yellow {
+	border-radius: 0px;
+} */
 /**************************************************************
 * Menu
 ***************************************************************/
@@ -178,56 +192,87 @@ a {
 	margin-top: 0;
 	margin-bottom: 0;
 }
-.carousel-item span {
-	text-align: center;
-	display: block;
-	border: 1px solid rgba(115, 115, 115, 0.25);
-	padding: 0;
-	margin: 0;
-	border-radius: 40px;
+.carousel-item {
+	height: 260px !important;
 }
 /**************************************************************
 * Contact us
 ***************************************************************/
 .contact-us-container {
-	padding: 0 1rem;
+	padding: 1rem;
+}
+.contact-us-text {
+	padding-bottom: 0.25rem;
+}
+.contact-us-text span {
+	color: orange;
+	font-weight: 700;
+}
+.contact-us-text h3 {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.input-field input,
+.input-field textarea {
+	border: solid 1px rgba(115, 115, 115, 0.5) !important;
+	border-radius: 4px !important;
+	background-color: rgba(226, 218, 218, 0.075) !important;
+	text-indent: 5px;
+}
+.input-field label {
+	border-left: 1px solid rgba(115, 115, 115, 0.5);
+	padding-left: 0.5rem;
+}
+.contact-us-btn-container {
+	text-align: center;
+}
+.contact-us-btn-container .btn {
+	border-radius: 4px;
+}
+.contact-us-background {
+	height: 25vh;
+	width: 100vw;
+	background-image: url('./images/HTC_Heritage\ Library_Vibrant\ Vineyard\ 02Element\ 3.webp');
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	margin: 1rem 0;
 }
 /**************************************************************
 * Footer
 ***************************************************************/
-/* .footer {
-	display: flex;
-	flex-direction: column;
-	position: fixed;
-	bottom: 0;
-	right: 0;
-	left: 0;
-	border-top: 1px solid #000;
+.page-footer {
+	background-color: rgba(115, 115, 115, 0.05);
+	color: black;
 }
-.icon-container {
-	display: flex;
-	justify-content: center;
+.page-footer a {
+	color: #333;
 }
-.icon-container li {
-	margin: 1rem 1rem 0 1rem;
+.page-footer a:hover {
+	color: #999;
 }
-.copyright-container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-.copyright-container span {
-	margin: 0.25rem 0;
-}
-.footer .fa-twitter:hover {
+.page-footer .fa-twitter:hover {
 	color: dodgerblue;
 }
-.footer .fa-github:hover {
-	color: #D5D5D5;
+.page-footer-container {
+	padding: 0 1rem;
 }
-.footer .fab, .footer .fa {
-	color: #000000;
-} */
+.page-footer-icon-container a {
+	margin: 0 0.5rem;
+}
+.page-footer-link-container li {
+	margin: 0.25rem 0;
+}
+.footer-copyright .container {
+	display: flex;
+	justify-content: space-between;
+}
+.footer-copyright span {
+	color: black;
+}
+.footer-form {
+	padding-bottom: 1rem;
+}
 /**************************************************************
 * Media queries
 ***************************************************************/
@@ -257,7 +302,6 @@ a {
 		background-size: contain;
 		margin: 0;
 		padding: 0;
-
 	}
 	.about-us-background-two {
 		background-position: bottom;
@@ -276,14 +320,35 @@ a {
 	.about-us-btn-container {
 		text-align: left;
 	}
+	.contact-us-container {
+		display: flex;
+		justify-content: space-evenly;
+		width: 100vw;
+	}
+	.contact-us-container .contact-us-text {
+		width: 20vw;
+	}
+	.contact-us-container form {
+		width: 50vw;
+		padding-right: 1rem;
+	}
+	.contact-us-background {
+		height: 50vh;
+		width: 100vw;
+	}
 
 	/* footer */
-	/* .copyright-container {
-		flex-direction: row;
-		justify-content: space-around;
-	} */
+	.page-footer-container {
+		display: flex;
+		justify-content: space-evenly;
+	}
+	.footer-text {
+		width: 15vw;
+	}
+	.footer-links {
+		width: 15vw;
+	}
+	.footer-form {
+		width: 15vw;
+	}
 }
-
-/* @media screen and (min-device-width: 1024px) {
-
-} */
