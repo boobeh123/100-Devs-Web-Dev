@@ -203,6 +203,9 @@ a {
 	height: 200px;
 	width: 200px;
 }
+.carousel-item h3 {
+	font-size: 1.5rem;
+}
 /**************************************************************
 * Contact us
 ***************************************************************/
@@ -263,7 +266,7 @@ a {
 	color: dodgerblue;
 }
 .page-footer-container {
-	padding: 0 1rem;
+	padding: 0 1rem 1rem 1rem;
 }
 .page-footer-icon-container a {
 	margin: 0 0.5rem;
