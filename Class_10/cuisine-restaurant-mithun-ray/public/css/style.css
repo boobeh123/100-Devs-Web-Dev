@@ -121,7 +121,7 @@ a {
 	color: #C13584;
 }
 /**************************************************************
-* Main
+* Main (index)
 ***************************************************************/
 /**************************************************************
 * About us
@@ -250,6 +250,71 @@ a {
 	margin: 1rem 0;
 }
 /**************************************************************
+* Main (blog)
+***************************************************************/
+.blog-container {
+	padding: 1rem;
+}
+.card-content h2 {
+	font-size: 1.5rem;
+	margin: 0 0 0.5rem 0;
+	font-weight: 700;
+}
+.card-image {
+	border-bottom: 1px solid rgba(115, 115, 115, 0.15);
+}
+.blog-background-one {
+	background-image: url('./images/HTC_Heritage\ Library_Berry\ Boost\ 02Element\ 2.webp');
+	height: 25vh;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+.blog-background-two {
+	background-image: url('./images/HTC_Heritage\ Library_Citrus\ Club\ 04Element\ 8.webp');
+	height: 25vh;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+.blog-background-three {
+	background-image: url('./images/HTC_Heritage\ Library_Plum\ Power\ 02Element\ 3.webp');
+	height: 25vh;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+#category-three,
+#category-two, 
+#category-one {
+	font-weight: 700;
+	font-size: 0.9rem;
+	border-radius: 40px;
+	width: 30%;
+	text-align: center;
+	outline: auto;
+	cursor: pointer;
+}
+#category-three {
+	background-color: #E0E6FE;
+	color: #5D59B8;
+}
+#category-two {
+	background-color: #FCE6F2;
+	color: #AB3465;
+}
+#category-one {
+	background-color:  #DDFDE7;
+	color: #176535;
+}
+.card-action {
+	display: flex;
+	justify-content: space-between;
+}
+.card-action span {
+	color:rgba(115, 115, 115, 0.85)
+}
+/**************************************************************
 * Footer
 ***************************************************************/
 .page-footer {
@@ -301,7 +366,7 @@ a {
 		background-size: contain;
 	}
 
-	/* main */
+	/* main (index) */
 	.about-us-container {
 		display: flex;
 		padding-top: 1rem;
@@ -346,6 +411,20 @@ a {
 	.contact-us-background {
 		height: 50vh;
 		width: 100vw;
+	}
+
+	/* main (blog) */
+	.blog-container {
+		display: flex;
+		justify-content: space-evenly;
+	}
+	.card {
+		max-width: 30vw;
+	}
+	#category-three,
+	#category-two, 
+	#category-one {
+		width: 40%;
 	}
 
 	/* footer */

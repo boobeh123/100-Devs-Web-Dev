@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Bobby Asakawa version of a cuisine restaurant website" />
+    <meta name="keywords" content="Bobby, asakawa, hawaii, HI, oahu, ewa, ewa beach, portfolio, software, engineer, full, stack, web, developer" />
+    <meta name="author" content="Bobby Asakawa" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./public/css/images/icons8-rice-bowl-32.png"/>
+    <!-- Preload webp -->
+    <link rel="preload" fetchpriority="high" as="image" href="./public/css/images/HTC_Heritage Library_Peachy Peaches 03Element 7.webp" type="image/webp">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+    <!-- MaterializeCSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- External CSS  -->
+    <link rel="stylesheet" href="/public/css/normalize.css">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <title>Cuisine Restaurant</title>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="/" class="brand-logo waves-effect waves-orange" aria-label="Logo"><img src="./public/css/images/logo.png" class="header-logo" alt="restaurant-logo-bowl-of-noodles-and-chopsticks"/>Itadaki</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">&equiv;</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="/" class="waves-effect waves-green">Home</a></li>
+                    <li>
+                        <form id="search-form">
+                            <input id="search" type="search" placeholder="Search">
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="/" class="waves-effect waves-green">Home</a></li>
+        </ul>
+        <div class="header-container">
+            <div class="header-background"></div>
+            <section class="header-text">
+                <h1>From our <strong>blog</strong></h1>
+                <p>Consider following us on social media to get the latest updates and be involved with our community!</p>
+                <p class="header-social-stats">
+                    <span class="social-stat">
+                        <span class="fab fa-facebook-f"></span>
+                        <span class="stat">52k</span>
+                    </span>
+                    <span class="social-stat">
+                        <span class="fab fa-twitter"></span>
+                        <span class="stat">62k</span>
+                    </span>
+                    <span class="social-stat">
+                        <span class="fab fa-instagram"></span>
+                        <span class="stat">55k</span>
+                    </span>
+                </p>
+            </section>
+        </div>
+    </header>
+    <main>
+        <div class="blog-container scrollspy">
+            <div class="card hoverable">
+                <div class="card-image">
+                    <div class="blog-background-one"></div>
+                </div>
+                <div class="card-content">
+                    <span class="card-title" id="category-one">Video</span>
+                    <h2>5 Reasons to Dine at Itadaki</h2>
+                    <p>Are you looking for a new dining experience? Look no further than Itadaki. Our menu features a variety of delicious dishes made with fresh, high-quality ingredients. But that's not all - here are 5 reasons why you should choose to dine with us:</p>
+                </div>
+                <div class="card-action">
+                    <a class="modal-trigger" href="#modal1">Read more &rarr;</a>
+                    <span>2 min read</span>
+                </div>
+            </div>
+            <div class="card hoverable">
+                <div class="card-image">
+                    <div class="blog-background-two"></div>
+                </div>
+                <div class="card-content">
+                    <span class="card-title" id="category-two">Article</span>
+                    <h2>The Importance of Relations</h2>
+                    <p>At Itadaki, we understand that providing excellent customer service is just as important as serving delicious food. That's why we strive to build strong business-to-customer relations with every person who walks through our doors. Here are just a few of the ways we do this:</p>
+                </div>
+                <div class="card-action">
+                    <a class="modal-trigger" href="#modal2">Read more &rarr;</a>
+                    <span>2 min read</span>
+                </div>
+            </div>
+            <div class="card hoverable">
+                <div class="card-image">
+                    <div class="blog-background-three"></div>
+                </div>
+                <div class="card-content">
+                    <span class="card-title" id="category-three">Case Study</span>
+                    <h2>Introducing Itadaki's New Menu</h2>
+                    <p>The New Year is here, and we're excited to unveil our new menu at Itadaki! We've spent the past few months experimenting with new ingredients, flavors, and techniques to create a menu that's perfect for the season. Here are just a few of the highlights of our new offerings:</p>
+                </div>
+                <div class="card-action">
+                    <a class="modal-trigger" href="#modal3">Read more &rarr;</a>
+                    <span>2 min read</span>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <h3>5 Reasons to Dine at Itadaki</h3>
+                <p>Are you looking for a new dining experience? Look no further than Itadaki. Our menu features a variety of delicious dishes made with fresh, high-quality ingredients. But that's not all - here are 5 reasons why you should choose to dine with us:</p>
+                <ol>
+                    <li><p>Our experienced chef creates unique and innovative dishes that you won't find anywhere else.</p></li>
+                    <li><p>Our welcoming and attentive staff will ensure that your dining experience is enjoyable from start to finish.</p></li>
+                    <li><p>We offer a wide range of options to accommodate dietary restrictions and allergies.</p></li>
+                    <li><p>Our elegant and comfortable atmosphere is perfect for a special occasion or a casual night out.</p></li>
+                    <li><p>We have a carefully curated dessert menu that will complement your meal perfectly.</p></li>
+                </ol>
+                <p>Don't miss out on the opportunity to try something new and delicious. Make a reservation at Itadaki today!</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+            </div>
+        </div> 
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <h3>The Importance of Strong Business-to-Customer Relations at Itadaki</h3>
+                <p>At Itadaki, we understand that providing excellent customer service is just as important as serving delicious food. That's why we strive to build strong business-to-customer relations with every person who walks through our doors. Here are just a few of the ways we do this:</p>
+                <ol>
+                    <li><p>We train our staff to be friendly, approachable, and attentive to our customers' needs.</p></li>
+                    <li><p>We take the time to get to know our regular customers and make them feel like valued members of our restaurant family.</p></li>
+                    <li><p>We are always willing to go the extra mile to ensure that our customers have an enjoyable dining experience, whether that means accommodating a vegan option or accommodating a special meal.</p></li>
+                    <li><p>We actively seek out customer feedback and use it to improve our service and menu.</p></li>
+                    <li><p>We always try to be transparent and communicate effectively with our customers, whether that means clearly explaining menu items or providing updates on wait times.</p></li>
+                </ol>
+                <p>At Itadaki, we believe that strong business-to-customer relations are essential for success. We are committed to providing our customers with the best possible experience every time they dine with us.</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+            </div>
+        </div>
+        <div id="modal3" class="modal">
+            <div class="modal-content">
+                <h3>Introducing Itadaki's New Menu</h3>
+                <p>The New Year is here, and we're excited to unveil our new menu at Itadaki! We've spent the past few months experimenting with new ingredients, flavors, and techniques to create a menu that's perfect for the season. Here are just a few of the highlights of our new offerings:</p>
+                <ol>
+                    <li><p>We've added a variety of fresh, seasonal salads to our menu, including a watermelon and feta salad, and a grilled peach salad with arugula and balsamic vinaigrette.</p></li>
+                    <li><p>Our kitchen team has been experimenting with different grilling techniques, and we now have some mouthwatering new options like grilled octopus, and a variety of skewers including chicken and shrimps.</p></li>
+                    <li><p>To cool off on hot days, we're now offering a selection of creative and refreshing summer drinks like homemade lemonade, iced tea and mocktails.</p></li>
+                    <li><p>We've also added a few new dessert options, including a strawberry-basil sorbet and a lemon-blueberry tart.</p></li>
+                </ol>
+                <p>We can't wait for you to come and try our new menu! Make sure to book your table in advance, as we expect it to be very popular.</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+            </div>
+        </div>
+    </main>
+	<!-- Footer -->
+    <footer class="page-footer">
+        <div class="page-footer-container">
+            <section class="footer-text">
+                <h5>OUR GUARANTEE</h5>
+                <p>All products are created with passion and great attention to detail. Web pages should help you to create your own significant designs whether for business, personal, or any other medium.</p>
+                <div class="page-footer-icon-container">
+                    <a href="https://twitter.com/boobeh123" target="_blank" aria-label="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a href="https://github.com/boobeh123/" target="_blank" aria-label="Github"><i class="fa fa-github" aria-hidden="true"></i></a>
+                    <a href="https://btawebdevelopment.com" target="_blank" aria-label="Portfolio"><i class="fas fa-globe" aria-hidden="true"></i></a>
+                </div>
+            </section>
+            <div class="footer-links">
+                <h5>Links</h5>
+                <ul class="page-footer-link-container">
+                    <li><a href="https://fontawesome.com/" target="_blank">Icons</a></li>
+                    <li><a href="https://www.heritagetype.com/pages/free-vintage-illustrations" target="_blank">Images</a></li>
+                    <li><a href="disclaimer.html">FAQ</a></li>
+                    <li><a href="disclaimer.html">Careers</a></li>
+                    <li><a href="disclaimer.html">Private Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-form">
+                <h5>Newsletter</h5>
+                <p>Subscribe to our newsletter and get updates for free.</p>
+                <form action="/subscribe" name="subscribe" method="POST" netlify>
+                    <input type="hidden" name="message" id="subscription-message" value="Subscribed"></textarea>
+                    <div class="input-field">
+                        <input type="email" name="email" id="subscription-email" class="validate" required>
+                        <label for="subscription-email">Email</label>
+                    </div>
+                    <div class="footer-btn-container">
+                        <input type="submit" name="submit" class="btn black" value="Subscribe">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                <span>&copy; 2023 Bobby Asakawa</span>
+                <span>All rights reserved</span>
+            </div>
+        </div>
+    </footer>
+    <!-- MaterializeCSS JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Fontawesome Icons -->
+	<script src="https://kit.fontawesome.com/9f91d488b5.js" crossorigin="anonymous"></script>
+    <script type="text/JavaScript" src="/public/js/main.js"></script>
+</body>
+</html>

@@ -1,23 +1,17 @@
+// Initialize MCSS Components
 const sidenav = document.querySelector('.sidenav');
 const sidenavInstances = M.Sidenav.init(sidenav);
 
 const scrollspy = document.querySelectorAll('.scrollspy');
 const scrollspyInstances = M.ScrollSpy.init(scrollspy);
 
-const carousel = document.querySelectorAll('.carousel');
-const carouselInstances = M.Carousel.init(carousel, {
-    numVisible: 3,
-    duration: 50,
-    shift: 100,
-});
-let carouselIntervalId = setInterval(() => {
-    carouselInstances[0].next();
-}, 3000);
+const modal = document.querySelectorAll('.modal');
+const modalInstances = M.Modal.init(modal);
 
+
+// Searchbar functionality
 const searchForm = document.querySelector('#search-form')
-
 searchForm.addEventListener('submit', searchBar);
-
 function searchBar(e) {
     e.preventDefault()
     const searchInput = document.querySelector('#search')
